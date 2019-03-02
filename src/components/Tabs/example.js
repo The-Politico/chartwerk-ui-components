@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Page from 'Common/Page/';
+import CodeBlock from 'Common/CodeBlock';
 
 import Tabs from './index';
 
@@ -22,6 +23,19 @@ const components = [
 const App = (props) => (
   <Page title='Tabs'>
     <Tabs tabs={['One', 'Two']} components={components} />
+    <CodeBlock
+      value={`import { Tabs } from 'chartwerk-ui-components';
+
+const components = [
+  [<SomeComponent />],
+  [<AnotherComponent />, <SecondComponent />]
+];
+
+const tabs = ['One', 'Two'];
+
+<Tabs tabs={tabs} components={components} />
+    `}
+    />
   </Page>
 );
 

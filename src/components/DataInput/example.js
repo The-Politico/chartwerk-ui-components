@@ -2,10 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import DataInput from './index';
 import Page from 'Common/Page/';
+import CodeBlock from 'Common/CodeBlock';
 
 const App = (props) => (
   <Page title='DataInput'>
     <DataInput />
+    <CodeBlock
+      value={`import { DataInput } from 'chartwerk-ui-components';
+
+<DataInput />
+      `}
+    />
   </Page>
 );
 

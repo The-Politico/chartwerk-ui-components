@@ -1,0 +1,35 @@
+@import "Theme/_colors.scss";
+
+.component :global {
+  position: relative;
+  pre {
+    border-radius: 2px;
+    margin: 80px 0 60px;
+    padding: 2em 0 0;
+    border-top: 2px dashed #ccc;
+  }
+  button {
+    border: 0;
+    color: #ddd;
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+    outline: none !important;
+    cursor: pointer;
+    font-size: 14px;
+    &:hover {
+      color: #666;
+    }
+    &:active {
+      border: 1px solid #666;
+    }
+    &.copy{
+      right: 10px;
+      bottom: 5px;
+      &:active{
+        right: 8px;
+        bottom: 3px;
+      }
+    }
+  }
+}
