@@ -1,0 +1,21 @@
+@import "Theme/_fonts.scss";
+@import "Theme/_colors.scss";
+
+.component :global {
+    @import "~bulma/sass/utilities/_all.sass";
+    @import "~bulma/sass/layout/section.sass";
+
+    @extend %sans;
+    color: $black;
+
+    .well{
+      width: 100%;
+      max-width: 600px;
+      margin: 0px auto;
+    }
+    h1{
+      @extend %title;
+      margin: 40px auto 30px;
+      font-weight: lighter;
+    }
+}

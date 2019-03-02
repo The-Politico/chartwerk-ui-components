@@ -1,0 +1,24 @@
+@import "Theme/_fonts.scss";
+@import "Theme/_colors.scss";
+
+.component :global {
+  @import "~bulma/sass/utilities/_all.sass";
+  @import "~bulma/sass/components/navbar.sass";
+
+  .navbar{
+    background-color: $red;
+    @extend %sans;
+    .navbar-item{
+      font-size: 18px;
+      color: $white;
+      text-decoration: none;
+      .kraftwerk{
+        @extend %kraftwerk;
+        font-size: 24px;
+      }
+      &:hover{
+        color: $white;
+      }
+    }
+  }
+}

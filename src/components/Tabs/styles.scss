@@ -1,0 +1,10 @@
+.component :global {
+  @import "~bulma/sass/utilities/_all.sass";
+  @import "~bulma/sass/components/tabs.sass";
+
+  .tabs ul{
+    li{
+      cursor: pointer;
+    }
+  }
+}
