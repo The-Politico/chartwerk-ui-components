@@ -14,7 +14,7 @@ class Docs extends React.Component {
       <li><a href={`./${site}/`}>{site}</a></li>
     ));
     return (
-      <Page>
+      <Page link='.'>
         <div className={classnames(styles.component)}>
           <ul>{links}</ul>
         </div>
