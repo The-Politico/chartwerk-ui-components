@@ -26,14 +26,13 @@ const App = (props) => (
     <CodeBlock
       value={`import { Tabs } from 'chartwerk-ui-components';
 
-const components = [
-  [<SomeComponent />],
-  [<AnotherComponent />, <SecondComponent />]
-];
-
-const tabs = ['One', 'Two'];
-
-<Tabs tabs={tabs} components={components} />
+<Tabs
+  tabs={['One', 'Two']}
+  components={[
+    [<SomeComponent />], // tab "One"
+    [<AnotherComponent />, <SecondComponent />] // tab "Two"
+  ]}
+/>
     `}
     />
   </Page>

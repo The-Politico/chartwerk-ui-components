@@ -10,7 +10,9 @@ const App = (props) => (
     <CodeBlock
       value={`import { DataInput } from 'chartwerk-ui-components';
 
-<DataInput />
+<DataInput
+  dateFormats={['M/D/YY', 'MM/DD/YY']}
+/>
       `}
     />
   </Page>

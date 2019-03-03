@@ -1,8 +1,24 @@
+@import "Theme/_colors.scss";
 .component :global {
+  small{
+    color: $black;
+  }
   textarea{
     width: 100%;
     max-width: 100%;
     min-width: 100%;
     min-height: 200px;
+    font-family: monospace;
+    outline: none;
+  }
+  .level.error{
+    background-color: $red;
+    padding: 8px;
+    color: white;
+    font-size: 13px;
+    margin: 5px 0;
+    p{
+      margin: 0;
+    }
   }
 }

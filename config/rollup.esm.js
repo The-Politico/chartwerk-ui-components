@@ -27,12 +27,14 @@ const commonConfig = {
   ],
   plugins: [
     json(),
-    postcss({
-      modules: true,
-    }),
     alias({
       resolve: ['.jsx', '.js'],
+      Common: path.resolve(process.cwd(), 'src/common/'),
       Constants: path.resolve(process.cwd(), 'src/constants/'),
+      Theme: path.resolve(process.cwd(), 'src/theme/'),
+    }),
+    postcss({
+      modules: true,
     }),
     babel(babelOpts),
     resolve({

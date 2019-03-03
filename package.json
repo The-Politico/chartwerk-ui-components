@@ -15,7 +15,10 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
+    "d3-dsv": "^1.1.1",
     "lodash": "^4.17.11",
+    "moment": "^2.24.0",
+    "parse-num": "^1.0.0",
     "prop-types": "^15.7.2"
   },
   "peerDependencies": {

@@ -1,0 +1,6 @@
+@import "~Theme/_fonts.scss";
+@import "~Theme/_colors.scss";
+
+.component :global {
+  color: $black;
+}
