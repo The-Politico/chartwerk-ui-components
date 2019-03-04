@@ -13,15 +13,16 @@ class DataInput extends React.Component {
     view: INPUT,
     rawData: '',
     parsedData: undefined,
-    headerTypes: {},
+    columnTypes: {},
     columnTransforms: {},
+    columnMaps: {},
   }
 
   sendState = (newState) => this.setState(newState)
 
   render() {
     const { dateFormats } = this.props;
-    const { view, parsedData, headerTypes, rawData } = this.state;
+    const { view, parsedData, columnTypes, rawData, columnTransforms } = this.state;
 
     return (
       <div className={classnames(styles.component)}>
@@ -36,7 +37,8 @@ class DataInput extends React.Component {
           <DataEdit
             dateFormats={dateFormats}
             parsedData={parsedData}
-            headerTypes={headerTypes}
+            columnTypes={columnTypes}
+            columnTransforms={columnTransforms}
             sendState={this.sendState}
           />
         )}

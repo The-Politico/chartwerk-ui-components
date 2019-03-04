@@ -1,0 +1,67 @@
+@import "../../../../../theme/_fonts.scss";
+@import "../../../../../theme/_colors.scss";
+
+.component :global {
+  @import "~bulma/sass/utilities/_all.sass";
+  @import "~bulma/sass/elements/form.sass";
+
+  label.label{
+    @extend %sans;
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+
+  .field-container{
+    display: inline-block;
+    margin-right: 0px;
+  }
+
+
+  .field{
+    display: inline-block;
+    margin-right: 20px;
+
+    input{
+      width: 50px;
+      font-size: 12px;
+      line-height: 16px;
+      outline: none !important;
+      height: 24px;
+    }
+  }
+
+  .multiply{
+    a.button{
+      font-size: 16px;
+      padding: 1px 8px 1px;
+      height: 29px;
+    }
+    input{
+      width: 65px;
+    }
+  }
+  .round{
+    a.button{
+      font-size: 13px;
+      padding: 1px 10px 1px;
+      width: 56px;
+    }
+    input{
+      width: 30px;
+    }
+  }
+  .annotate{
+    input{
+      width: 25px;
+      height: 27px;
+      padding: 2px 6px;
+      &.left{
+        margin-right: 24px;
+      }
+      &.right{
+        text-align: right;
+      }
+    }
+  }
+
+}

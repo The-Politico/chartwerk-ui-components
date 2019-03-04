@@ -1,14 +1,16 @@
 import React from 'react';
 import classnames from 'classnames';
 
+import Transformer from 'Components/DataInput/utils/transformer';
+
 class TableCell extends React.Component {
   state = {
     editing: false,
   }
 
   type = () => {
-    const { headerTypes, column } = this.props;
-    return headerTypes[column];
+    const { columnTypes, column } = this.props;
+    return columnTypes[column];
   }
 
   correctType(type) {
@@ -31,17 +33,22 @@ class TableCell extends React.Component {
     if (e.key === 'Enter') this.setState({ editing: false });
   }
 
-  // TODO
-  applyTransforms = (value) => value
+  applyTransforms = (value) => {
+    return this.transformer.transform(value);
+  }
 
   render() {
     const { editing } = this.state;
-    const { headerTypes, column, row, rowIndex, update } = this.props;
-    const type = this.correctType(headerTypes[column]);
+    const { columnTypes, column, editingColumn, transforms, row, rowIndex, update } = this.props;
+    const type = this.correctType(columnTypes[column]);
     const datum = row[column];
+    this.transformer = new Transformer(transforms || {});
     return (
       <td
-        className={classnames(type, { editing })}
+        className={classnames(type, {
+          editing,
+          'editing-column': editingColumn,
+        })}
         onClick={(e) => this.setState({ editing: true })}
       >
         {editing && <input

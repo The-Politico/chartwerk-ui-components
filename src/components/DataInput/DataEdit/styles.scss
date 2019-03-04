@@ -1,6 +1,17 @@
-@import "~Theme/_fonts.scss";
-@import "~Theme/_colors.scss";
+@import "../../../theme/_fonts.scss";
+@import "../../../theme/_colors.scss";
 
 .component :global {
   color: $black;
+
+  .level.nav{
+    margin-top: 15px;
+    button{
+      margin-right: 5px;
+    }
+  }
+
+  div.level.tags{
+    margin-bottom: 5px;
+  }
 }

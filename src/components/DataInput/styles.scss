@@ -1,5 +1,5 @@
-@import "Theme/_colors.scss";
-@import "Theme/_fonts.scss";
+@import "../../theme/_colors.scss";
+@import "../../theme/_fonts.scss";
 
 .component :global {
   @import "~bulma/sass/utilities/_all.sass";

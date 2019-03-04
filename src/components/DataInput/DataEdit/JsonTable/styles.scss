@@ -1,5 +1,5 @@
-@import "Theme/_fonts.scss";
-@import "Theme/_colors.scss";
+@import "../../../../theme/_fonts.scss";
+@import "../../../../theme/_colors.scss";
 
 .component :global {
   @import "~bulma/sass/utilities/_all.sass";
@@ -24,13 +24,32 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      &.number{
+        padding-right: 15px;
+        position: relative;
+        cursor: pointer;
+        svg{
+          position: absolute;
+          right: 5px;
+          color: #ccc;
+        }
+        &.editing-column{
+          svg{
+            color: $number;
+          }
+
+        }
+        &:hover svg{
+          color: $number;
+        }
+      }
     }
 
     tr.types th{
       @extend %monospace;
       padding: 1px 10px;
       font-size: 10px;
-      background-color: #ccc;
+      background-color: #eee;
       color: #888;
     }
 
@@ -44,7 +63,12 @@
       }
     }
     td, th{
+
+      width: 135px;
       text-align: left;
+      &:first-child{
+        width: 35px;
+      }
       &.number input{
         text-align: right;
         color: $number;
@@ -54,6 +78,16 @@
       }
       &.date input{
         color: $date;
+      }
+      &.index{
+        color: #ccc;
+        padding-left: 2px;
+      }
+      &.editing-column{
+        background-color: $number-editing;
+        input{
+          background-color: $number-editing;
+        }
       }
     }
   }

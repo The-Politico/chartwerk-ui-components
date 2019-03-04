@@ -1,8 +1,9 @@
 import React from 'react';
 import classnames from 'classnames';
 import styles from './styles.scss';
-import { typeStringValue } from '../../utils/autoType';
+import { typeStringValue } from 'Components/DataInput/utils/autoType';
 
+import TableHead from './TableHead';
 import TableCell from './TableCell';
 
 class JsonTable extends React.Component {
@@ -18,10 +19,8 @@ class JsonTable extends React.Component {
   }
 
   render() {
-    const { parsedData, headerTypes } = this.props;
+    const { parsedData, columnTypes, columnTransforms, transformColumn, setTransformColumn } = this.props;
     const { columns } = parsedData;
-    const Head = columns.map(c => <th key={c}>{c}</th>);
-    const HeadTypes = columns.map(c => <th key={c}>{headerTypes[c]}</th>);
     const Body = parsedData.map((row, rowIndex) => {
       const tds = columns.map(column => (
         <TableCell
@@ -29,20 +28,27 @@ class JsonTable extends React.Component {
           row={row}
           rowIndex={rowIndex}
           column={column}
+          editingColumn={transformColumn === column}
+          transformColumn={transformColumn}
+          transforms={columnTransforms[column]}
           update={this.updateParsedData}
-          headerTypes={headerTypes}
+          columnTypes={columnTypes}
         />
       ));
+      tds.unshift(<td className='index'>{rowIndex + 1}</td>);
       return (<tr key={rowIndex}>{tds}</tr>);
     });
+
     return (
       <div className={classnames(styles.component)}>
         <div className='table-container'>
           <table className='table is-fullwidth is-hoverable is-bordered'>
-            <thead>
-              <tr>{Head}</tr>
-              <tr className='types'>{HeadTypes}</tr>
-            </thead>
+            <TableHead
+              columns={columns}
+              columnTypes={columnTypes}
+              transformColumn={transformColumn}
+              setTransformColumn={setTransformColumn}
+            />
             <tbody>{Body}</tbody>
           </table>
         </div>

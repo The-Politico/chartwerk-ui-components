@@ -23,18 +23,18 @@ class TextInput extends React.Component {
       this.setState({ parseError: true });
       return;
     }
-    const headerTypes = {};
+    const columnTypes = {};
     parsedData.columns.forEach(c => {
       let type;
       const d = parsedData[0][c];
       if (typeof d === 'string') type = 'string';
       if (typeof d === 'number') type = 'number';
       if (d instanceof Date) type = 'date';
-      headerTypes[c] = type;
+      columnTypes[c] = type;
     });
     sendState({
       parsedData,
-      headerTypes,
+      columnTypes,
       columnTransforms: {},
       rawData: this.state.value,
       view: EDIT,
@@ -58,7 +58,7 @@ class TextInput extends React.Component {
             <b>Uh-oh!</b> We couldn't parse your data. Try pasting it in again?
           </p>
         </div>}
-        <div className='level'>
+        <div className='level nav'>
           <button
             onClick={this.parseDataString}
             className={classnames('button', {
