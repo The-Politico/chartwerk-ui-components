@@ -35,6 +35,20 @@ const App = (props) => (
 
 <DataInput
   dateFormats={['M/D/YY', 'MM/DD/YY']}
+  dataMapPrompts={[{
+    key: 'base',
+    prompt: 'Which column has dates in it?',
+    type: 'date',
+    members: 1,
+    required: true,
+  }, {
+    key: 'extras',
+    prompt: 'Which columns are extra?',
+    members: 0,
+  }]}
+  updateDataInput={(dataInput) => {
+    console.log('Your data!', dataInput);
+  }}
 />
       `}
     />
