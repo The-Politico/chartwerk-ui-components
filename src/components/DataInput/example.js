@@ -18,7 +18,7 @@ const prompts = [{
   required: true,
 }, {
   key: 'extra',
-  prompt: 'Which columns have nothing in them of use to you?',
+  prompt: 'Which columns are extra?',
   members: 0,
 }];
 
@@ -26,8 +26,8 @@ const App = (props) => (
   <Page title='DataInput'>
     <DataInput
       dataMapPrompts={prompts}
-      updateDataInput={(dataInput) => {
-        console.log('Here\'s your data!', dataInput);
+      updateDataInput={(data) => {
+        console.log('Here\'s your data!', data);
       }}
     />
     <CodeBlock
@@ -46,8 +46,8 @@ const App = (props) => (
     prompt: 'Which columns are extra?',
     members: 0,
   }]}
-  updateDataInput={(dataInput) => {
-    console.log('Your data!', dataInput);
+  updateDataInput={(data) => {
+    console.log('Your parsed data, transforms and data map!', data);
   }}
 />
       `}
