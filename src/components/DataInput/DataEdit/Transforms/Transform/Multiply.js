@@ -9,7 +9,7 @@ const transformer = new Transformer();
 class Multiply extends React.Component {
   render() {
     const { operation, multiplier, update } = this.props;
-    const currentOperation = operation || transformer.multiply;
+    const currentOperation = operation || transformer.divide;
     const multiplying = currentOperation === transformer.multiply;
     return (
       <div className='field-container'>

@@ -2,93 +2,36 @@
 @import "../../../../theme/_colors.scss";
 
 .component :global {
-  @import "~bulma/sass/utilities/_all.sass";
-  @import "~bulma/sass/elements/table.sass";
-
   color: $black;
 
   .table-container{
     width: 100%;
-    max-height: 275px;
-    overflow: scroll;
     border: 1px solid #ccc;
   }
-  table.table{
-    border-collapse: collapse;
+
+  div.table{
     @extend %monospace;
-
-    tr th{
-      @extend %sans;
-      font-size: 14px;
-      max-width: 100px;
+    overflow-x: scroll;
+    div.row{
       white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      &.number{
-        padding-right: 15px;
-        position: relative;
-        cursor: pointer;
-        svg{
-          position: absolute;
-          right: 5px;
-          color: #ccc;
-        }
+      width: auto;
+      div.cell {
+        box-sizing: border-box;
+        display: inline-block;
+        width: 135px;
         &.editing-column{
-          svg{
-            color: $number;
-          }
-
-        }
-        &:hover svg{
-          color: $number;
-        }
-      }
-    }
-
-    tr.types th{
-      @extend %monospace;
-      padding: 1px 10px;
-      font-size: 10px;
-      background-color: #eee;
-      color: #888;
-    }
-
-    td{
-      padding: 0;
-      input{
-        padding: 2px 5px;
-        border: 0;
-        outline: none;
-        max-width: 125px;
-      }
-    }
-    td, th{
-
-      width: 135px;
-      text-align: left;
-      &:first-child{
-        width: 35px;
-      }
-      &.number input{
-        text-align: right;
-        color: $number;
-      }
-      &.string input{
-        color: $string;
-      }
-      &.date input{
-        color: $date;
-      }
-      &.index{
-        color: #ccc;
-        padding-left: 2px;
-      }
-      &.editing-column{
-        background-color: $number-editing;
-        input{
           background-color: $number-editing;
+          border-bottom: 1px solid #ddd;
+          &.header{
+            border-bottom: 0;
+          }
+          input{
+            background-color: $number-editing;
+          }
         }
       }
     }
   }
+
+
 }

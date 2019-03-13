@@ -32,10 +32,12 @@ const commonConfig = {
       Common: path.resolve(process.cwd(), 'src/common/'),
       Components: path.resolve(process.cwd(), 'src/components/'),
       Constants: path.resolve(process.cwd(), 'src/constants/'),
-      Theme: path.resolve(process.cwd(), 'src/theme/'),
     }),
     postcss({
-      modules: true,
+      modules: {
+        generateScopedName: 'chartwerk_ui_components___[hash:base64:10]',
+      },
+      extract: true,
     }),
     babel(babelOpts),
     resolve({
@@ -53,6 +55,7 @@ export default glob.sync('./src/components/*/index.js').map(file => {
     output: {
       file: path.resolve(process.cwd(), `dist/components/${componentName}/index.js`),
       format: 'es',
+      banner: 'import \'./index.css\';',
     },
   };
   return {

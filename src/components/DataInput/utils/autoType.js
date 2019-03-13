@@ -24,7 +24,7 @@ function parsePercent(value) {
   const cleanPercent = value.replace(regex, ''); // clean everything but the percent
   if (!/[0-9]%$/.test(cleanPercent)) return false; // if not a percent
   const cleanNum = parseNum(value); // clean number fully
-  if (cleanNum) return cleanNum / 100; // if clean, divide by 100 for percent
+  if (cleanNum) return cleanNum; // if clean
   return false;
 }
 
@@ -39,7 +39,7 @@ export const typeStringValue = (string, dateTypes) => {
   if (!isNaN(number = +value)) return number;
   if ((number = parsePercent(value))) return number;
   if (/^([-+]\d{2})?\d{4}(-\d{2}(-\d{2})?)?(T\d{2}:\d{2}(:\d{2}(\.\d{3})?)?(Z|[-+]\d{2}:\d{2})?)?$/.test(value)) return new Date(value);
-  if (moment(value, dateTypes, true).isValid()) return moment(value, dateTypes, true).toDate();
+  if (moment(value, dateTypes, true).isValid()) return moment(value, dateTypes, true).utc().toDate();
   if (!isNaN(number = parseNum(value))) return number;
   return value;
 };

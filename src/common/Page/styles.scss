@@ -1,6 +1,8 @@
 @import "Theme/_fonts.scss";
 @import "Theme/_colors.scss";
 
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
 .component :global {
     @import "~bulma/sass/utilities/_all.sass";
     @import "~bulma/sass/layout/section.sass";
@@ -14,7 +16,8 @@
       margin: 0px auto;
     }
     h1{
-      @extend %title;
+      font-family: 'Quicksand', sans-serif;
+      font-size: 300%;
       margin: 40px auto 30px;
       font-weight: lighter;
     }

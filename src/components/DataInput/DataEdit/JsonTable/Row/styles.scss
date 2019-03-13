@@ -1,0 +1,15 @@
+.component :global {
+  div.cell{
+    text-align: left;
+  }
+  div.cell.index{
+    background-color: #eee;
+    color: #888;
+    height: 22px;
+    line-height: 22px;
+    border-top: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    padding-left: 2px;
+    text-align: center !important;
+  }
+}

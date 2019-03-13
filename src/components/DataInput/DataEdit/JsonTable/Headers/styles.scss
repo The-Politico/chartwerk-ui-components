@@ -1,0 +1,47 @@
+@import "../../../../../theme/_colors.scss";
+@import "../../../../../theme/_fonts.scss";
+
+.component :global {
+  margin-left: -1px;
+  div.cell{
+    &.header{
+      @extend %sans;
+      font-size: 13px;
+      font-weight: bold;
+      padding: 4px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-bottom: -3px;
+      &.number{
+        padding-right: 20px;
+        position: relative;
+        cursor: pointer;
+        svg{
+          position: absolute;
+          right: 5px;
+          color: #ccc;
+        }
+        &.editing-column{
+          svg{
+            color: $number;
+          }
+
+        }
+        &:hover svg{
+          color: $number;
+        }
+      }
+    }
+    &.type {
+      @extend %monospace;
+      padding: 1px 10px;
+      font-size: 10px;
+      background-color: #eee;
+      color: #888;
+      border-left: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+      border-top: 1px solid #ddd;
+    }
+  }
+}

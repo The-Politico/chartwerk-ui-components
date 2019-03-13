@@ -2,11 +2,12 @@ import React from 'react';
 import classnames from 'classnames';
 import styles from './styles.scss';
 
-import { INPUT, EDIT } from './constants/views';
+import { INPUT, EDIT, MAP } from './constants/views';
 import defaultDateFormats from './constants/dateFormats';
 
 import TextInput from './TextInput';
 import DataEdit from './DataEdit';
+import DataMap from './DataMap';
 
 class DataInput extends React.Component {
   state = {
@@ -41,6 +42,9 @@ class DataInput extends React.Component {
             columnTransforms={columnTransforms}
             sendState={this.sendState}
           />
+        )}
+        {view === MAP && (
+          <DataMap />
         )}
       </div>
     );

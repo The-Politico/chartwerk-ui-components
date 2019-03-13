@@ -1,0 +1,37 @@
+@import "../../../../theme/_colors.scss";
+@import "../../../../theme/_fonts.scss";
+.component :global {
+  @import "~bulma/sass/utilities/_all.sass";
+  @import "~bulma/sass/elements/tag.sass";
+
+  margin: 20px 0;
+
+  .tags{
+    .tag{
+      background-color: #fff;
+
+      @extend %sans;
+      font-size: 14px;
+      line-height: 26px;
+      max-width: 100px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: inline-block;
+      cursor: pointer;
+
+      &.number{
+        border:1px solid $number;
+        color: $number;
+      }
+      &.string{
+        border:1px solid $string;
+        color: $string;
+      }
+      &.date{
+        border:1px solid $date;
+        color: $date;
+      }
+    }
+  }
+}

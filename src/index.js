@@ -1,2 +1,2 @@
-export { default as Tabs } from './components/Tabs';
-export { default as DataInput } from './components/DataInput';
+export { default as Tabs } from './components/Tabs/index.js';
+export { default as DataInput } from './components/DataInput/index.js';

@@ -1,0 +1,26 @@
+@import "../../../../../../theme/_fonts.scss";
+@import "../../../../../../theme/_colors.scss";
+
+.component :global {
+  border-right: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  height: 22px;
+  line-height: 22px;
+  padding: 0 3px;
+  input{
+    width: 100%;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    &.number{
+      text-align: right;
+      color: $number;
+    }
+    &.string{
+      color: $string;
+    }
+    &.date{
+      color: $date;
+    }
+  }
+}

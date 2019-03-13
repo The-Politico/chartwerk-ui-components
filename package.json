@@ -26,7 +26,8 @@
     "parse-num": "^1.0.0",
     "prop-types": "^15.7.2",
     "react-collapse": "^4.0.3",
-    "react-motion": "^0.5.2"
+    "react-motion": "^0.5.2",
+    "react-window": "^1.6.2"
   },
   "peerDependencies": {
     "react": "latest",
@@ -60,6 +61,7 @@
     "rollup": "^1.4.0",
     "rollup-plugin-alias": "^1.5.1",
     "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-insert": "^0.2.0",
     "rollup-plugin-json": "^3.1.0",
     "rollup-plugin-node-resolve": "^4.0.1",
     "rollup-plugin-postcss": "^2.0.3",

@@ -27,7 +27,7 @@ class Tabs extends React.Component {
     ));
 
     return (
-      <div className={classnames(styles.component)}>
+      <div className={classnames('tabs', styles.component)}>
         <div className='tabs'>
           <ul>{Tabs}</ul>
         </div>

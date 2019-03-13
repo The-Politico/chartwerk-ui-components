@@ -2,7 +2,7 @@ import React from 'react';
 import classnames from 'classnames';
 import styles from './styles.scss';
 
-import { INPUT } from '../constants/views';
+import { INPUT, MAP } from '../constants/views';
 
 import Transforms from './Transforms';
 import JsonTable from './JsonTable';
@@ -52,6 +52,7 @@ class DataEdit extends React.Component {
           >Back</button>
           <button
             className='button'
+            onClick={() => sendState({ view: MAP })}
           >Next</button>
         </div>
       </div>
