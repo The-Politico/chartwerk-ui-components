@@ -2,12 +2,13 @@ import React from 'react';
 import classnames from 'classnames';
 import styles from './styles.scss';
 
-import { INPUT, EDIT, MAP } from './constants/views';
+import { INPUT, EDIT, MAP, END } from './constants/views';
 import defaultDateFormats from './constants/dateFormats';
 
 import TextInput from './TextInput';
 import DataEdit from './DataEdit';
 import DataMap from './DataMap';
+import Finale from './Finale';
 
 class DataInput extends React.Component {
   state = {
@@ -16,15 +17,29 @@ class DataInput extends React.Component {
     parsedData: undefined,
     columnTypes: {},
     columnTransforms: {},
-    columnMaps: {},
+    dataMap: {},
   }
 
   sendState = (newState) => this.setState(newState)
 
-  render() {
-    const { dateFormats } = this.props;
-    const { view, parsedData, columnTypes, rawData, columnTransforms } = this.state;
+  updateDataMap = (newMap) => this.setState(state => (
+    { dataMap: Object.assign(state.dataMap, newMap) }
+  ));
 
+  sendFullData = () => {
+    const { parsedData: data, columnTypes, columnTransforms, dataMap } = this.state;
+
+    this.props.updateDataInput({
+      data,
+      dataMap,
+      columnTypes,
+      columnTransforms,
+    });
+  }
+
+  render() {
+    const { dateFormats, dataMapPrompts } = this.props;
+    const { view, parsedData, columnTypes, rawData, columnTransforms, dataMap } = this.state;
     return (
       <div className={classnames(styles.component)}>
         {view === INPUT && (
@@ -44,7 +59,20 @@ class DataInput extends React.Component {
           />
         )}
         {view === MAP && (
-          <DataMap />
+          <DataMap
+            prompts={dataMapPrompts}
+            columns={parsedData.columns}
+            columnTypes={columnTypes}
+            dataMap={dataMap}
+            updateDataMap={this.updateDataMap}
+            sendState={this.sendState}
+            sendFullData={this.sendFullData}
+          />
+        )}
+        {view === END && (
+          <Finale
+            sendState={this.sendState}
+          />
         )}
       </div>
     );

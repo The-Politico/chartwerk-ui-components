@@ -36,6 +36,7 @@ class TextInput extends React.Component {
       parsedData,
       columnTypes,
       columnTransforms: {},
+      dataMap: {},
       rawData: this.state.value,
       view: EDIT,
     });
@@ -51,7 +52,7 @@ class TextInput extends React.Component {
         <textarea
           value={value}
           onChange={e => this.setState({ value: e.target.value })}
-          placeholder='Paste spreadsheet, delimited or JSON data here.'
+          placeholder='Paste spreadsheet or delimited data here.'
         />
         {parseError && <div className='level error'>
           <p>

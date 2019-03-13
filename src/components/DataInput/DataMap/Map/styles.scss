@@ -23,14 +23,31 @@
       &.number{
         border:1px solid $number;
         color: $number;
+        &.member{
+          color: #fff;
+          background-color: $number;
+        }
       }
       &.string{
         border:1px solid $string;
         color: $string;
+        &.member{
+          color: #fff;
+          background-color: #777;
+          border:1px solid #777;
+        }
       }
       &.date{
         border:1px solid $date;
         color: $date;
+        &.member{
+          color: #fff;
+          background-color: $date;
+        }
+      }
+      &.disabled{
+        opacity: 0.5;
+        pointer-events: none;
       }
     }
   }

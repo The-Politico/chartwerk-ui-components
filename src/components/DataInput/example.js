@@ -14,14 +14,21 @@ const prompts = [{
   key: 'value',
   prompt: 'Which columns have the values you want to show?',
   type: 'number',
-  members: 0,
+  members: 2,
   required: true,
+}, {
+  key: 'extra',
+  prompt: 'Which columns have nothing in them of use to you?',
+  members: 0,
 }];
 
 const App = (props) => (
   <Page title='DataInput'>
     <DataInput
       dataMapPrompts={prompts}
+      updateDataInput={(dataInput) => {
+        console.log('Here\'s your data!', dataInput);
+      }}
     />
     <CodeBlock
       value={`import { DataInput } from 'chartwerk-ui-components';
