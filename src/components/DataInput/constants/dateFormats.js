@@ -1,5 +1,4 @@
 export default [
-  'YYYY',
   'MM/YY',
   'M/YY',
   'MM/YYYY',
@@ -18,6 +17,4 @@ export default [
   'MMM. DD, YYYY',
   'MMM D, YYYY',
   'MMM. D, YYYY',
-  'HH:mm MM/DD/YYYY',
-  'hh:mmA MM/DD/YYYY',
 ];

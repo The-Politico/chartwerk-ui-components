@@ -4,7 +4,9 @@ import styles from './styles.scss';
 
 import { EDIT } from '../constants/views';
 
-import parse from '../utils/parseDataString';
+import { parseToTypes, parseToStrings } from '../utils/parseDataString';
+import { parseMajorityType } from '../utils/parsers';
+import explicitlyType from '../utils/explicitType';
 
 class TextInput extends React.Component {
   constructor(props) {
@@ -18,22 +20,24 @@ class TextInput extends React.Component {
   parseDataString = () => {
     this.setState({ parseError: false });
     const { sendState } = this.props;
-    const parsedData = parse(this.state.value);
-    if (!parsedData) {
+    const stringData = parseToStrings(this.state.value);
+    let typedData = parseToTypes(this.state.value);
+    if (!typedData) {
       this.setState({ parseError: true });
       return;
     }
     const columnTypes = {};
-    parsedData.columns.forEach(c => {
-      let type;
-      const d = parsedData[0][c];
-      if (typeof d === 'string') type = 'string';
-      if (typeof d === 'number') type = 'number';
-      if (d instanceof Date) type = 'date';
-      columnTypes[c] = type;
+    const columns = typedData.columns.slice();
+    columns.forEach(column => {
+      const { majorityType, unanimous } = parseMajorityType(typedData.map(obj => obj[column]));
+      columnTypes[column] = majorityType;
+      if (!unanimous) {
+        typedData = explicitlyType(typedData, stringData, column, majorityType);
+      }
     });
     sendState({
-      parsedData,
+      stringData,
+      typedData,
       columnTypes,
       columnTransforms: {},
       dataMap: {},
@@ -52,7 +56,7 @@ class TextInput extends React.Component {
         <textarea
           value={value}
           onChange={e => this.setState({ value: e.target.value })}
-          placeholder='Paste spreadsheet or delimited data here.'
+          placeholder='Paste spreadsheet or comma, tab or pipe separated data here.'
         />
         {parseError && <div className='level error'>
           <p>

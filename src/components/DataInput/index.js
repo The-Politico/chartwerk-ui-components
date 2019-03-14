@@ -14,7 +14,8 @@ class DataInput extends React.Component {
   state = {
     view: INPUT,
     rawData: '',
-    parsedData: undefined,
+    stringData: undefined,
+    typedData: undefined,
     columnTypes: {},
     columnTransforms: {},
     dataMap: {},
@@ -27,7 +28,7 @@ class DataInput extends React.Component {
   ));
 
   sendFullData = () => {
-    const { parsedData: data, columnTypes, columnTransforms, dataMap } = this.state;
+    const { typedData: data, columnTypes, columnTransforms, dataMap } = this.state;
 
     this.props.updateDataInput({
       data,
@@ -39,7 +40,7 @@ class DataInput extends React.Component {
 
   render() {
     const { dateFormats, dataMapPrompts } = this.props;
-    const { view, parsedData, columnTypes, rawData, columnTransforms, dataMap } = this.state;
+    const { view, typedData, columnTypes, rawData, columnTransforms, dataMap } = this.state;
     return (
       <div className={classnames(styles.component)}>
         {view === INPUT && (
@@ -52,7 +53,7 @@ class DataInput extends React.Component {
         {view === EDIT && (
           <DataEdit
             dateFormats={dateFormats}
-            parsedData={parsedData}
+            typedData={typedData}
             columnTypes={columnTypes}
             columnTransforms={columnTransforms}
             sendState={this.sendState}
@@ -61,7 +62,7 @@ class DataInput extends React.Component {
         {view === MAP && (
           <DataMap
             prompts={dataMapPrompts}
-            columns={parsedData.columns}
+            columns={typedData.columns}
             columnTypes={columnTypes}
             dataMap={dataMap}
             updateDataMap={this.updateDataMap}

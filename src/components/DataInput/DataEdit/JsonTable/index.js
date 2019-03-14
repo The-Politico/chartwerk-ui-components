@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 import styles from './styles.scss';
-import { typeStringValue } from 'Components/DataInput/utils/autoType';
+import { autoTypeString } from 'Components/DataInput/utils/autoTyper';
 
 import { datumWidth, indexWidth } from './widths';
 
@@ -11,15 +11,15 @@ import Row from './Row';
 import { FixedSizeList as List } from 'react-window';
 
 class JsonTable extends React.Component {
-  updateParsedData = (type, row, prop, value) => {
-    const { parsedData, sendState, dateFormats } = this.props;
-    parsedData[row][prop] = typeStringValue(value, dateFormats);
-    sendState({ parsedData });
+  updatetypedData = (type, row, prop, value) => {
+    const { typedData, sendState, dateFormats } = this.props;
+    typedData[row][prop] = autoTypeString(value, dateFormats);
+    sendState({ typedData });
   }
 
   render() {
-    const { parsedData, columnTypes, columnTransforms, transformColumn, setTransformColumn } = this.props;
-    const { columns } = parsedData;
+    const { typedData, columnTypes, columnTransforms, transformColumn, setTransformColumn } = this.props;
+    const { columns } = typedData;
     return (
       <div className={classnames(styles.component)}>
         <div className='table-container'>
@@ -31,10 +31,10 @@ class JsonTable extends React.Component {
               setTransformColumn={setTransformColumn}
             />
             <List
-              itemData={parsedData}
+              itemData={typedData}
               height={200}
               width={indexWidth + (datumWidth * columns.length)}
-              itemCount={parsedData.length}
+              itemCount={typedData.length}
               itemSize={22}
               overscanCount={10}
             >
@@ -44,7 +44,7 @@ class JsonTable extends React.Component {
                     columnTypes,
                     columnTransforms,
                     transformColumn,
-                    update: this.updateParsedData,
+                    update: this.updatetypedData,
                   }}
                   {...props}
                 />

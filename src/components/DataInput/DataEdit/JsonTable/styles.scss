@@ -7,11 +7,12 @@
   .table-container{
     width: 100%;
     border: 1px solid #ccc;
+    overflow-x: scroll;
+    padding-bottom: 12px;
   }
 
   div.table{
     @extend %monospace;
-    overflow-x: scroll;
     div.row{
       white-space: nowrap;
       width: auto;

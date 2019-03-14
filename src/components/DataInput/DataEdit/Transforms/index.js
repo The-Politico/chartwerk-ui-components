@@ -17,14 +17,14 @@ class Transforms extends React.Component {
   }
 
   render() {
-    const { parsedData, columnTransforms, transformColumn } = this.props;
+    const { typedData, columnTransforms, transformColumn } = this.props;
 
     if (!transformColumn) return null;
     return (
       <div className={classnames(styles.component)}>
         <Transform
           column={transformColumn}
-          data={parsedData[transformColumn]}
+          data={typedData[transformColumn]}
           transforms={columnTransforms[transformColumn] || {}}
           updateTransform={this.updateTransform}
         />
