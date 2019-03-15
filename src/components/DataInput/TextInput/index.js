@@ -33,7 +33,7 @@ class TextInput extends React.Component {
     const stringData = parseToStrings(this.state.value);
     let typedData = parseToTypes(this.state.value);
     if (!typedData) {
-      this.setState({ parseError: true });
+      this.setState({ parseError: true, parsing: false });
       return;
     }
     const columnTypes = {};
