@@ -20,6 +20,7 @@ const prompts = [{
   key: 'extra',
   prompt: 'Which columns are extra?',
   members: 0,
+  required: true,
 }];
 
 const App = (props) => (
@@ -34,7 +35,6 @@ const App = (props) => (
       value={`import { DataInput } from 'chartwerk-ui-components';
 
 <DataInput
-  dateFormats={['M/D/YY', 'MM/DD/YY']}
   dataMapPrompts={[{
     key: 'base',
     prompt: 'Which column has dates in it?',

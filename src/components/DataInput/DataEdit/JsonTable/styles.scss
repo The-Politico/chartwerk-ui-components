@@ -3,6 +3,16 @@
 
 .component :global {
   color: $black;
+  position: relative;
+
+  .table-footer{
+    width: 100%;
+    position: absolute;
+    background-color: #eee;
+    height: 12px;
+    bottom: 1px;
+    left: 1px;
+  }
 
   .table-container{
     width: 100%;

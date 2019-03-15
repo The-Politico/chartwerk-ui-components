@@ -3,7 +3,6 @@ import classnames from 'classnames';
 import styles from './styles.scss';
 
 import { INPUT, EDIT, MAP, END } from './constants/views';
-import defaultDateFormats from './constants/dateFormats';
 
 import TextInput from './TextInput';
 import DataEdit from './DataEdit';
@@ -39,21 +38,20 @@ class DataInput extends React.Component {
   }
 
   render() {
-    const { dateFormats, dataMapPrompts } = this.props;
-    const { view, typedData, columnTypes, rawData, columnTransforms, dataMap } = this.state;
+    const { dataMapPrompts } = this.props;
+    const { view, typedData, stringData, columnTypes, rawData, columnTransforms, dataMap } = this.state;
     return (
       <div className={classnames(styles.component)}>
         {view === INPUT && (
           <TextInput
             defaultValue={rawData}
-            dateFormats={dateFormats}
             sendState={this.sendState}
           />
         )}
         {view === EDIT && (
           <DataEdit
-            dateFormats={dateFormats}
             typedData={typedData}
+            stringData={stringData}
             columnTypes={columnTypes}
             columnTransforms={columnTransforms}
             sendState={this.sendState}
@@ -81,7 +79,6 @@ class DataInput extends React.Component {
 }
 
 DataInput.defaultProps = {
-  dateFormats: defaultDateFormats,
 };
 
 export default DataInput;

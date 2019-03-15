@@ -64,7 +64,7 @@ export const parseByType = (value, type) => {
  *
  * Returns the majority type and a boolean that indicates whether
  * all data were of that type. We use that boolean to determine
- * if we need to reparse the column data.
+ * if we need to re-parse the column data.
  */
 export const parseMajorityType = (dataArray) => {
   const typeArray = dataArray.map(d => parseType(d));

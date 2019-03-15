@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 import styles from './styles.scss';
-import { autoTypeString } from 'Components/DataInput/utils/autoTyper';
+import { parseByType } from 'Components/DataInput/utils/parsers';
 
 import { datumWidth, indexWidth } from './widths';
 
@@ -11,17 +11,26 @@ import Row from './Row';
 import { FixedSizeList as List } from 'react-window';
 
 class JsonTable extends React.Component {
-  updatetypedData = (type, row, prop, value) => {
-    const { typedData, sendState, dateFormats } = this.props;
-    typedData[row][prop] = autoTypeString(value, dateFormats);
+  updatetypedData = (type, row, column, value) => {
+    const { typedData, sendState } = this.props;
+    typedData[row][column] = parseByType(value, type);
     sendState({ typedData });
   }
 
   render() {
-    const { typedData, columnTypes, columnTransforms, transformColumn, setTransformColumn } = this.props;
+    const {
+      typedData,
+      columnTypes,
+      columnTransforms,
+      transformColumn,
+      setTransformColumn,
+      reTypeColumn,
+      setReTypeColumn,
+    } = this.props;
     const { columns } = typedData;
     return (
       <div className={classnames(styles.component)}>
+        <div className='table-footer' />
         <div className='table-container'>
           <div className='table is-fullwidth is-bordered'>
             <Headers
@@ -29,6 +38,8 @@ class JsonTable extends React.Component {
               columnTypes={columnTypes}
               transformColumn={transformColumn}
               setTransformColumn={setTransformColumn}
+              reTypeColumn={reTypeColumn}
+              setReTypeColumn={setReTypeColumn}
             />
             <List
               itemData={typedData}

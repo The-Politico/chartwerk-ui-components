@@ -1,0 +1,42 @@
+@import "../../../../theme/_fonts.scss";
+@import "../../../../theme/_colors.scss";
+
+.component :global {
+  @import "~bulma/sass/utilities/_all.sass";
+  @import "~bulma/sass/elements/form.sass";
+
+  @extend %sans;
+
+  h3{
+    font-size: 16px;
+    margin: 15px 0 10px;
+    display: inline-block;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    svg{
+      color: $red;
+    }
+  }
+
+  .control{
+    margin-top: 5px;
+    font-size: 14px;
+    label{
+      @extend %monospace;
+      margin-right: 15px;
+      input{
+        margin-right: 5px;
+      }
+    }
+  }
+  small{
+    display: block;
+    margin: 15px 0 25px;
+    b{
+      font-weight: bold;
+    }
+  }
+
+}

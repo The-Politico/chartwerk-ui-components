@@ -9,7 +9,14 @@ import TypeCell from './TypeCell';
 
 class Headers extends React.Component {
   render() {
-    const { columns, columnTypes, transformColumn, setTransformColumn } = this.props;
+    const {
+      columns,
+      columnTypes,
+      transformColumn,
+      setTransformColumn,
+      reTypeColumn,
+      setReTypeColumn,
+    } = this.props;
 
     const Header = columns.map((column, i) => (
       <ColumnCell
@@ -22,7 +29,12 @@ class Headers extends React.Component {
     Header.unshift(<EmptyCell key={'empty'} />);
 
     const HeaderTypes = columns.map((column, i) =>
-      <TypeCell type={columnTypes[column]} key={i} />
+      <TypeCell
+        column={column}
+        type={columnTypes[column]}
+        key={i}
+        {...{ reTypeColumn, setReTypeColumn }}
+      />
     );
     HeaderTypes.unshift(<EmptyCell key={'empty'} />);
 

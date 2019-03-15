@@ -26,7 +26,6 @@
           svg{
             color: $number;
           }
-
         }
         &:hover svg{
           color: $number;
@@ -35,13 +34,27 @@
     }
     &.type {
       @extend %monospace;
-      padding: 1px 10px;
+      padding: 2px 10px;
+      cursor: pointer;
       font-size: 10px;
       background-color: #eee;
       color: #888;
       border-left: 1px solid #ddd;
       border-bottom: 1px solid #ddd;
       border-top: 1px solid #ddd;
+      svg{
+        margin-left: 5px;
+        display: none;
+      }
+      &.editing{
+        border-top: 1px solid $red;
+        svg{
+          color: $red;
+        }
+      }
+      &:hover svg, &.editing svg{
+        display: inline;
+      }
     }
   }
 }

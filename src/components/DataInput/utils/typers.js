@@ -3,7 +3,9 @@ import { parseNumber, parseDate, parseString } from './parsers';
 
 /**
  * Guesses the datatype of a string value.
- * Mostly d3's dsv autoType, but with additional date parsing by moment and a few more checks.
+ *
+ * Mostly d3's dsv autoType, but with additional date parsing and a few more
+ * explicit checks.
  *
  * NOTE: this sequence is biased to prefer typing as a number, so dates
  * like YYYY are parsed as numbers.
@@ -24,9 +26,16 @@ export const autoTypeString = (string) => {
   return value;
 };
 
-export default (object) => {
+export const autoTyper = (object) => {
   for (let key in object) {
     object[key] = autoTypeString(object[key]);
+  }
+  return object;
+};
+
+export const stringTyper = (object) => {
+  for (let key in object) {
+    object[key] = object[key].trim();
   }
   return object;
 };

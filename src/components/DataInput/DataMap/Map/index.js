@@ -1,6 +1,12 @@
 import React from 'react';
 import classnames from 'classnames';
+
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import styles from './styles.scss';
+
+import Warning from './Warning';
 
 class Map extends React.Component {
   addToMap = (column) => {
@@ -47,8 +53,14 @@ class Map extends React.Component {
     return (
       <div className={classnames(styles.component)}>
         <p>{prompt.prompt}</p>
+        {prompt.required && (
+          <small>
+            ( {prompt.members ? prompt.members : null} required )
+            <FontAwesomeIcon icon={faCheck} hidden={!isFull} />
+          </small>
+        )}
         <div className='tags'>
-          {Columns}
+          {Columns.length >= prompt.members ? Columns : <Warning />}
         </div>
       </div>
     );

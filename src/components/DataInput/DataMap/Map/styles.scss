@@ -6,6 +6,20 @@
 
   margin: 20px 0;
 
+  small{
+    display: block;
+    margin-top: -15px;
+    margin-bottom: 15px;
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #bbb;
+
+    svg{
+      color: $green;
+      margin-left: 5px;
+    }
+  }
+
   .tags{
     .tag{
       background-color: #fff;
@@ -49,6 +63,17 @@
         opacity: 0.5;
         pointer-events: none;
       }
+    }
+  }
+
+  .warning{
+    font-size: 14px;
+    color: white;
+    background-color: $red;
+    padding: 2px 5px;
+    margin: 7px 5px 11px;
+    svg{
+      margin-right: 5px;
     }
   }
 }

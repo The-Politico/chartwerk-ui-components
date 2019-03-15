@@ -4,12 +4,14 @@ import styles from './styles.scss';
 
 import { INPUT, MAP } from '../constants/views';
 
-import Transforms from './Transforms';
 import JsonTable from './JsonTable';
+import Transforms from './Transforms';
+import ReType from './ReType';
 
 class DataEdit extends React.Component {
   state = {
     transformColumn: null,
+    reTypeColumn: null,
   }
 
   setTransformColumn = (column) => {
@@ -17,12 +19,21 @@ class DataEdit extends React.Component {
     if (column === transformColumn) {
       this.setState({ transformColumn: null });
     } else {
-      this.setState({ transformColumn: column });
+      this.setState({ transformColumn: column, reTypeColumn: null });
+    }
+  }
+
+  setReTypeColumn = (column) => {
+    const { reTypeColumn } = this.state;
+    if (column === reTypeColumn) {
+      this.setState({ reTypeColumn: null });
+    } else {
+      this.setState({ reTypeColumn: column, transformColumn: null });
     }
   }
 
   render() {
-    const { transformColumn } = this.state;
+    const { transformColumn, reTypeColumn } = this.state;
     const { sendState } = this.props;
 
     return (
@@ -33,10 +44,16 @@ class DataEdit extends React.Component {
         <JsonTable
           transformColumn={transformColumn}
           setTransformColumn={this.setTransformColumn}
+          reTypeColumn={reTypeColumn}
+          setReTypeColumn={this.setReTypeColumn}
           {...this.props}
         />
         <Transforms
           transformColumn={transformColumn}
+          {...this.props}
+        />
+        <ReType
+          reTypeColumn={reTypeColumn}
           {...this.props}
         />
         <div className='level nav'>
