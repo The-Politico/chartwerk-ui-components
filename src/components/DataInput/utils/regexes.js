@@ -9,9 +9,9 @@ export const NEWLINE = /\r?\n/;
  * Test for separated value formats, run on the first line
  * of the string data.
  */
-export const PSV = /^\w+\s?\|/;
-export const TSV = /^\w+\s?\t/;
-export const CSV = /^\w+\s?,/;
+export const PSV = /^[\w_\- ]+\|[\w_\- ]+/;
+export const TSV = /^[\w_\- ]+\t[\w_\- ]+/;
+export const CSV = /^[\w_\- ]+,[\w_\- ]+/;
 
 /**
  * Test for date formats parseable by JS Date operator

@@ -60,7 +60,7 @@ class Map extends React.Component {
           </small>
         )}
         <div className='tags'>
-          {Columns.length >= prompt.members ? Columns : <Warning />}
+          {Columns.length >= prompt.members ? Columns : <Warning prompt={prompt} />}
         </div>
       </div>
     );
