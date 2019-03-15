@@ -9,6 +9,8 @@ import DataEdit from './DataEdit';
 import DataMap from './DataMap';
 import Finale from './Finale';
 
+import Transformer from './utils/transformer';
+
 class DataInput extends React.Component {
   state = {
     view: INPUT,
@@ -29,11 +31,17 @@ class DataInput extends React.Component {
   sendFullData = () => {
     const { typedData: data, columnTypes, columnTransforms, dataMap } = this.state;
 
+    const transformers = {};
+
+    Object.keys(columnTransforms).forEach((column) => {
+      transformers[column] = new Transformer(columnTransforms[column]);
+    });
+
     this.props.updateDataInput({
       data,
       dataMap,
       columnTypes,
-      columnTransforms,
+      transformers,
     });
   }
 

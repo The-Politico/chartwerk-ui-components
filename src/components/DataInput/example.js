@@ -20,7 +20,6 @@ const prompts = [{
   key: 'extra',
   prompt: 'Which columns are extra?',
   members: 0,
-  required: true,
 }];
 
 const App = (props) => (

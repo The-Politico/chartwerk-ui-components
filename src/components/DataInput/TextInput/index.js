@@ -1,5 +1,9 @@
 import React from 'react';
 import classnames from 'classnames';
+
+import { faCog } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import styles from './styles.scss';
 
 import { EDIT } from '../constants/views';
@@ -14,7 +18,13 @@ class TextInput extends React.Component {
     this.state = {
       value: props.defaultValue,
       parseError: false,
+      parsing: false,
     };
+  }
+
+  startParsing = () => {
+    this.setState({ parsing: true });
+    setTimeout(this.parseDataString, 500);
   }
 
   parseDataString = () => {
@@ -47,7 +57,7 @@ class TextInput extends React.Component {
   }
 
   render() {
-    const { value, parseError } = this.state;
+    const { value, parseError, parsing } = this.state;
     return (
       <div className={classnames(styles.component)}>
         <div className='message'>
@@ -65,12 +75,21 @@ class TextInput extends React.Component {
         </div>}
         <div className='level nav'>
           <button
-            onClick={this.parseDataString}
+            onClick={this.startParsing}
             className={classnames('button', {
               'is-disabled': !value,
             })}
             disabled={!value}
-          >Next</button>
+          >
+            Next
+          </button>
+          <FontAwesomeIcon
+            icon={faCog}
+            size='lg'
+            fixedWidth
+            spin
+            hidden={!parsing}
+          />
         </div>
       </div>
     );
