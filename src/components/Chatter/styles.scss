@@ -1,0 +1,5 @@
+@import "../../theme/_fonts.scss";
+
+.component :global {
+  @extend %sans;
+}

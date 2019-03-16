@@ -1,0 +1,40 @@
+@import '../../../theme/_colors.scss';
+.component :global {
+  @import "~bulma/sass/utilities/_all.sass";
+  @import "~bulma/sass/elements/form.sass";
+  margin-top: 15px;
+
+  .label{
+    font-size: 14px;
+    font-weight: bold;
+    small{
+      margin-left: 10px;
+      font-size: 12px;
+      font-weight: normal;
+      color: #ccc;
+      &.zero{
+        color: $red;
+      }
+    }
+  }
+  .input{
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .help{
+    text-align: right;
+    color: #999;
+    span{
+      margin-left: 10px;
+      &.bold{
+        font-weight: bold;
+      }
+      &.italic{
+        font-style: italic;
+      }
+    }
+    &[hidden]{
+      display: none;
+    }
+  }
+}
