@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import DataInput from './index';
+import Data from './index';
 import Page from 'Common/Page/';
 import CodeBlock from 'Common/CodeBlock';
 
@@ -23,17 +23,17 @@ const prompts = [{
 }];
 
 const App = (props) => (
-  <Page title='DataInput'>
-    <DataInput
+  <Page title='Data'>
+    <Data
       dataMapPrompts={prompts}
-      updateDataInput={(data) => {
+      updateData={(data) => {
         console.log('Here\'s your data!', data);
       }}
     />
     <CodeBlock
-      value={`import { DataInput } from 'chartwerk-ui-components';
+      value={`import { Data } from 'chartwerk-ui-components';
 
-<DataInput
+<Data
   dataMapPrompts={[{
     key: 'base',
     prompt: 'Which column has dates in it?',
@@ -45,7 +45,7 @@ const App = (props) => (
     prompt: 'Which columns are extra?',
     members: 0,
   }]}
-  updateDataInput={(data) => {
+  updateData={(data) => {
     console.log('Your parsed data, transforms and data map!', data);
   }}
 />

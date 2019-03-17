@@ -85,7 +85,7 @@ class DataMap extends React.Component {
   }
 
   render() {
-    const { prompts, columnTypes, dataMap, updateDataMap, sendState, sendFullData } = this.props;
+    const { prompts, columnTypes, dataMap, updateDataMap, sendState, updateContext } = this.props;
     const Maps = prompts.map(prompt => (
       <Map
         key={prompt.key}
@@ -114,7 +114,7 @@ class DataMap extends React.Component {
             className='button'
             onClick={() => {
               sendState({ view: END });
-              sendFullData();
+              updateContext();
             }}
             disabled={!this.areRequiredMapsSatistified()}
           >Next</button>

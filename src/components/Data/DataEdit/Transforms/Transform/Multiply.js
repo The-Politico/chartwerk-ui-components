@@ -2,7 +2,7 @@ import React from 'react';
 import { faTimes, faDivide } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import Transformer from 'Components/DataInput/utils/transformer';
+import Transformer from 'Components/Data/utils/transformer';
 
 const transformer = new Transformer();
 

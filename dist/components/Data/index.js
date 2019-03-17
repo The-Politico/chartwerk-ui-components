@@ -116,14 +116,14 @@ function _possibleConstructorReturn(self, call) {
   return _assertThisInitialized(self);
 }
 
-var styles = {"component":"chartwerk_ui_components___1b1mREQFB_","spinAround":"chartwerk_ui_components___1kajkrvXiz"};
+var styles = {"component":"chartwerk_ui_components___2cqd8bK7hI","spinAround":"chartwerk_ui_components___FNc774so1i"};
 
 var INPUT = 'input';
 var EDIT = 'edit';
 var MAP = 'map';
 var END = 'end';
 
-var styles$1 = {"component":"chartwerk_ui_components___QLfKp__by7"};
+var styles$1 = {"component":"chartwerk_ui_components___3pX6qViLQf"};
 
 // Regexes used to type and split string data input by a user
 
@@ -427,9 +427,9 @@ TextInput.defaultProps = {
   defaultValue: ''
 };
 
-var styles$2 = {"component":"chartwerk_ui_components___3Lrj0Cq2Df"};
+var styles$2 = {"component":"chartwerk_ui_components___3EpYOzTwU5"};
 
-var styles$3 = {"component":"chartwerk_ui_components___2QOSB9YqR9"};
+var styles$3 = {"component":"chartwerk_ui_components___18qm3Qf4SF"};
 
 var datumWidth = 140;
 var indexWidth = 35;
@@ -440,7 +440,7 @@ var indexCellWidth = {
   width: '35px'
 };
 
-var styles$4 = {"component":"chartwerk_ui_components___2tLG43A4er"};
+var styles$4 = {"component":"chartwerk_ui_components___1wLikxf3tB"};
 
 var ColumnCell = function ColumnCell(props) {
   return React.createElement("div", {
@@ -539,9 +539,9 @@ function (_React$Component) {
   return Headers;
 }(React.Component);
 
-var styles$5 = {"component":"chartwerk_ui_components___3V3rHCCB4y"};
+var styles$5 = {"component":"chartwerk_ui_components___ihZRoQeq1_"};
 
-var styles$6 = {"component":"chartwerk_ui_components___136elTEO6o"};
+var styles$6 = {"component":"chartwerk_ui_components___31rxNzRjNc"};
 
 var isPositiveNumber = function isPositiveNumber(number) {
   if (typeof number !== 'number') return false;
@@ -876,9 +876,9 @@ function (_React$Component) {
   return JsonTable;
 }(React.Component);
 
-var styles$7 = {"component":"chartwerk_ui_components___3hYt_PWIV0","spinAround":"chartwerk_ui_components___3HcH-EOCbt"};
+var styles$7 = {"component":"chartwerk_ui_components___1739ZqYURf","spinAround":"chartwerk_ui_components___2nyH7QKWHB"};
 
-var styles$8 = {"component":"chartwerk_ui_components___i6e86hKUtB","spinAround":"chartwerk_ui_components___2OsbF3aavR"};
+var styles$8 = {"component":"chartwerk_ui_components___2peR9z0_0s","spinAround":"chartwerk_ui_components___3g0n7Ap7Pr"};
 
 var transformer = new Transformer();
 
@@ -1171,7 +1171,7 @@ function (_React$Component) {
   return Transforms;
 }(React.Component);
 
-var styles$9 = {"component":"chartwerk_ui_components___TauCE6jVHk","spinAround":"chartwerk_ui_components___19EzWo2Nhg"};
+var styles$9 = {"component":"chartwerk_ui_components___3iiHp7Le4i","spinAround":"chartwerk_ui_components___3QzzPpMtr1"};
 
 var ReType =
 /*#__PURE__*/
@@ -1354,9 +1354,9 @@ function (_React$Component) {
   return DataEdit;
 }(React.Component);
 
-var styles$a = {"component":"chartwerk_ui_components___vL1cWpH8PQ"};
+var styles$a = {"component":"chartwerk_ui_components___L_GTUyOt34"};
 
-var styles$b = {"component":"chartwerk_ui_components___16UGFmMQ1E","spinAround":"chartwerk_ui_components___37TnW8RXc3"};
+var styles$b = {"component":"chartwerk_ui_components___22ellApJCn","spinAround":"chartwerk_ui_components___1fzigblk4E"};
 
 var Warning = function Warning(props) {
   return React.createElement("div", {
@@ -1561,7 +1561,7 @@ function (_React$Component) {
           dataMap = _this$props4.dataMap,
           updateDataMap = _this$props4.updateDataMap,
           sendState = _this$props4.sendState,
-          sendFullData = _this$props4.sendFullData;
+          updateContext = _this$props4.updateContext;
       var Maps = prompts.map(function (prompt) {
         return React.createElement(Map, {
           key: prompt.key,
@@ -1592,7 +1592,7 @@ function (_React$Component) {
           sendState({
             view: END
           });
-          sendFullData();
+          updateContext();
         },
         disabled: !this.areRequiredMapsSatistified()
       }, "Next")));
@@ -1602,7 +1602,7 @@ function (_React$Component) {
   return DataMap;
 }(React.Component);
 
-var styles$c = {"component":"chartwerk_ui_components___6T802eymai"};
+var styles$c = {"component":"chartwerk_ui_components___23fZebKi6n"};
 
 var Finale =
 /*#__PURE__*/
@@ -1621,7 +1621,7 @@ function (_React$Component) {
       var sendState = this.props.sendState;
       return React.createElement("div", {
         className: classnames(styles$c.component)
-      }, React.createElement("p", null, "Data's ready!"), React.createElement("div", {
+      }, React.createElement("div", {
         className: "level nav"
       }, React.createElement("button", {
         className: "button",
@@ -1630,30 +1630,30 @@ function (_React$Component) {
             view: EDIT
           });
         }
-      }, "Re-edit")));
+      }, "Re-edit data")));
     }
   }]);
 
   return Finale;
 }(React.Component);
 
-var DataInput =
+var Data =
 /*#__PURE__*/
 function (_React$Component) {
-  _inherits(DataInput, _React$Component);
+  _inherits(Data, _React$Component);
 
-  function DataInput() {
+  function Data() {
     var _getPrototypeOf2;
 
     var _this;
 
-    _classCallCheck(this, DataInput);
+    _classCallCheck(this, Data);
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
 
-    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(DataInput)).call.apply(_getPrototypeOf2, [this].concat(args)));
+    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Data)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
     _defineProperty(_assertThisInitialized(_this), "state", {
       view: INPUT,
@@ -1677,7 +1677,7 @@ function (_React$Component) {
       });
     });
 
-    _defineProperty(_assertThisInitialized(_this), "sendFullData", function () {
+    _defineProperty(_assertThisInitialized(_this), "updateContext", function () {
       var _this$state = _this.state,
           data = _this$state.typedData,
           columnTypes = _this$state.columnTypes,
@@ -1688,7 +1688,7 @@ function (_React$Component) {
         transformers[column] = new Transformer(columnTransforms[column]);
       });
 
-      _this.props.updateDataInput({
+      _this.props.updateData({
         data: data,
         dataMap: dataMap,
         columnTypes: columnTypes,
@@ -1699,7 +1699,7 @@ function (_React$Component) {
     return _this;
   }
 
-  _createClass(DataInput, [{
+  _createClass(Data, [{
     key: "render",
     value: function render() {
       var dataMapPrompts = this.props.dataMapPrompts;
@@ -1729,16 +1729,16 @@ function (_React$Component) {
         dataMap: dataMap,
         updateDataMap: this.updateDataMap,
         sendState: this.sendState,
-        sendFullData: this.sendFullData
+        updateContext: this.updateContext
       }), view === END && React.createElement(Finale, {
         sendState: this.sendState
       }));
     }
   }]);
 
-  return DataInput;
+  return Data;
 }(React.Component);
 
-DataInput.defaultProps = {};
+Data.defaultProps = {};
 
-export default DataInput;
+export default Data;

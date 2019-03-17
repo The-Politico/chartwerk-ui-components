@@ -4,7 +4,7 @@ import classnames from 'classnames';
 
 import { datumCellWidth } from '../../widths';
 
-import Transformer from 'Components/DataInput/utils/transformer';
+import Transformer from 'Components/Data/utils/transformer';
 
 class EditableCell extends React.Component {
   constructor(props) {

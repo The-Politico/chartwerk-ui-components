@@ -8,12 +8,11 @@ class Finale extends React.Component {
     const { sendState } = this.props;
     return (
       <div className={classnames(styles.component)}>
-        <p>Data's ready!</p>
         <div className='level nav'>
           <button
             className='button'
             onClick={() => sendState({ view: EDIT })}
-          >Re-edit</button>
+          >Re-edit data</button>
         </div>
       </div>
     );

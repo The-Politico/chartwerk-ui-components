@@ -11,7 +11,7 @@ import Finale from './Finale';
 
 import Transformer from './utils/transformer';
 
-class DataInput extends React.Component {
+class Data extends React.Component {
   state = {
     view: INPUT,
     rawData: '',
@@ -28,7 +28,7 @@ class DataInput extends React.Component {
     { dataMap: Object.assign(state.dataMap, newMap) }
   ));
 
-  sendFullData = () => {
+  updateContext = () => {
     const { typedData: data, columnTypes, columnTransforms, dataMap } = this.state;
 
     const transformers = {};
@@ -37,7 +37,7 @@ class DataInput extends React.Component {
       transformers[column] = new Transformer(columnTransforms[column]);
     });
 
-    this.props.updateDataInput({
+    this.props.updateData({
       data,
       dataMap,
       columnTypes,
@@ -73,7 +73,7 @@ class DataInput extends React.Component {
             dataMap={dataMap}
             updateDataMap={this.updateDataMap}
             sendState={this.sendState}
-            sendFullData={this.sendFullData}
+            updateContext={this.updateContext}
           />
         )}
         {view === END && (
@@ -86,7 +86,7 @@ class DataInput extends React.Component {
   }
 }
 
-DataInput.defaultProps = {
+Data.defaultProps = {
 };
 
-export default DataInput;
+export default Data;

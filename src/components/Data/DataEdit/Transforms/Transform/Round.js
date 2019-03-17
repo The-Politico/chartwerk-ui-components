@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Transformer from 'Components/DataInput/utils/transformer';
+import Transformer from 'Components/Data/utils/transformer';
 
 const transformer = new Transformer();
 

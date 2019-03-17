@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 import styles from './styles.scss';
-import { parseByType } from 'Components/DataInput/utils/parsers';
+import { parseByType } from 'Components/Data/utils/parsers';
 
 import { datumWidth, indexWidth } from './widths';
 
