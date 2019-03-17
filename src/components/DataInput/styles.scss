@@ -5,6 +5,8 @@
   @import "~bulma/sass/utilities/_all.sass";
   @import "~bulma/sass/elements/button.sass";
 
+  @extend %sans;
+
   color: $black;
 
   .message p{

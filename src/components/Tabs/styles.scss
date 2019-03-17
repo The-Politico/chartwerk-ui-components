@@ -1,6 +1,10 @@
+@import "../../theme/_fonts.scss";
+
 .component :global {
   @import "~bulma/sass/utilities/_all.sass";
   @import "~bulma/sass/components/tabs.sass";
+
+  @extend %sans;
 
   .tabs ul{
     li{
