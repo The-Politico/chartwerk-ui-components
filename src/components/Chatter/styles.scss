@@ -2,4 +2,8 @@
 
 .component :global {
   @extend %sans;
+
+  input, textarea{
+    box-sizing: border-box;
+  }
 }

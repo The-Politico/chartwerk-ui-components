@@ -2,6 +2,9 @@
 .chartwerk_ui_components___1CPabYE21v {
   font-family: 'Open Sans', sans-serif; }
 
+.chartwerk_ui_components___1CPabYE21v input, .chartwerk_ui_components___1CPabYE21v textarea {
+  box-sizing: border-box; }
+
 .chartwerk_ui_components___3HyS-1zOvh {
   margin-top: 15px; }
 
