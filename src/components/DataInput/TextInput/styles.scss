@@ -11,6 +11,7 @@
     font-family: monospace;
     outline: none;
     padding: 10px;
+    box-sizing: border-box;
   }
   .level.error{
     background-color: $red;
