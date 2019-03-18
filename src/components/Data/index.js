@@ -79,6 +79,7 @@ class Data extends React.Component {
         {view === END && (
           <Finale
             stringData={stringData}
+            columnTypes={columnTypes}
             sendState={this.sendState}
           />
         )}

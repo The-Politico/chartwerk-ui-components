@@ -6,11 +6,11 @@ import Preview from './Preview';
 
 class Finale extends React.Component {
   render() {
-    const { sendState, stringData } = this.props;
+    const { sendState, stringData, columnTypes } = this.props;
     return (
       <div className={classnames(styles.component)}>
         <div className='level nav'>
-          <Preview data={stringData} />
+          <Preview data={stringData} types={columnTypes} />
           <button
             className='button'
             onClick={() => sendState({ view: EDIT })}

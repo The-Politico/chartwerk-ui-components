@@ -10,3 +10,17 @@ $number: $blue;
 $string: $black;
 
 $number-editing: #e3f2fd;
+
+@mixin color-from-format{
+  &.date {
+    color: $date;
+  }
+
+  &.number {
+    color: $number;
+  }
+
+  &.string {
+    color: $string;
+  }
+}

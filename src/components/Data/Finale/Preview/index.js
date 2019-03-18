@@ -4,7 +4,7 @@ import keys from 'lodash/keys';
 import styles from './styles.scss';
 
 const Preview = (props) => {
-  const { data } = props;
+  const { data, types } = props;
   if (!data) { return null; }
 
   const previewRows = data.slice(0, 5);
@@ -12,10 +12,6 @@ const Preview = (props) => {
 
   const headers = keys(previewRows[0]);
   const truncatedRowCount = data.length - previewRows.length;
-
-  console.log('headers', headers);
-  console.log('previewRows', previewRows);
-  console.log('truncatedRowCount', truncatedRowCount);
 
   return (
     <div className={styles.component + ' preview-container'}>
@@ -31,7 +27,7 @@ const Preview = (props) => {
           {previewRows.map(tr =>
             <tr>
               {keys(tr).map(k =>
-                <td>{tr[k]}</td>
+                <td className={types[k]}>{tr[k]}</td>
               )}
             </tr>
           )}
