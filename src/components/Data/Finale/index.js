@@ -2,13 +2,15 @@ import React from 'react';
 import classnames from 'classnames';
 import styles from './styles.scss';
 import { EDIT } from '../constants/views';
+import Preview from './Preview';
 
 class Finale extends React.Component {
   render() {
-    const { sendState } = this.props;
+    const { sendState, stringData } = this.props;
     return (
       <div className={classnames(styles.component)}>
         <div className='level nav'>
+          <Preview data={stringData} />
           <button
             className='button'
             onClick={() => sendState({ view: EDIT })}

@@ -78,6 +78,7 @@ class Data extends React.Component {
         )}
         {view === END && (
           <Finale
+            stringData={stringData}
             sendState={this.sendState}
           />
         )}

@@ -5363,3 +5363,260 @@
     .chartwerk_ui_components___23fZebKi6n .level.nav button[disabled] {
       opacity: 0.5;
       pointer-events: none; }
+
+.chartwerk_ui_components___3xdpn5KgWX .table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #212529; }
+  .chartwerk_ui_components___3xdpn5KgWX .table th,
+  .chartwerk_ui_components___3xdpn5KgWX .table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6; }
+  .chartwerk_ui_components___3xdpn5KgWX .table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6; }
+  .chartwerk_ui_components___3xdpn5KgWX .table tbody + tbody {
+    border-top: 2px solid #dee2e6; }
+
+.chartwerk_ui_components___3xdpn5KgWX .table-sm th,
+.chartwerk_ui_components___3xdpn5KgWX .table-sm td {
+  padding: 0.3rem; }
+
+.chartwerk_ui_components___3xdpn5KgWX .table-bordered {
+  border: 1px solid #dee2e6; }
+  .chartwerk_ui_components___3xdpn5KgWX .table-bordered th,
+  .chartwerk_ui_components___3xdpn5KgWX .table-bordered td {
+    border: 1px solid #dee2e6; }
+  .chartwerk_ui_components___3xdpn5KgWX .table-bordered thead th,
+  .chartwerk_ui_components___3xdpn5KgWX .table-bordered thead td {
+    border-bottom-width: 2px; }
+
+.chartwerk_ui_components___3xdpn5KgWX .table-borderless th,
+.chartwerk_ui_components___3xdpn5KgWX .table-borderless td,
+.chartwerk_ui_components___3xdpn5KgWX .table-borderless thead th,
+.chartwerk_ui_components___3xdpn5KgWX .table-borderless tbody + tbody {
+  border: 0; }
+
+.chartwerk_ui_components___3xdpn5KgWX .table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0, 0, 0, 0.05); }
+
+.chartwerk_ui_components___3xdpn5KgWX .table-hover tbody tr:hover {
+  color: #212529;
+  background-color: rgba(0, 0, 0, 0.075); }
+
+.chartwerk_ui_components___3xdpn5KgWX .table-primary,
+.chartwerk_ui_components___3xdpn5KgWX .table-primary > th,
+.chartwerk_ui_components___3xdpn5KgWX .table-primary > td {
+  background-color: #b8daff; }
+
+.chartwerk_ui_components___3xdpn5KgWX .table-primary th,
+.chartwerk_ui_components___3xdpn5KgWX .table-primary td,
+.chartwerk_ui_components___3xdpn5KgWX .table-primary thead th,
+.chartwerk_ui_components___3xdpn5KgWX .table-primary tbody + tbody {
+  border-color: #7abaff; }
+
+.chartwerk_ui_components___3xdpn5KgWX .table-hover .table-primary:hover {
+  background-color: #9fcdff; }
+  .chartwerk_ui_components___3xdpn5KgWX .table-hover .table-primary:hover > td,
+  .chartwerk_ui_components___3xdpn5KgWX .table-hover .table-primary:hover > th {
+    background-color: #9fcdff; }
+
+.chartwerk_ui_components___3xdpn5KgWX .table-secondary,
+.chartwerk_ui_components___3xdpn5KgWX .table-secondary > th,
+.chartwerk_ui_components___3xdpn5KgWX .table-secondary > td {
+  background-color: #d6d8db; }
+
+.chartwerk_ui_components___3xdpn5KgWX .table-secondary th,
+.chartwerk_ui_components___3xdpn5KgWX .table-secondary td,
+.chartwerk_ui_components___3xdpn5KgWX .table-secondary thead th,
+.chartwerk_ui_components___3xdpn5KgWX .table-secondary tbody + tbody {
+  border-color: #b3b7bb; }
+
+.chartwerk_ui_components___3xdpn5KgWX .table-hover .table-secondary:hover {
+  background-color: #c8cbcf; }
+  .chartwerk_ui_components___3xdpn5KgWX .table-hover .table-secondary:hover > td,
+  .chartwerk_ui_components___3xdpn5KgWX .table-hover .table-secondary:hover > th {
+    background-color: #c8cbcf; }
+
+.chartwerk_ui_components___3xdpn5KgWX .table-success,
+.chartwerk_ui_components___3xdpn5KgWX .table-success > th,
+.chartwerk_ui_components___3xdpn5KgWX .table-success > td {
+  background-color: #c3e6cb; }
+
+.chartwerk_ui_components___3xdpn5KgWX .table-success th,
+.chartwerk_ui_components___3xdpn5KgWX .table-success td,
+.chartwerk_ui_components___3xdpn5KgWX .table-success thead th,
+.chartwerk_ui_components___3xdpn5KgWX .table-success tbody + tbody {
+  border-color: #8fd19e; }
+
+.chartwerk_ui_components___3xdpn5KgWX .table-hover .table-success:hover {
+  background-color: #b1dfbb; }
+  .chartwerk_ui_components___3xdpn5KgWX .table-hover .table-success:hover > td,
+  .chartwerk_ui_components___3xdpn5KgWX .table-hover .table-success:hover > th {
+    background-color: #b1dfbb; }
+
+.chartwerk_ui_components___3xdpn5KgWX .table-info,
+.chartwerk_ui_components___3xdpn5KgWX .table-info > th,
+.chartwerk_ui_components___3xdpn5KgWX .table-info > td {
+  background-color: #bee5eb; }
+
+.chartwerk_ui_components___3xdpn5KgWX .table-info th,
+.chartwerk_ui_components___3xdpn5KgWX .table-info td,
+.chartwerk_ui_components___3xdpn5KgWX .table-info thead th,
+.chartwerk_ui_components___3xdpn5KgWX .table-info tbody + tbody {
+  border-color: #86cfda; }
+
+.chartwerk_ui_components___3xdpn5KgWX .table-hover .table-info:hover {
+  background-color: #abdde5; }
+  .chartwerk_ui_components___3xdpn5KgWX .table-hover .table-info:hover > td,
+  .chartwerk_ui_components___3xdpn5KgWX .table-hover .table-info:hover > th {
+    background-color: #abdde5; }
+
+.chartwerk_ui_components___3xdpn5KgWX .table-warning,
+.chartwerk_ui_components___3xdpn5KgWX .table-warning > th,
+.chartwerk_ui_components___3xdpn5KgWX .table-warning > td {
+  background-color: #ffeeba; }
+
+.chartwerk_ui_components___3xdpn5KgWX .table-warning th,
+.chartwerk_ui_components___3xdpn5KgWX .table-warning td,
+.chartwerk_ui_components___3xdpn5KgWX .table-warning thead th,
+.chartwerk_ui_components___3xdpn5KgWX .table-warning tbody + tbody {
+  border-color: #ffdf7e; }
+
+.chartwerk_ui_components___3xdpn5KgWX .table-hover .table-warning:hover {
+  background-color: #ffe8a1; }
+  .chartwerk_ui_components___3xdpn5KgWX .table-hover .table-warning:hover > td,
+  .chartwerk_ui_components___3xdpn5KgWX .table-hover .table-warning:hover > th {
+    background-color: #ffe8a1; }
+
+.chartwerk_ui_components___3xdpn5KgWX .table-danger,
+.chartwerk_ui_components___3xdpn5KgWX .table-danger > th,
+.chartwerk_ui_components___3xdpn5KgWX .table-danger > td {
+  background-color: #f5c6cb; }
+
+.chartwerk_ui_components___3xdpn5KgWX .table-danger th,
+.chartwerk_ui_components___3xdpn5KgWX .table-danger td,
+.chartwerk_ui_components___3xdpn5KgWX .table-danger thead th,
+.chartwerk_ui_components___3xdpn5KgWX .table-danger tbody + tbody {
+  border-color: #ed969e; }
+
+.chartwerk_ui_components___3xdpn5KgWX .table-hover .table-danger:hover {
+  background-color: #f1b0b7; }
+  .chartwerk_ui_components___3xdpn5KgWX .table-hover .table-danger:hover > td,
+  .chartwerk_ui_components___3xdpn5KgWX .table-hover .table-danger:hover > th {
+    background-color: #f1b0b7; }
+
+.chartwerk_ui_components___3xdpn5KgWX .table-light,
+.chartwerk_ui_components___3xdpn5KgWX .table-light > th,
+.chartwerk_ui_components___3xdpn5KgWX .table-light > td {
+  background-color: #fdfdfe; }
+
+.chartwerk_ui_components___3xdpn5KgWX .table-light th,
+.chartwerk_ui_components___3xdpn5KgWX .table-light td,
+.chartwerk_ui_components___3xdpn5KgWX .table-light thead th,
+.chartwerk_ui_components___3xdpn5KgWX .table-light tbody + tbody {
+  border-color: #fbfcfc; }
+
+.chartwerk_ui_components___3xdpn5KgWX .table-hover .table-light:hover {
+  background-color: #ececf6; }
+  .chartwerk_ui_components___3xdpn5KgWX .table-hover .table-light:hover > td,
+  .chartwerk_ui_components___3xdpn5KgWX .table-hover .table-light:hover > th {
+    background-color: #ececf6; }
+
+.chartwerk_ui_components___3xdpn5KgWX .table-dark,
+.chartwerk_ui_components___3xdpn5KgWX .table-dark > th,
+.chartwerk_ui_components___3xdpn5KgWX .table-dark > td {
+  background-color: #c6c8ca; }
+
+.chartwerk_ui_components___3xdpn5KgWX .table-dark th,
+.chartwerk_ui_components___3xdpn5KgWX .table-dark td,
+.chartwerk_ui_components___3xdpn5KgWX .table-dark thead th,
+.chartwerk_ui_components___3xdpn5KgWX .table-dark tbody + tbody {
+  border-color: #95999c; }
+
+.chartwerk_ui_components___3xdpn5KgWX .table-hover .table-dark:hover {
+  background-color: #b9bbbe; }
+  .chartwerk_ui_components___3xdpn5KgWX .table-hover .table-dark:hover > td,
+  .chartwerk_ui_components___3xdpn5KgWX .table-hover .table-dark:hover > th {
+    background-color: #b9bbbe; }
+
+.chartwerk_ui_components___3xdpn5KgWX .table-active,
+.chartwerk_ui_components___3xdpn5KgWX .table-active > th,
+.chartwerk_ui_components___3xdpn5KgWX .table-active > td {
+  background-color: rgba(0, 0, 0, 0.075); }
+
+.chartwerk_ui_components___3xdpn5KgWX .table-hover .table-active:hover {
+  background-color: rgba(0, 0, 0, 0.075); }
+  .chartwerk_ui_components___3xdpn5KgWX .table-hover .table-active:hover > td,
+  .chartwerk_ui_components___3xdpn5KgWX .table-hover .table-active:hover > th {
+    background-color: rgba(0, 0, 0, 0.075); }
+
+.chartwerk_ui_components___3xdpn5KgWX .table .thead-dark th {
+  color: #fff;
+  background-color: #343a40;
+  border-color: #454d55; }
+
+.chartwerk_ui_components___3xdpn5KgWX .table .thead-light th {
+  color: #495057;
+  background-color: #e9ecef;
+  border-color: #dee2e6; }
+
+.chartwerk_ui_components___3xdpn5KgWX .table-dark {
+  color: #fff;
+  background-color: #343a40; }
+  .chartwerk_ui_components___3xdpn5KgWX .table-dark th,
+  .chartwerk_ui_components___3xdpn5KgWX .table-dark td,
+  .chartwerk_ui_components___3xdpn5KgWX .table-dark thead th {
+    border-color: #454d55; }
+  .chartwerk_ui_components___3xdpn5KgWX .table-dark.table-bordered {
+    border: 0; }
+  .chartwerk_ui_components___3xdpn5KgWX .table-dark.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(255, 255, 255, 0.05); }
+  .chartwerk_ui_components___3xdpn5KgWX .table-dark.table-hover tbody tr:hover {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.075); }
+
+@media (max-width: 575.98px) {
+  .chartwerk_ui_components___3xdpn5KgWX .table-responsive-sm {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; }
+    .chartwerk_ui_components___3xdpn5KgWX .table-responsive-sm > .table-bordered {
+      border: 0; } }
+
+@media (max-width: 767.98px) {
+  .chartwerk_ui_components___3xdpn5KgWX .table-responsive-md {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; }
+    .chartwerk_ui_components___3xdpn5KgWX .table-responsive-md > .table-bordered {
+      border: 0; } }
+
+@media (max-width: 991.98px) {
+  .chartwerk_ui_components___3xdpn5KgWX .table-responsive-lg {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; }
+    .chartwerk_ui_components___3xdpn5KgWX .table-responsive-lg > .table-bordered {
+      border: 0; } }
+
+@media (max-width: 1199.98px) {
+  .chartwerk_ui_components___3xdpn5KgWX .table-responsive-xl {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; }
+    .chartwerk_ui_components___3xdpn5KgWX .table-responsive-xl > .table-bordered {
+      border: 0; } }
+
+.chartwerk_ui_components___3xdpn5KgWX .table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; }
+  .chartwerk_ui_components___3xdpn5KgWX .table-responsive > .table-bordered {
+    border: 0; }

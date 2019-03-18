@@ -1,0 +1,8 @@
+.component :global {
+  @import "~bootstrap/scss/functions";
+  @import "~bootstrap/scss/variables";
+  @import "~bootstrap/scss/mixins/breakpoints";
+  @import "~bootstrap/scss/mixins/hover";
+  @import "~bootstrap/scss/mixins/table-row";
+  @import "~bootstrap/scss/tables";
+}

@@ -83,13 +83,16 @@ class TextInput extends React.Component {
           >
             Next
           </button>
-          <FontAwesomeIcon
-            icon={faCog}
-            size='lg'
-            fixedWidth
-            spin
-            hidden={!parsing}
-          />
+
+          {parsing &&
+            <FontAwesomeIcon
+              icon={faCog}
+              size='lg'
+              fixedWidth
+              spin
+              hidden={!parsing}
+            />
+          }
         </div>
       </div>
     );

@@ -13,6 +13,7 @@ import maxBy from 'lodash/maxBy';
 import head from 'lodash/head';
 import { format } from 'd3-format';
 import { FixedSizeList } from 'react-window';
+import keys from 'lodash/keys';
 
 function _classCallCheck(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
@@ -410,7 +411,7 @@ function (_React$Component) {
           'is-disabled': !value
         }),
         disabled: !value
-      }, "Next"), React.createElement(FontAwesomeIcon, {
+      }, "Next"), parsing && React.createElement(FontAwesomeIcon, {
         icon: faCog,
         size: "lg",
         fixedWidth: true,
@@ -1604,6 +1605,43 @@ function (_React$Component) {
 
 var styles$c = {"component":"chartwerk_ui_components___23fZebKi6n"};
 
+var styles$d = {"component":"chartwerk_ui_components___3xdpn5KgWX"};
+
+var Preview = function Preview(props) {
+  var data = props.data;
+
+  if (!data) {
+    return null;
+  }
+
+  var previewRows = data.slice(0, 5);
+
+  if (previewRows.length === 0) {
+    return null;
+  }
+
+  var headers = keys(previewRows[0]);
+  var truncatedRowCount = data.length - previewRows.length;
+  console.log('headers', headers);
+  console.log('previewRows', previewRows);
+  console.log('truncatedRowCount', truncatedRowCount);
+  return React.createElement("div", {
+    className: styles$d.component + ' preview-container'
+  }, React.createElement("table", {
+    className: "table table-striped"
+  }, React.createElement("thead", null, React.createElement("tr", null, headers.map(function (d) {
+    return React.createElement("th", {
+      key: d
+    }, d);
+  }))), React.createElement("tbody", null, previewRows.map(function (tr) {
+    return React.createElement("tr", null, keys(tr).map(function (k) {
+      return React.createElement("td", null, tr[k]);
+    }));
+  }), React.createElement("tr", null, React.createElement("td", {
+    colSpan: headers.length
+  }, "And ", truncatedRowCount, " similiar rows.")))));
+};
+
 var Finale =
 /*#__PURE__*/
 function (_React$Component) {
@@ -1618,12 +1656,16 @@ function (_React$Component) {
   _createClass(Finale, [{
     key: "render",
     value: function render() {
-      var sendState = this.props.sendState;
+      var _this$props = this.props,
+          sendState = _this$props.sendState,
+          stringData = _this$props.stringData;
       return React.createElement("div", {
         className: classnames(styles$c.component)
       }, React.createElement("div", {
         className: "level nav"
-      }, React.createElement("button", {
+      }, React.createElement(Preview, {
+        data: stringData
+      }), React.createElement("button", {
         className: "button",
         onClick: function onClick() {
           return sendState({
@@ -1731,6 +1773,7 @@ function (_React$Component) {
         sendState: this.sendState,
         updateContext: this.updateContext
       }), view === END && React.createElement(Finale, {
+        stringData: stringData,
         sendState: this.sendState
       }));
     }
