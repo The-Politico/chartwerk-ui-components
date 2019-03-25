@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
@@ -8,41 +9,41 @@ import styles from './styles.scss';
 
 import Warning from './Warning';
 
-class Map extends React.Component {
-  addToMap = (column) => {
-    const { prompt, dataMap, updateDataMap } = this.props;
-    const map = dataMap[prompt.key];
+class Prompt extends React.Component {
+  addToMapping = (column) => {
+    const { prompt, map, updateMap } = this.props;
+    const mapping = map[prompt.key];
     if (prompt.members === 1) {
-      updateDataMap({ [prompt.key]: column });
+      updateMap({ [prompt.key]: column });
     } else {
-      if (map) map.push(column);
-      updateDataMap({ [prompt.key]: map || [column] });
+      if (mapping) mapping.push(column);
+      updateMap({ [prompt.key]: mapping || [column] });
     }
   }
 
-  removeFromMap = (column) => {
-    const { prompt, dataMap, updateDataMap } = this.props;
-    const map = dataMap[prompt.key];
+  removeFromMapping = (column) => {
+    const { prompt, map, updateMap } = this.props;
+    const mapping = map[prompt.key];
     if (prompt.members === 1) {
-      updateDataMap({ [prompt.key]: null });
+      updateMap({ [prompt.key]: null });
     } else {
-      updateDataMap({ [prompt.key]: map.filter(c => c !== column) });
+      updateMap({ [prompt.key]: mapping.filter(c => c !== column) });
     }
   }
 
   render() {
-    const { prompt, availableColumns, columnTypes, isColumnMemberOfMap, isFull } = this.props;
+    const { prompt, availableColumns, columns, isColumnMemberOfMap, isFull } = this.props;
     const Columns = availableColumns.map((column) => {
       const member = isColumnMemberOfMap(column, prompt.key);
       return (
         <div
           key={column}
-          className={classnames('tag', columnTypes[column], {
+          className={classnames('tag', columns[column].type, {
             member: member,
             disabled: isFull && !member,
           })}
           onClick={() => member ?
-            this.removeFromMap(column) : this.addToMap(column)
+            this.removeFromMapping(column) : this.addToMapping(column)
           }
         >
           {column}
@@ -67,4 +68,14 @@ class Map extends React.Component {
   }
 }
 
-export default Map;
+Prompt.propTypes = {
+  prompt: PropTypes.object.isRequired,
+  columns: PropTypes.object.isRequired,
+  availableColumns: PropTypes.array.isRequired,
+  isColumnMemberOfMap: PropTypes.func.isRequired,
+  isFull: PropTypes.bool,
+  map: PropTypes.object.isRequired,
+  updateMap: PropTypes.func.isRequired,
+};
+
+export default Prompt;

@@ -4,46 +4,47 @@ import classnames from 'classnames';
 
 import { datumCellWidth } from '../../widths';
 
-import Transformer from 'Components/Data/utils/transformer';
+import Transformer from 'Components/Data/utils/number/transformer';
 
 class EditableCell extends React.Component {
   constructor(props) {
     super(props);
-    const { row, column } = props;
+    const { row, columnKey } = props;
     this.state = {
       editing: false,
-      value: this.formatEditableCell(row[column]),
+      value: this.formatEditableCell(row[columnKey].parsed),
     };
   }
 
   getType = () => {
-    const { columnTypes, column } = this.props;
-    return columnTypes[column];
+    return this.props.column.type;
   }
 
   correctType = () => {
-    const type = this.getType();
+    const { type } = this.props.column;
     return type === 'string' ? 'text' : type;
   }
 
   // Convert native types to strings for inputs
   formatEditableCell = (datum) => {
-    if (this.getType() === 'number' && datum) return datum.toString();
-    if (this.getType() === 'date' && datum) return datum.toISOString().substring(0, 10);
+    const { type } = this.props.column;
+    if (type === 'number' && datum) return datum.toString();
+    if (type === 'date' && datum) return datum.toISOString().substring(0, 10);
     return datum;
   }
 
   formatDisplayCell = (datum) => {
     if (!datum) return '';
-    if (this.getType() === 'number') return this.applyTransforms(datum);
-    if (this.getType() === 'date') return datum.toLocaleDateString('en-US', { timeZone: 'UTC' });
+    const { type } = this.props.column;
+    if (type === 'number') return this.applyTransforms(datum);
+    if (type === 'date') return datum.toLocaleDateString('en-US', { timeZone: 'UTC' });
     return datum;
   }
 
   sendUpdate = () => {
-    const { column, rowIndex, update } = this.props;
+    const { columnKey, rowIndex, update } = this.props;
     const type = this.correctType();
-    update(type, rowIndex, column, this.state.value);
+    update(type, rowIndex, columnKey, this.state.value);
   }
 
   applyTransforms = (value) => {
@@ -67,9 +68,9 @@ class EditableCell extends React.Component {
 
   render() {
     const { editing, value } = this.state;
-    const { column, editingColumn, transforms, row } = this.props;
+    const { columnKey, editingColumn, transforms, row } = this.props;
     const type = this.correctType();
-    const datum = row[column];
+    const datum = row[columnKey].parsed;
     this.transformer = new Transformer(transforms || {});
     return (
       <div

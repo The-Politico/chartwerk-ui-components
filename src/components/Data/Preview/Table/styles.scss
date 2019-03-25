@@ -1,0 +1,34 @@
+.component :global {
+  @import "~bulma/sass/utilities/_all.sass";
+  @import "~bulma/sass/elements/table.sass";
+  @import "../../../../theme/_colors.scss";
+  @import "../../../../theme/_fonts.scss";
+
+  margin-bottom: 25px;
+
+  table.table.preview{
+    max-width: 100%;
+    overflow-x: scroll;
+    display: block;
+    border-collapse: collapse;
+    margin-bottom: 0px;
+    padding-bottom: 15px;
+
+    td {
+        @include color-from-format;
+        @extend %monospace;
+    }
+
+    th{
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 150px;
+    }
+  }
+
+  small{
+    @extend %sans;
+    color: #999;
+  }
+}

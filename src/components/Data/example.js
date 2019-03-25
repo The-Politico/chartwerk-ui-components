@@ -25,16 +25,20 @@ const prompts = [{
 const App = (props) => (
   <Page title='Data'>
     <Data
-      dataMapPrompts={prompts}
       updateData={(data) => {
         console.log('Here\'s your data!', data);
       }}
+      mapPrompts={prompts}
     />
     <CodeBlock
       value={`import { Data } from 'chartwerk-ui-components';
 
 <Data
-  dataMapPrompts={[{
+  data={dataFromDB}
+  updateData={(data) => {
+    console.log('Your parsed data!', data);
+  }}
+  mapPrompts={[{
     key: 'base',
     prompt: 'Which column has dates in it?',
     type: 'date',
@@ -45,9 +49,6 @@ const App = (props) => (
     prompt: 'Which columns are extra?',
     members: 0,
   }]}
-  updateData={(data) => {
-    console.log('Your parsed data, transforms and data map!', data);
-  }}
 />
       `}
     />

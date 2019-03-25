@@ -11,27 +11,28 @@ class Headers extends React.Component {
   render() {
     const {
       columns,
-      columnTypes,
       transformColumn,
       setTransformColumn,
       reTypeColumn,
       setReTypeColumn,
     } = this.props;
 
-    const Header = columns.map((column, i) => (
+    const orderedColumns = Object.keys(columns).sort((a, b) => columns[a].order - columns[b].order);
+
+    const Header = orderedColumns.map((column, i) => (
       <ColumnCell
         key={i}
         column={column}
-        isNumeric={columnTypes[column] === 'number'}
+        isNumeric={columns[column].type === 'number'}
         {...{ transformColumn, setTransformColumn }}
       />
     ));
     Header.unshift(<EmptyCell key={'empty'} />);
 
-    const HeaderTypes = columns.map((column, i) =>
+    const HeaderTypes = orderedColumns.map((column, i) =>
       <TypeCell
         column={column}
-        type={columnTypes[column]}
+        type={columns[column].type}
         key={i}
         {...{ reTypeColumn, setReTypeColumn }}
       />

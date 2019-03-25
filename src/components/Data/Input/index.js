@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import { faCog } from '@fortawesome/free-solid-svg-icons';
@@ -11,8 +12,9 @@ import { EDIT } from '../constants/views';
 import { parseToTypes, parseToStrings } from '../utils/parseDataString';
 import { parseMajorityType } from '../utils/parsers';
 import explicitlyType from '../utils/explicitType';
+import { zipDataCollections } from '../utils/zippers';
 
-class TextInput extends React.Component {
+class Input extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -31,27 +33,32 @@ class TextInput extends React.Component {
     this.setState({ parseError: false });
     const { sendState } = this.props;
     const stringData = parseToStrings(this.state.value);
-    let typedData = parseToTypes(this.state.value);
-    if (!typedData) {
+    let parsedData = parseToTypes(this.state.value);
+    if (!parsedData) {
       this.setState({ parseError: true, parsing: false });
       return;
     }
-    const columnTypes = {};
-    const columns = typedData.columns.slice();
-    columns.forEach(column => {
-      const { majorityType, unanimous } = parseMajorityType(typedData.map(obj => obj[column]));
-      columnTypes[column] = majorityType;
+    const columns = {};
+    const columnsArray = parsedData.columns.slice();
+    columnsArray.forEach((column, i) => {
+      const { majorityType, unanimous } = parseMajorityType(parsedData.map(obj => obj[column]));
+      columns[column] = {
+        order: i,
+        type: majorityType,
+        transform: {},
+        annotate: {},
+      };
       if (!unanimous) {
-        typedData = explicitlyType(typedData, stringData, column, majorityType);
+        parsedData = explicitlyType(parsedData, stringData, column, majorityType);
       }
     });
+
+    const data = zipDataCollections(stringData, parsedData);
+
     sendState({
-      stringData,
-      typedData,
-      columnTypes,
-      columnTransforms: {},
-      dataMap: {},
-      rawData: this.state.value,
+      data,
+      columns,
+      blob: this.state.value,
       view: EDIT,
     });
   }
@@ -99,8 +106,13 @@ class TextInput extends React.Component {
   }
 }
 
-TextInput.defaultProps = {
+Input.defaultProps = {
   defaultValue: '',
 };
 
-export default TextInput;
+Input.propTypes = {
+  defaultValue: PropTypes.string.isRequired,
+  sendState: PropTypes.func.isRequired,
+};
+
+export default Input;

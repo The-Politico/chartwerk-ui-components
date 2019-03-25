@@ -10,24 +10,22 @@ import Row from './Row';
 
 import { FixedSizeList as List } from 'react-window';
 
-class JsonTable extends React.Component {
-  updatetypedData = (type, row, column, value) => {
-    const { typedData, sendState } = this.props;
-    typedData[row][column] = parseByType(value, type);
-    sendState({ typedData });
+class Table extends React.Component {
+  updateData = (type, row, column, value) => {
+    const { data, sendState } = this.props;
+    data[row][column].parsed = parseByType(value, type);
+    sendState({ data });
   }
 
   render() {
     const {
-      typedData,
-      columnTypes,
-      columnTransforms,
+      data,
+      columns,
       transformColumn,
       setTransformColumn,
       reTypeColumn,
       setReTypeColumn,
     } = this.props;
-    const { columns } = typedData;
     return (
       <div className={classnames(styles.component)}>
         <div className='table-footer' />
@@ -35,27 +33,25 @@ class JsonTable extends React.Component {
           <div className='table is-fullwidth is-bordered'>
             <Headers
               columns={columns}
-              columnTypes={columnTypes}
               transformColumn={transformColumn}
               setTransformColumn={setTransformColumn}
               reTypeColumn={reTypeColumn}
               setReTypeColumn={setReTypeColumn}
             />
             <List
-              itemData={typedData}
+              itemData={data}
               height={200}
-              width={indexWidth + (datumWidth * columns.length)}
-              itemCount={typedData.length}
+              width={indexWidth + (datumWidth * Object.keys(columns).length)}
+              itemCount={data.length}
               itemSize={22}
               overscanCount={10}
             >
               {(props) => (
                 <Row
                   {...{
-                    columnTypes,
-                    columnTransforms,
+                    columns,
                     transformColumn,
-                    update: this.updatetypedData,
+                    update: this.updateData,
                   }}
                   {...props}
                 />
@@ -68,4 +64,4 @@ class JsonTable extends React.Component {
   }
 }
 
-export default JsonTable;
+export default Table;

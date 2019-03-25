@@ -11,24 +11,25 @@ class Row extends React.PureComponent {
       data,
       index,
       style,
-      columnTypes,
-      columnTransforms,
+      columns,
       transformColumn,
       update,
     } = this.props;
-    const { columns } = data;
+
+    const orderedColumns = Object.keys(columns).sort((a, b) => columns[a].order - columns[b].order);
+
     const row = data[index];
-    const cells = columns.map(column => (
+
+    const cells = orderedColumns.map(columnKey => (
       <EditableCell
-        key={column + index}
+        key={columnKey + index}
         row={row}
         rowIndex={index}
-        column={column}
-        editingColumn={transformColumn === column}
+        column={columns[columnKey]}
+        columnKey={columnKey}
+        editingColumn={transformColumn === columnKey}
         transformColumn={transformColumn}
-        transforms={columnTransforms[column]}
         update={update}
-        columnTypes={columnTypes}
       />
     ));
     cells.unshift(<IndexCell index={index + 1} key={index} />);

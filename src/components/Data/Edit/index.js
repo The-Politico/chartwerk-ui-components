@@ -1,14 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import styles from './styles.scss';
 
 import { INPUT, MAP } from '../constants/views';
 
-import JsonTable from './JsonTable';
+import Table from './Table';
 import Transforms from './Transforms';
 import ReType from './ReType';
 
-class DataEdit extends React.Component {
+class Edit extends React.Component {
   state = {
     transformColumn: null,
     reTypeColumn: null,
@@ -41,7 +42,7 @@ class DataEdit extends React.Component {
         <div className='message'>
           <p>Here's how we parsed your data. You can edit values in the table.</p>
         </div>
-        <JsonTable
+        <Table
           transformColumn={transformColumn}
           setTransformColumn={this.setTransformColumn}
           reTypeColumn={reTypeColumn}
@@ -71,4 +72,9 @@ class DataEdit extends React.Component {
   }
 }
 
-export default DataEdit;
+Edit.propTypes = {
+  data: PropTypes.array.isRequired,
+  columns: PropTypes.object.isRequired,
+};
+
+export default Edit;

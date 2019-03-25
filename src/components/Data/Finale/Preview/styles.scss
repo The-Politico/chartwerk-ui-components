@@ -1,9 +1,0 @@
-.component :global {
-  @import "~bulma/sass/utilities/_all.sass";
-  @import "~bulma/sass/elements/table.sass";
-  @import "../../../../theme/_colors.scss";
-
-  td {
-      @include color-from-format;
-  }
-}

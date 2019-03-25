@@ -4,25 +4,31 @@ import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import styles from './styles.scss';
-import explicitlyType from '../../utils/explicitType';
+import { zipDataCollections, unzipDataCollections } from 'Components/Data/utils/zippers';
+import explicitlyType from 'Components/Data/utils/explicitType';
 
 class ReType extends React.Component {
   onChange = ({ target }) => {
     const newType = target.value;
-    const { typedData, stringData, reTypeColumn, sendState, columnTypes } = this.props;
+    const { data, columns, reTypeColumn, sendState } = this.props;
+    const [stringData, typedData] = unzipDataCollections(data);
     const reTypedData = explicitlyType(typedData, stringData, reTypeColumn, newType);
-    columnTypes[reTypeColumn] = newType;
+    columns[reTypeColumn].type = newType;
+    // Always delete numeric format config on a retype
+    delete columns[reTypeColumn].transform;
+    delete columns[reTypeColumn].annotate;
+
     sendState({
-      typedData: reTypedData,
-      columnTypes,
+      data: zipDataCollections(stringData, reTypedData),
+      columns,
     });
   }
 
   render() {
-    const { reTypeColumn, columnTypes } = this.props;
+    const { reTypeColumn, columns } = this.props;
     if (!reTypeColumn) return null;
 
-    const currentType = columnTypes[reTypeColumn];
+    const currentType = columns[reTypeColumn].type;
 
     return (
       <div className={classnames(styles.component)}>
