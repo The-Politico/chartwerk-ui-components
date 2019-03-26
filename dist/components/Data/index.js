@@ -1,5 +1,6 @@
 import './index.css';
 import React from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { faCog, faPencilAlt, faTimes, faDivide, faCheck } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -11,8 +12,9 @@ import entries from 'lodash/entries';
 import partialRight from 'lodash/partialRight';
 import maxBy from 'lodash/maxBy';
 import head from 'lodash/head';
-import { format } from 'd3-format';
+import zipWith from 'lodash/zipWith';
 import { FixedSizeList } from 'react-window';
+import { format } from 'd3-format';
 import keys from 'lodash/keys';
 
 function _classCallCheck(instance, Constructor) {
@@ -70,6 +72,25 @@ function _extends() {
   return _extends.apply(this, arguments);
 }
 
+function _objectSpread(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+    var ownKeys = Object.keys(source);
+
+    if (typeof Object.getOwnPropertySymbols === 'function') {
+      ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {
+        return Object.getOwnPropertyDescriptor(source, sym).enumerable;
+      }));
+    }
+
+    ownKeys.forEach(function (key) {
+      _defineProperty(target, key, source[key]);
+    });
+  }
+
+  return target;
+}
+
 function _inherits(subClass, superClass) {
   if (typeof superClass !== "function" && superClass !== null) {
     throw new TypeError("Super expression must either be null or a function");
@@ -117,14 +138,52 @@ function _possibleConstructorReturn(self, call) {
   return _assertThisInitialized(self);
 }
 
+function _slicedToArray(arr, i) {
+  return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest();
+}
+
+function _arrayWithHoles(arr) {
+  if (Array.isArray(arr)) return arr;
+}
+
+function _iterableToArrayLimit(arr, i) {
+  var _arr = [];
+  var _n = true;
+  var _d = false;
+  var _e = undefined;
+
+  try {
+    for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+      _arr.push(_s.value);
+
+      if (i && _arr.length === i) break;
+    }
+  } catch (err) {
+    _d = true;
+    _e = err;
+  } finally {
+    try {
+      if (!_n && _i["return"] != null) _i["return"]();
+    } finally {
+      if (_d) throw _e;
+    }
+  }
+
+  return _arr;
+}
+
+function _nonIterableRest() {
+  throw new TypeError("Invalid attempt to destructure non-iterable instance");
+}
+
 var styles = {"component":"chartwerk_ui_components___2cqd8bK7hI","spinAround":"chartwerk_ui_components___FNc774so1i"};
 
 var INPUT = 'input';
 var EDIT = 'edit';
 var MAP = 'map';
-var END = 'end';
+var PREVIEW = 'preview';
 
-var styles$1 = {"component":"chartwerk_ui_components___3pX6qViLQf"};
+var styles$1 = {"component":"chartwerk_ui_components___Hsz0o0s8Dh"};
 
 // Regexes used to type and split string data input by a user
 
@@ -308,17 +367,47 @@ var explicitlyTypeCollectionByColumn = function explicitlyTypeCollectionByColumn
   return typedCollection;
 };
 
-var TextInput =
+var zipDataCollections = function zipDataCollections(stringData, parsedData) {
+  return zipWith(stringData, parsedData, function (stringObj, parsedObj) {
+    var datum = {};
+    Object.keys(stringObj).forEach(function (key) {
+      datum[key] = {
+        raw: stringObj[key],
+        parsed: parsedObj[key]
+      };
+    });
+    return datum;
+  });
+};
+var unzipDataCollections = function unzipDataCollections(data) {
+  var stringData = data.map(function (d) {
+    var datum = {};
+    Object.keys(d).forEach(function (key) {
+      datum[key] = d[key].raw;
+    });
+    return datum;
+  });
+  var parsedData = data.map(function (d) {
+    var datum = {};
+    Object.keys(d).forEach(function (key) {
+      datum[key] = d[key].parsed;
+    });
+    return datum;
+  });
+  return [stringData, parsedData];
+};
+
+var Input =
 /*#__PURE__*/
 function (_React$Component) {
-  _inherits(TextInput, _React$Component);
+  _inherits(Input, _React$Component);
 
-  function TextInput(props) {
+  function Input(props) {
     var _this;
 
-    _classCallCheck(this, TextInput);
+    _classCallCheck(this, Input);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(TextInput).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Input).call(this, props));
 
     _defineProperty(_assertThisInitialized(_this), "startParsing", function () {
       _this.setState({
@@ -335,9 +424,9 @@ function (_React$Component) {
 
       var sendState = _this.props.sendState;
       var stringData = parseToStrings(_this.state.value);
-      var typedData = parseToTypes(_this.state.value);
+      var parsedData = parseToTypes(_this.state.value);
 
-      if (!typedData) {
+      if (!parsedData) {
         _this.setState({
           parseError: true,
           parsing: false
@@ -346,28 +435,29 @@ function (_React$Component) {
         return;
       }
 
-      var columnTypes = {};
-      var columns = typedData.columns.slice();
-      columns.forEach(function (column) {
-        var _parseMajorityType = parseMajorityType(typedData.map(function (obj) {
+      var columns = {};
+      var columnsArray = parsedData.columns.slice();
+      columnsArray.forEach(function (column, i) {
+        var _parseMajorityType = parseMajorityType(parsedData.map(function (obj) {
           return obj[column];
         })),
             majorityType = _parseMajorityType.majorityType,
             unanimous = _parseMajorityType.unanimous;
 
-        columnTypes[column] = majorityType;
+        columns[column] = {
+          order: i,
+          type: majorityType
+        };
 
         if (!unanimous) {
-          typedData = explicitlyTypeCollectionByColumn(typedData, stringData, column, majorityType);
+          parsedData = explicitlyTypeCollectionByColumn(parsedData, stringData, column, majorityType);
         }
       });
+      var data = zipDataCollections(stringData, parsedData);
       sendState({
-        stringData: stringData,
-        typedData: typedData,
-        columnTypes: columnTypes,
-        columnTransforms: {},
-        dataMap: {},
-        rawData: _this.state.value,
+        data: data,
+        columns: columns,
+        blob: _this.state.value,
         view: EDIT
       });
     });
@@ -380,7 +470,7 @@ function (_React$Component) {
     return _this;
   }
 
-  _createClass(TextInput, [{
+  _createClass(Input, [{
     key: "render",
     value: function render() {
       var _this2 = this;
@@ -421,16 +511,20 @@ function (_React$Component) {
     }
   }]);
 
-  return TextInput;
+  return Input;
 }(React.Component);
 
-TextInput.defaultProps = {
+Input.defaultProps = {
   defaultValue: ''
 };
+Input.propTypes = {
+  defaultValue: PropTypes.string.isRequired,
+  sendState: PropTypes.func.isRequired
+};
 
-var styles$2 = {"component":"chartwerk_ui_components___3EpYOzTwU5"};
+var styles$2 = {"component":"chartwerk_ui_components___2X8B4iz3dp"};
 
-var styles$3 = {"component":"chartwerk_ui_components___18qm3Qf4SF"};
+var styles$3 = {"component":"chartwerk_ui_components___2tNjOiYN5j"};
 
 var datumWidth = 140;
 var indexWidth = 35;
@@ -441,7 +535,7 @@ var indexCellWidth = {
   width: '35px'
 };
 
-var styles$4 = {"component":"chartwerk_ui_components___1wLikxf3tB"};
+var styles$4 = {"component":"chartwerk_ui_components___2KmMU7PtV6"};
 
 var ColumnCell = function ColumnCell(props) {
   return React.createElement("div", {
@@ -496,16 +590,18 @@ function (_React$Component) {
     value: function render() {
       var _this$props = this.props,
           columns = _this$props.columns,
-          columnTypes = _this$props.columnTypes,
           transformColumn = _this$props.transformColumn,
           setTransformColumn = _this$props.setTransformColumn,
           reTypeColumn = _this$props.reTypeColumn,
           setReTypeColumn = _this$props.setReTypeColumn;
-      var Header = columns.map(function (column, i) {
+      var orderedColumns = Object.keys(columns).sort(function (a, b) {
+        return columns[a].order - columns[b].order;
+      });
+      var Header = orderedColumns.map(function (column, i) {
         return React.createElement(ColumnCell, _extends({
           key: i,
           column: column,
-          isNumeric: columnTypes[column] === 'number'
+          isNumeric: columns[column].type === 'number'
         }, {
           transformColumn: transformColumn,
           setTransformColumn: setTransformColumn
@@ -514,10 +610,10 @@ function (_React$Component) {
       Header.unshift(React.createElement(EmptyCell, {
         key: 'empty'
       }));
-      var HeaderTypes = columns.map(function (column, i) {
+      var HeaderTypes = orderedColumns.map(function (column, i) {
         return React.createElement(TypeCell, _extends({
           column: column,
-          type: columnTypes[column],
+          type: columns[column].type,
           key: i
         }, {
           reTypeColumn: reTypeColumn,
@@ -540,71 +636,14 @@ function (_React$Component) {
   return Headers;
 }(React.Component);
 
-var styles$5 = {"component":"chartwerk_ui_components___ihZRoQeq1_"};
+var styles$5 = {"component":"chartwerk_ui_components___18XMcmtgFf"};
 
-var styles$6 = {"component":"chartwerk_ui_components___31rxNzRjNc"};
-
-var isPositiveNumber = function isPositiveNumber(number) {
-  if (typeof number !== 'number') return false;
-  if (parseFloat(number) < 0) return false;
-  return true;
-};
-
-var isString = function isString(string) {
-  return typeof string === 'string';
-};
-
-var Transformer =
-/*#__PURE__*/
-function () {
-  function Transformer() {
-    var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
-        operation = _ref.operation,
-        multiplier = _ref.multiplier,
-        rounding = _ref.rounding,
-        precision = _ref.precision,
-        prefix = _ref.prefix,
-        suffix = _ref.suffix;
-
-    _classCallCheck(this, Transformer);
-
-    this.multiply = 'multiply';
-    this.divide = 'divide';
-    this.fixed = 'fixed point';
-    this.digits = 'significant digits'; // Defaults
-
-    this.operation = operation === this.multiply ? this.multiply : this.divide;
-    this.multiplier = isPositiveNumber(multiplier) ? parseFloat(multiplier) : null;
-    this.rounding = rounding === this.fixed ? this.fixed : this.digits;
-    this.precision = isPositiveNumber(precision) ? parseInt(precision) : null;
-    this.prefix = isString(prefix) ? prefix : '';
-    this.suffix = isString(suffix) ? suffix : '';
-  }
-
-  _createClass(Transformer, [{
-    key: "transform",
-    value: function transform(d) {
-      try {
-        d = parseFloat(d);
-      } catch (e) {
-        return d;
-      }
-
-      var precisionFormat = this.rounding === this.fixed ? 'f' : 'r';
-      var format$1 = this.precision !== null && this.precision >= 0 ? format(",.".concat(this.precision).concat(precisionFormat)) : format(',');
-      if (this.operation === this.multiply && this.multiplier) d *= this.multiplier;
-      if (this.operation === this.divide && this.multiplier) d *= 1 / this.multiplier;
-      return "".concat(this.prefix).concat(format$1(d)).concat(this.suffix);
-    }
-  }]);
-
-  return Transformer;
-}();
+var styles$6 = {"component":"chartwerk_ui_components___16FpMFvss8"};
 
 var EditableCell =
 /*#__PURE__*/
-function (_React$Component) {
-  _inherits(EditableCell, _React$Component);
+function (_React$PureComponent) {
+  _inherits(EditableCell, _React$PureComponent);
 
   function EditableCell(props) {
     var _this;
@@ -614,46 +653,43 @@ function (_React$Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(EditableCell).call(this, props));
 
     _defineProperty(_assertThisInitialized(_this), "getType", function () {
-      var _this$props = _this.props,
-          columnTypes = _this$props.columnTypes,
-          column = _this$props.column;
-      return columnTypes[column];
+      return _this.props.column.type;
     });
 
     _defineProperty(_assertThisInitialized(_this), "correctType", function () {
-      var type = _this.getType();
-
+      var type = _this.props.column.type;
       return type === 'string' ? 'text' : type;
     });
 
     _defineProperty(_assertThisInitialized(_this), "formatEditableCell", function (datum) {
-      if (_this.getType() === 'number' && datum) return datum.toString();
-      if (_this.getType() === 'date' && datum) return datum.toISOString().substring(0, 10);
+      var type = _this.props.column.type;
+      if (type === 'number' && datum) return datum.toString();
+      if (type === 'date' && datum) return datum.toISOString().substring(0, 10);
       return datum;
     });
 
     _defineProperty(_assertThisInitialized(_this), "formatDisplayCell", function (datum) {
       if (!datum) return '';
-      if (_this.getType() === 'number') return _this.applyTransforms(datum);
-      if (_this.getType() === 'date') return datum.toLocaleDateString('en-US', {
+      var type = _this.props.column.type;
+
+      if (type === 'number') {
+        return datum.annotated || datum.transformed || datum.parsed;
+      }
+      if (type === 'date') return datum.parsed.toLocaleDateString('en-US', {
         timeZone: 'UTC'
       });
-      return datum;
+      return datum.parsed;
     });
 
     _defineProperty(_assertThisInitialized(_this), "sendUpdate", function () {
-      var _this$props2 = _this.props,
-          column = _this$props2.column,
-          rowIndex = _this$props2.rowIndex,
-          update = _this$props2.update;
+      var _this$props = _this.props,
+          columnKey = _this$props.columnKey,
+          rowIndex = _this$props.rowIndex,
+          update = _this$props.update;
 
       var type = _this.correctType();
 
-      update(type, rowIndex, column, _this.state.value);
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "applyTransforms", function (value) {
-      return _this.transformer.transform(value);
+      update(type, rowIndex, columnKey, _this.state.value);
     });
 
     _defineProperty(_assertThisInitialized(_this), "onEdit", function (_ref) {
@@ -683,10 +719,10 @@ function (_React$Component) {
     });
 
     var row = props.row,
-        _column = props.column;
+        _columnKey = props.columnKey;
     _this.state = {
       editing: false,
-      value: _this.formatEditableCell(row[_column])
+      value: _this.formatEditableCell(row[_columnKey].parsed)
     };
     return _this;
   }
@@ -699,14 +735,12 @@ function (_React$Component) {
       var _this$state = this.state,
           editing = _this$state.editing,
           value = _this$state.value;
-      var _this$props3 = this.props,
-          column = _this$props3.column,
-          editingColumn = _this$props3.editingColumn,
-          transforms = _this$props3.transforms,
-          row = _this$props3.row;
+      var _this$props2 = this.props,
+          columnKey = _this$props2.columnKey,
+          editingColumn = _this$props2.editingColumn,
+          row = _this$props2.row;
       var type = this.correctType();
-      var datum = row[column];
-      this.transformer = new Transformer(transforms || {});
+      var datum = row[columnKey];
       return React.createElement("div", {
         style: datumCellWidth,
         className: classnames('cell', styles$6.component, {
@@ -736,7 +770,7 @@ function (_React$Component) {
   }]);
 
   return EditableCell;
-}(React.Component);
+}(React.PureComponent);
 
 var IndexCell = function IndexCell(props) {
   return React.createElement("div", {
@@ -763,23 +797,23 @@ function (_React$PureComponent) {
           data = _this$props.data,
           index = _this$props.index,
           style = _this$props.style,
-          columnTypes = _this$props.columnTypes,
-          columnTransforms = _this$props.columnTransforms,
+          columns = _this$props.columns,
           transformColumn = _this$props.transformColumn,
           update = _this$props.update;
-      var columns = data.columns;
+      var orderedColumns = Object.keys(columns).sort(function (a, b) {
+        return columns[a].order - columns[b].order;
+      });
       var row = data[index];
-      var cells = columns.map(function (column) {
+      var cells = orderedColumns.map(function (columnKey) {
         return React.createElement(EditableCell, {
-          key: column + index,
+          key: columnKey + index,
           row: row,
           rowIndex: index,
-          column: column,
-          editingColumn: transformColumn === column,
+          column: columns[columnKey],
+          columnKey: columnKey,
+          editingColumn: transformColumn === columnKey,
           transformColumn: transformColumn,
-          transforms: columnTransforms[column],
-          update: update,
-          columnTypes: columnTypes
+          update: update
         });
       });
       cells.unshift(React.createElement(IndexCell, {
@@ -796,51 +830,49 @@ function (_React$PureComponent) {
   return Row;
 }(React.PureComponent);
 
-var JsonTable =
+var Table =
 /*#__PURE__*/
 function (_React$Component) {
-  _inherits(JsonTable, _React$Component);
+  _inherits(Table, _React$Component);
 
-  function JsonTable() {
+  function Table() {
     var _getPrototypeOf2;
 
     var _this;
 
-    _classCallCheck(this, JsonTable);
+    _classCallCheck(this, Table);
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
 
-    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(JsonTable)).call.apply(_getPrototypeOf2, [this].concat(args)));
+    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Table)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
-    _defineProperty(_assertThisInitialized(_this), "updatetypedData", function (type, row, column, value) {
+    _defineProperty(_assertThisInitialized(_this), "updateData", function (type, row, column, value) {
       var _this$props = _this.props,
-          typedData = _this$props.typedData,
+          data = _this$props.data,
           sendState = _this$props.sendState;
-      typedData[row][column] = parseByType(value, type);
+      data[row][column].parsed = parseByType(value, type);
       sendState({
-        typedData: typedData
+        data: data
       });
     });
 
     return _this;
   }
 
-  _createClass(JsonTable, [{
+  _createClass(Table, [{
     key: "render",
     value: function render() {
       var _this2 = this;
 
       var _this$props2 = this.props,
-          typedData = _this$props2.typedData,
-          columnTypes = _this$props2.columnTypes,
-          columnTransforms = _this$props2.columnTransforms,
+          data = _this$props2.data,
+          columns = _this$props2.columns,
           transformColumn = _this$props2.transformColumn,
           setTransformColumn = _this$props2.setTransformColumn,
           reTypeColumn = _this$props2.reTypeColumn,
           setReTypeColumn = _this$props2.setReTypeColumn;
-      var columns = typedData.columns;
       return React.createElement("div", {
         className: classnames(styles$3.component)
       }, React.createElement("div", {
@@ -851,37 +883,82 @@ function (_React$Component) {
         className: "table is-fullwidth is-bordered"
       }, React.createElement(Headers, {
         columns: columns,
-        columnTypes: columnTypes,
         transformColumn: transformColumn,
         setTransformColumn: setTransformColumn,
         reTypeColumn: reTypeColumn,
         setReTypeColumn: setReTypeColumn
       }), React.createElement(FixedSizeList, {
-        itemData: typedData,
+        itemData: data,
         height: 200,
-        width: indexWidth + datumWidth * columns.length,
-        itemCount: typedData.length,
+        width: indexWidth + datumWidth * Object.keys(columns).length,
+        itemCount: data.length,
         itemSize: 22,
         overscanCount: 10
       }, function (props) {
         return React.createElement(Row, _extends({
-          columnTypes: columnTypes,
-          columnTransforms: columnTransforms,
+          columns: columns,
           transformColumn: transformColumn,
-          update: _this2.updatetypedData
+          update: _this2.updateData
         }, props));
       }))));
     }
   }]);
 
-  return JsonTable;
+  return Table;
 }(React.Component);
 
-var styles$7 = {"component":"chartwerk_ui_components___1739ZqYURf","spinAround":"chartwerk_ui_components___2nyH7QKWHB"};
+var styles$7 = {"component":"chartwerk_ui_components___m7nuPQ3NIt","spinAround":"chartwerk_ui_components___2HG7QYqctC"};
 
-var styles$8 = {"component":"chartwerk_ui_components___2peR9z0_0s","spinAround":"chartwerk_ui_components___3g0n7Ap7Pr"};
+var styles$8 = {"component":"chartwerk_ui_components___2ea2SZEwIv","spinAround":"chartwerk_ui_components___Sn06hWL_Fa"};
 
-var transformer = new Transformer();
+var isPositiveNumber = function isPositiveNumber(number) {
+  if (typeof number !== 'number') return false;
+  if (parseFloat(number) < 0) return false;
+  return true;
+};
+var isString = function isString(string) {
+  return typeof string === 'string';
+};
+
+var MULTIPLY = 'multiply';
+var DIVIDE = 'divide';
+
+var Transformer =
+/*#__PURE__*/
+function () {
+  function Transformer() {
+    var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+        operation = _ref.operation,
+        multiplier = _ref.multiplier;
+
+    _classCallCheck(this, Transformer);
+
+    _defineProperty(this, "multiply", MULTIPLY);
+
+    _defineProperty(this, "divide", DIVIDE);
+
+    this.operation = operation === MULTIPLY ? MULTIPLY : DIVIDE;
+    this.multiplier = isPositiveNumber(multiplier) ? parseFloat(multiplier) : null;
+  }
+
+  _createClass(Transformer, [{
+    key: "transform",
+    value: function transform(d) {
+      try {
+        d = parseFloat(d);
+      } catch (e) {
+        return d;
+      }
+
+      if (!this.multiplier) return d;
+      if (this.operation === MULTIPLY) d *= this.multiplier;
+      if (this.operation === DIVIDE) d *= 1 / this.multiplier;
+      return d;
+    }
+  }]);
+
+  return Transformer;
+}();
 
 var Multiply =
 /*#__PURE__*/
@@ -901,8 +978,8 @@ function (_React$Component) {
           operation = _this$props.operation,
           multiplier = _this$props.multiplier,
           update = _this$props.update;
-      var currentOperation = operation || transformer.divide;
-      var multiplying = currentOperation === transformer.multiply;
+      var currentOperation = operation || DIVIDE;
+      var multiplying = currentOperation === MULTIPLY;
       return React.createElement("div", {
         className: "field-container"
       }, React.createElement("label", {
@@ -915,9 +992,10 @@ function (_React$Component) {
         className: "button",
         onClick: function onClick() {
           return update({
-            operation: multiplying ? transformer.divide : transformer.multiply
+            operation: multiplying ? DIVIDE : MULTIPLY
           });
-        }
+        },
+        disabled: !multiplier
       }, React.createElement(FontAwesomeIcon, {
         icon: multiplying ? faTimes : faDivide,
         fixedWidth: true
@@ -934,7 +1012,7 @@ function (_React$Component) {
           var target = _ref.target;
           return update({
             multiplier: parseFloat(target.value) || null,
-            operation: multiplying ? transformer.multiply : transformer.divide
+            operation: multiplying ? MULTIPLY : DIVIDE
           });
         }
       }))));
@@ -944,7 +1022,57 @@ function (_React$Component) {
   return Multiply;
 }(React.Component);
 
-var transformer$1 = new Transformer();
+var FIXED = 'fixed point';
+var DIGITS = 'significant digits';
+
+var Annotator =
+/*#__PURE__*/
+function () {
+  function Annotator() {
+    var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+        rounding = _ref.rounding,
+        precision = _ref.precision,
+        prefix = _ref.prefix,
+        suffix = _ref.suffix;
+
+    _classCallCheck(this, Annotator);
+
+    _defineProperty(this, "fixed", FIXED);
+
+    _defineProperty(this, "digits", DIGITS);
+
+    this.rounding = rounding === FIXED ? FIXED : DIGITS;
+    this.precision = isPositiveNumber(precision) ? parseInt(precision) : null;
+    this.prefix = isString(prefix) ? prefix : '';
+    this.suffix = isString(suffix) ? suffix : '';
+  }
+
+  _createClass(Annotator, [{
+    key: "annotate",
+    value: function annotate(d) {
+      try {
+        d = parseFloat(d);
+      } catch (e) {
+        return d;
+      }
+
+      return "".concat(this.prefix).concat(this.format(d)).concat(this.suffix);
+    }
+  }, {
+    key: "formatString",
+    get: function get() {
+      var precisionFormat = this.rounding === FIXED ? 'f' : 'r';
+      return this.precision !== null && this.precision >= 0 ? ",.".concat(this.precision).concat(precisionFormat) : ',';
+    }
+  }, {
+    key: "format",
+    get: function get() {
+      return format(this.formatString);
+    }
+  }]);
+
+  return Annotator;
+}();
 
 var Round =
 /*#__PURE__*/
@@ -964,8 +1092,8 @@ function (_React$Component) {
           rounding = _this$props.rounding,
           precision = _this$props.precision,
           update = _this$props.update;
-      var currentFormat = rounding || transformer$1.fixed;
-      var fixed = currentFormat === transformer$1.fixed;
+      var currentFormat = rounding || FIXED;
+      var fixed = currentFormat === FIXED;
       return React.createElement("div", {
         className: "field-container"
       }, React.createElement("label", {
@@ -985,7 +1113,7 @@ function (_React$Component) {
         onChange: function onChange(_ref) {
           var target = _ref.target;
           return update({
-            rounding: fixed ? transformer$1.fixed : transformer$1.digits,
+            rounding: fixed ? FIXED : DIGITS,
             precision: target.value === '0' ? 0.0 : parseFloat(target.value) || null
           });
         }
@@ -995,9 +1123,10 @@ function (_React$Component) {
         className: "button",
         onClick: function onClick() {
           return update({
-            rounding: fixed ? transformer$1.digits : transformer$1.fixed
+            rounding: fixed ? DIGITS : FIXED
           });
-        }
+        },
+        disabled: !precision
       }, fixed ? 'decimals' : 'sig. digits'))));
     }
   }]);
@@ -1078,12 +1207,20 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Transform)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
-    _defineProperty(_assertThisInitialized(_this), "update", function (updates) {
+    _defineProperty(_assertThisInitialized(_this), "updateTransform", function (updates) {
       var _this$props = _this.props,
-          column = _this$props.column,
-          transforms = _this$props.transforms,
+          columnKey = _this$props.columnKey,
+          transform = _this$props.transform,
           updateTransform = _this$props.updateTransform;
-      updateTransform(column, Object.assign(transforms, updates));
+      updateTransform(columnKey, Object.assign(transform, updates));
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "updateAnnotations", function (updates) {
+      var _this$props2 = _this.props,
+          columnKey = _this$props2.columnKey,
+          annotations = _this$props2.annotations,
+          updateAnnotations = _this$props2.updateAnnotations;
+      updateAnnotations(columnKey, Object.assign(annotations, updates));
     });
 
     return _this;
@@ -1092,27 +1229,29 @@ function (_React$Component) {
   _createClass(Transform, [{
     key: "render",
     value: function render() {
-      var transforms = this.props.transforms;
-      var operation = transforms.operation,
-          multiplier = transforms.multiplier,
-          rounding = transforms.rounding,
-          precision = transforms.precision,
-          prefix = transforms.prefix,
-          suffix = transforms.suffix;
+      var _this$props3 = this.props,
+          transform = _this$props3.transform,
+          annotations = _this$props3.annotations;
+      var operation = transform.operation,
+          multiplier = transform.multiplier;
+      var rounding = annotations.rounding,
+          precision = annotations.precision,
+          prefix = annotations.prefix,
+          suffix = annotations.suffix;
       return React.createElement("div", {
         className: classnames(styles$8.component)
       }, React.createElement(Multiply, {
         operation: operation,
         multiplier: multiplier,
-        update: this.update
+        update: this.updateTransform
       }), React.createElement(Round, {
         rounding: rounding,
         precision: precision,
-        update: this.update
+        update: this.updateAnnotations
       }), React.createElement(Annotate, {
         prefix: prefix,
         suffix: suffix,
-        update: this.update
+        update: this.updateAnnotations
       }));
     }
   }]);
@@ -1138,12 +1277,80 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Transforms)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
-    _defineProperty(_assertThisInitialized(_this), "updateTransform", function (column, transforms) {
+    _defineProperty(_assertThisInitialized(_this), "isTransformNull", function (transform) {
+      return !transform || !transform.multiplier;
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "isAnnotationNull", function (annotations) {
+      return !annotations || !annotations.prefix && !annotations.suffix && !annotations.precision;
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "transformData", function (transform) {
       var _this$props = _this.props,
-          columnTransforms = _this$props.columnTransforms,
-          sendState = _this$props.sendState;
+          data = _this$props.data,
+          column = _this$props.transformColumn;
+      var newData = data.slice();
+
+      if (_this.isTransformNull(transform)) {
+        newData.forEach(function (d) {
+          delete d[column].transformed;
+        });
+        return newData;
+      }
+
+      var T = new Transformer(_objectSpread({}, transform));
+      newData.forEach(function (d) {
+        d[column].transformed = T.transform(d[column].parsed);
+      });
+      return newData;
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "annotateData", function (annotations, transform) {
+      var column = _this.props.transformColumn;
+
+      var newData = _this.transformData(transform);
+
+      if (_this.isAnnotationNull(annotations)) {
+        newData.forEach(function (d) {
+          delete d[column].annotated;
+        });
+        return newData;
+      }
+
+      var A = new Annotator(_objectSpread({}, annotations));
+      newData.forEach(function (d) {
+        d[column].annotated = A.annotate(d[column].transformed || d[column].parsed);
+      });
+      return newData;
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "updateTransform", function (column, transform) {
+      var _this$props2 = _this.props,
+          columns = _this$props2.columns,
+          sendState = _this$props2.sendState;
+      var annotations = columns[column].annotations;
+      var newColumns = Object.assign({}, columns);
+      newColumns[column].transform = transform; // Delete if null
+
+      if (_this.isTransformNull(transform)) delete newColumns[column].transform;
       sendState({
-        columnTransforms: Object.assign(columnTransforms, _defineProperty({}, column, transforms))
+        columns: newColumns,
+        data: _this.annotateData(annotations, transform)
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "updateAnnotations", function (column, annotations) {
+      var _this$props3 = _this.props,
+          columns = _this$props3.columns,
+          sendState = _this$props3.sendState;
+      var transform = columns[column].transform;
+      var newColumns = Object.assign({}, columns);
+      newColumns[column].annotations = annotations; // Delete if nulls
+
+      if (_this.isAnnotationNull(annotations)) delete newColumns[column].annotations;
+      sendState({
+        columns: newColumns,
+        data: _this.annotateData(annotations, transform)
       });
     });
 
@@ -1153,18 +1360,20 @@ function (_React$Component) {
   _createClass(Transforms, [{
     key: "render",
     value: function render() {
-      var _this$props2 = this.props,
-          typedData = _this$props2.typedData,
-          columnTransforms = _this$props2.columnTransforms,
-          transformColumn = _this$props2.transformColumn;
+      var _this$props4 = this.props,
+          data = _this$props4.data,
+          columns = _this$props4.columns,
+          transformColumn = _this$props4.transformColumn;
       if (!transformColumn) return null;
       return React.createElement("div", {
         className: classnames(styles$7.component)
       }, React.createElement(Transform, {
-        column: transformColumn,
-        data: typedData[transformColumn],
-        transforms: columnTransforms[transformColumn] || {},
-        updateTransform: this.updateTransform
+        columnKey: transformColumn,
+        data: data,
+        transform: columns[transformColumn].transform || {},
+        updateTransform: this.updateTransform,
+        annotations: columns[transformColumn].annotations || {},
+        updateAnnotations: this.updateAnnotations
       }));
     }
   }]);
@@ -1172,7 +1381,7 @@ function (_React$Component) {
   return Transforms;
 }(React.Component);
 
-var styles$9 = {"component":"chartwerk_ui_components___3iiHp7Le4i","spinAround":"chartwerk_ui_components___3QzzPpMtr1"};
+var styles$9 = {"component":"chartwerk_ui_components___tzZL-K6tZP","spinAround":"chartwerk_ui_components___1CkecKiYGn"};
 
 var ReType =
 /*#__PURE__*/
@@ -1196,16 +1405,24 @@ function (_React$Component) {
       var target = _ref.target;
       var newType = target.value;
       var _this$props = _this.props,
-          typedData = _this$props.typedData,
-          stringData = _this$props.stringData,
+          data = _this$props.data,
+          columns = _this$props.columns,
           reTypeColumn = _this$props.reTypeColumn,
-          sendState = _this$props.sendState,
-          columnTypes = _this$props.columnTypes;
+          sendState = _this$props.sendState;
+
+      var _unzipDataCollections = unzipDataCollections(data),
+          _unzipDataCollections2 = _slicedToArray(_unzipDataCollections, 2),
+          stringData = _unzipDataCollections2[0],
+          typedData = _unzipDataCollections2[1];
+
       var reTypedData = explicitlyTypeCollectionByColumn(typedData, stringData, reTypeColumn, newType);
-      columnTypes[reTypeColumn] = newType;
+      columns[reTypeColumn].type = newType; // Always delete numeric format config on a retype
+
+      delete columns[reTypeColumn].transform;
+      delete columns[reTypeColumn].annotations;
       sendState({
-        typedData: reTypedData,
-        columnTypes: columnTypes
+        data: zipDataCollections(stringData, reTypedData),
+        columns: columns
       });
     });
 
@@ -1217,9 +1434,9 @@ function (_React$Component) {
     value: function render() {
       var _this$props2 = this.props,
           reTypeColumn = _this$props2.reTypeColumn,
-          columnTypes = _this$props2.columnTypes;
+          columns = _this$props2.columns;
       if (!reTypeColumn) return null;
-      var currentType = columnTypes[reTypeColumn];
+      var currentType = columns[reTypeColumn].type;
       return React.createElement("div", {
         className: classnames(styles$9.component)
       }, React.createElement("div", {
@@ -1256,23 +1473,23 @@ function (_React$Component) {
   return ReType;
 }(React.Component);
 
-var DataEdit =
+var Edit =
 /*#__PURE__*/
 function (_React$Component) {
-  _inherits(DataEdit, _React$Component);
+  _inherits(Edit, _React$Component);
 
-  function DataEdit() {
+  function Edit() {
     var _getPrototypeOf2;
 
     var _this;
 
-    _classCallCheck(this, DataEdit);
+    _classCallCheck(this, Edit);
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
 
-    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(DataEdit)).call.apply(_getPrototypeOf2, [this].concat(args)));
+    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Edit)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
     _defineProperty(_assertThisInitialized(_this), "state", {
       transformColumn: null,
@@ -1312,7 +1529,7 @@ function (_React$Component) {
     return _this;
   }
 
-  _createClass(DataEdit, [{
+  _createClass(Edit, [{
     key: "render",
     value: function render() {
       var _this$state = this.state,
@@ -1323,7 +1540,7 @@ function (_React$Component) {
         className: classnames(styles$2.component)
       }, React.createElement("div", {
         className: "message"
-      }, React.createElement("p", null, "Here's how we parsed your data. You can edit values in the table.")), React.createElement(JsonTable, _extends({
+      }, React.createElement("p", null, "Here's how we parsed your data. You can edit values in the table.")), React.createElement(Table, _extends({
         transformColumn: transformColumn,
         setTransformColumn: this.setTransformColumn,
         reTypeColumn: reTypeColumn,
@@ -1352,12 +1569,17 @@ function (_React$Component) {
     }
   }]);
 
-  return DataEdit;
+  return Edit;
 }(React.Component);
 
-var styles$a = {"component":"chartwerk_ui_components___L_GTUyOt34"};
+Edit.propTypes = {
+  data: PropTypes.array.isRequired,
+  columns: PropTypes.object.isRequired
+};
 
-var styles$b = {"component":"chartwerk_ui_components___22ellApJCn","spinAround":"chartwerk_ui_components___1fzigblk4E"};
+var styles$a = {"component":"chartwerk_ui_components___2kr6xD-KDP"};
+
+var styles$b = {"component":"chartwerk_ui_components___3sSvXmFKQ8","spinAround":"chartwerk_ui_components___1w_35t5PrZ"};
 
 var Warning = function Warning(props) {
   return React.createElement("div", {
@@ -1367,6 +1589,108 @@ var Warning = function Warning(props) {
   }), "Not enough ", props.prompt.type && React.createElement("span", {
     className: "monospace"
   }, props.prompt.type), " columns left");
+};
+
+var Prompt =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(Prompt, _React$Component);
+
+  function Prompt() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    _classCallCheck(this, Prompt);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Prompt)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    _defineProperty(_assertThisInitialized(_this), "addToMapping", function (column) {
+      var _this$props = _this.props,
+          prompt = _this$props.prompt,
+          map = _this$props.map,
+          updateMap = _this$props.updateMap;
+      var mapping = map[prompt.key];
+
+      if (prompt.members === 1) {
+        updateMap(_defineProperty({}, prompt.key, column));
+      } else {
+        if (mapping) mapping.push(column);
+        updateMap(_defineProperty({}, prompt.key, mapping || [column]));
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "removeFromMapping", function (column) {
+      var _this$props2 = _this.props,
+          prompt = _this$props2.prompt,
+          map = _this$props2.map,
+          updateMap = _this$props2.updateMap;
+      var mapping = map[prompt.key];
+
+      if (prompt.members === 1) {
+        updateMap(_defineProperty({}, prompt.key, null));
+      } else {
+        updateMap(_defineProperty({}, prompt.key, mapping.filter(function (c) {
+          return c !== column;
+        })));
+      }
+    });
+
+    return _this;
+  }
+
+  _createClass(Prompt, [{
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      var _this$props3 = this.props,
+          prompt = _this$props3.prompt,
+          availableColumns = _this$props3.availableColumns,
+          columns = _this$props3.columns,
+          isColumnMemberOfMap = _this$props3.isColumnMemberOfMap,
+          isFull = _this$props3.isFull;
+      var Columns = availableColumns.map(function (column) {
+        var member = isColumnMemberOfMap(column, prompt.key);
+        return React.createElement("div", {
+          key: column,
+          className: classnames('tag', columns[column].type, {
+            member: member,
+            disabled: isFull && !member
+          }),
+          onClick: function onClick() {
+            return member ? _this2.removeFromMapping(column) : _this2.addToMapping(column);
+          }
+        }, column);
+      });
+      return React.createElement("div", {
+        className: classnames(styles$b.component)
+      }, React.createElement("p", null, prompt.prompt), prompt.required && React.createElement("small", null, "( ", prompt.members ? prompt.members : null, " required )", React.createElement(FontAwesomeIcon, {
+        icon: faCheck,
+        hidden: !isFull
+      })), React.createElement("div", {
+        className: "tags"
+      }, Columns.length >= prompt.members ? Columns : React.createElement(Warning, {
+        prompt: prompt
+      })));
+    }
+  }]);
+
+  return Prompt;
+}(React.Component);
+
+Prompt.propTypes = {
+  prompt: PropTypes.object.isRequired,
+  columns: PropTypes.object.isRequired,
+  availableColumns: PropTypes.array.isRequired,
+  isColumnMemberOfMap: PropTypes.func.isRequired,
+  isFull: PropTypes.bool,
+  map: PropTypes.object.isRequired,
+  updateMap: PropTypes.func.isRequired
 };
 
 var Map =
@@ -1387,142 +1711,52 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Map)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
-    _defineProperty(_assertThisInitialized(_this), "addToMap", function (column) {
-      var _this$props = _this.props,
-          prompt = _this$props.prompt,
-          dataMap = _this$props.dataMap,
-          updateDataMap = _this$props.updateDataMap;
-      var map = dataMap[prompt.key];
-
-      if (prompt.members === 1) {
-        updateDataMap(_defineProperty({}, prompt.key, column));
-      } else {
-        if (map) map.push(column);
-        updateDataMap(_defineProperty({}, prompt.key, map || [column]));
-      }
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "removeFromMap", function (column) {
-      var _this$props2 = _this.props,
-          prompt = _this$props2.prompt,
-          dataMap = _this$props2.dataMap,
-          updateDataMap = _this$props2.updateDataMap;
-      var map = dataMap[prompt.key];
-
-      if (prompt.members === 1) {
-        updateDataMap(_defineProperty({}, prompt.key, null));
-      } else {
-        updateDataMap(_defineProperty({}, prompt.key, map.filter(function (c) {
-          return c !== column;
-        })));
-      }
-    });
-
-    return _this;
-  }
-
-  _createClass(Map, [{
-    key: "render",
-    value: function render() {
-      var _this2 = this;
-
-      var _this$props3 = this.props,
-          prompt = _this$props3.prompt,
-          availableColumns = _this$props3.availableColumns,
-          columnTypes = _this$props3.columnTypes,
-          isColumnMemberOfMap = _this$props3.isColumnMemberOfMap,
-          isFull = _this$props3.isFull;
-      var Columns = availableColumns.map(function (column) {
-        var member = isColumnMemberOfMap(column, prompt.key);
-        return React.createElement("div", {
-          key: column,
-          className: classnames('tag', columnTypes[column], {
-            member: member,
-            disabled: isFull && !member
-          }),
-          onClick: function onClick() {
-            return member ? _this2.removeFromMap(column) : _this2.addToMap(column);
-          }
-        }, column);
-      });
-      return React.createElement("div", {
-        className: classnames(styles$b.component)
-      }, React.createElement("p", null, prompt.prompt), prompt.required && React.createElement("small", null, "( ", prompt.members ? prompt.members : null, " required )", React.createElement(FontAwesomeIcon, {
-        icon: faCheck,
-        hidden: !isFull
-      })), React.createElement("div", {
-        className: "tags"
-      }, Columns.length >= prompt.members ? Columns : React.createElement(Warning, {
-        prompt: prompt
-      })));
-    }
-  }]);
-
-  return Map;
-}(React.Component);
-
-var DataMap =
-/*#__PURE__*/
-function (_React$Component) {
-  _inherits(DataMap, _React$Component);
-
-  function DataMap() {
-    var _getPrototypeOf2;
-
-    var _this;
-
-    _classCallCheck(this, DataMap);
-
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(DataMap)).call.apply(_getPrototypeOf2, [this].concat(args)));
-
     _defineProperty(_assertThisInitialized(_this), "isColumnAvailable", function (column) {
-      var dataMap = _this.props.dataMap;
+      var map = _this.props.map;
       var available = true;
-      Object.keys(dataMap).forEach(function (key) {
-        var map = dataMap[key];
-        if (!dataMap[key]) return;
-        if (map === column) available = false;
-        if (Array.isArray(map) && map.includes(column)) available = false;
+      Object.keys(map).forEach(function (key) {
+        var mapping = map[key];
+        if (!mapping) return;
+        if (mapping === column) available = false;
+        if (Array.isArray(mapping) && mapping.includes(column)) available = false;
       });
       return available;
     });
 
     _defineProperty(_assertThisInitialized(_this), "isColumnMemberOfMap", function (column, key) {
-      var dataMap = _this.props.dataMap;
-      if (!dataMap[key]) return false;
-      var map = dataMap[key];
-      if (map === column || map.includes(column)) return true;
+      var map = _this.props.map;
+      var mapping = map[key];
+      if (!mapping) return false;
+      if (mapping === column || mapping.includes(column)) return true;
       return false;
     });
 
     _defineProperty(_assertThisInitialized(_this), "isMapFull", function (key) {
       var _this$props = _this.props,
-          dataMap = _this$props.dataMap,
+          map = _this$props.map,
           prompts = _this$props.prompts;
-      if (!dataMap[key]) return false;
+      var mapping = map[key];
+      if (!mapping) return false;
       var prompt = prompts.filter(function (p) {
         return p.key === key;
       })[0];
       if (prompt.members === 0 || !prompt.members) return false;
-      if (prompt.members === 1 && dataMap[key]) return true;
-      if (prompt.members === dataMap[key].length) return true;
+      if (prompt.members === 1 && mapping) return true;
+      if (prompt.members === mapping.length) return true;
     });
 
     _defineProperty(_assertThisInitialized(_this), "isRequiredMapSatisfied", function (key) {
       var _this$props2 = _this.props,
-          dataMap = _this$props2.dataMap,
+          map = _this$props2.map,
           prompts = _this$props2.prompts;
-      if (!dataMap[key]) return false;
+      var mapping = map[key];
+      if (!mapping) return false;
       var prompt = prompts.filter(function (p) {
         return p.key === key;
       })[0];
-      if ((prompt.members === 0 || !prompt.members) && dataMap[key].length > 0) return true;
-      if (prompt.members === 1 && dataMap[key]) return true;
-      if (prompt.members === dataMap[key].length) return true;
+      if ((prompt.members === 0 || !prompt.members) && mapping.length > 0) return true;
+      if (prompt.members === 1 && mapping) return true;
+      if (prompt.members === mapping.length) return true;
       return false;
     });
 
@@ -1537,11 +1771,12 @@ function (_React$Component) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "getColumnsAvailableToPrompt", function (prompt) {
-      var _this$props3 = _this.props,
-          columns = _this$props3.columns,
-          columnTypes = _this$props3.columnTypes;
-      return columns.filter(function (column) {
-        var columnType = columnTypes[column];
+      var columns = _this.props.columns;
+      var orderedColumns = Object.keys(columns).sort(function (a, b) {
+        return columns[a].order - columns[b].order;
+      });
+      return orderedColumns.filter(function (column) {
+        var columnType = columns[column].type;
         if (prompt.type && columnType !== prompt.type) return false;
         if (!_this.isColumnAvailable(column) && !_this.isColumnMemberOfMap(column, prompt.key)) return false;
         return true;
@@ -1551,34 +1786,33 @@ function (_React$Component) {
     return _this;
   }
 
-  _createClass(DataMap, [{
+  _createClass(Map, [{
     key: "render",
     value: function render() {
       var _this2 = this;
 
-      var _this$props4 = this.props,
-          prompts = _this$props4.prompts,
-          columnTypes = _this$props4.columnTypes,
-          dataMap = _this$props4.dataMap,
-          updateDataMap = _this$props4.updateDataMap,
-          sendState = _this$props4.sendState,
-          updateContext = _this$props4.updateContext;
-      var Maps = prompts.map(function (prompt) {
-        return React.createElement(Map, {
+      var _this$props3 = this.props,
+          prompts = _this$props3.prompts,
+          columns = _this$props3.columns,
+          map = _this$props3.map,
+          updateMap = _this$props3.updateMap,
+          sendState = _this$props3.sendState,
+          updateContext = _this$props3.updateContext;
+      var Prompts = prompts.map(function (prompt) {
+        return React.createElement(Prompt, {
           key: prompt.key,
           prompt: prompt,
-          columnTypes: columnTypes,
+          columns: columns,
           availableColumns: _this2.getColumnsAvailableToPrompt(prompt),
           isColumnMemberOfMap: _this2.isColumnMemberOfMap,
           isFull: _this2.isMapFull(prompt.key),
-          map: dataMap[prompt.key],
-          dataMap: dataMap,
-          updateDataMap: updateDataMap
+          map: map,
+          updateMap: updateMap
         });
       });
       return React.createElement("div", {
         className: classnames(styles$a.component)
-      }, React.createElement("div", null, Maps), React.createElement("div", {
+      }, React.createElement("div", null, Prompts), React.createElement("div", {
         className: "level nav"
       }, React.createElement("button", {
         className: "button",
@@ -1591,7 +1825,7 @@ function (_React$Component) {
         className: "button",
         onClick: function onClick() {
           sendState({
-            view: END
+            view: PREVIEW
           });
           updateContext();
         },
@@ -1600,15 +1834,25 @@ function (_React$Component) {
     }
   }]);
 
-  return DataMap;
+  return Map;
 }(React.Component);
 
-var styles$c = {"component":"chartwerk_ui_components___23fZebKi6n"};
+Map.propTypes = {
+  map: PropTypes.object.isRequired,
+  updateMap: PropTypes.func.isRequired,
+  prompts: PropTypes.array.isRequired,
+  columns: PropTypes.object.isRequired,
+  sendState: PropTypes.func.isRequired,
+  updateContext: PropTypes.func.isRequired
+};
 
-var styles$d = {"component":"chartwerk_ui_components___3xdpn5KgWX"};
+var styles$c = {"component":"chartwerk_ui_components___1sddTG5Ptd"};
 
-var Preview = function Preview(props) {
-  var data = props.data;
+var styles$d = {"component":"chartwerk_ui_components___yo7UjV4T3z","spinAround":"chartwerk_ui_components___17i8pG_5aB"};
+
+var Table$1 = function Table(props) {
+  var data = props.data,
+      columns = props.columns;
 
   if (!data) {
     return null;
@@ -1620,51 +1864,55 @@ var Preview = function Preview(props) {
     return null;
   }
 
-  var headers = keys(previewRows[0]);
+  var headers = keys(previewRows[0]).sort(function (a, b) {
+    return columns[a].order - columns[b].order;
+  });
   var truncatedRowCount = data.length - previewRows.length;
-  console.log('headers', headers);
-  console.log('previewRows', previewRows);
-  console.log('truncatedRowCount', truncatedRowCount);
   return React.createElement("div", {
-    className: styles$d.component + ' preview-container'
+    className: classnames(styles$d.component, 'preview-container')
   }, React.createElement("table", {
-    className: "table table-striped"
+    className: "table preview"
   }, React.createElement("thead", null, React.createElement("tr", null, headers.map(function (d) {
     return React.createElement("th", {
       key: d
     }, d);
-  }))), React.createElement("tbody", null, previewRows.map(function (tr) {
-    return React.createElement("tr", null, keys(tr).map(function (k) {
-      return React.createElement("td", null, tr[k]);
+  }))), React.createElement("tbody", null, previewRows.map(function (tr, i) {
+    return React.createElement("tr", {
+      key: i
+    }, headers.map(function (k, i) {
+      return React.createElement("td", {
+        className: columns[k].type,
+        key: i
+      }, tr[k].raw);
     }));
-  }), React.createElement("tr", null, React.createElement("td", {
-    colSpan: headers.length
-  }, "And ", truncatedRowCount, " similiar rows.")))));
+  }))), React.createElement("small", null, "... and ", truncatedRowCount, " similiar rows."));
 };
 
-var Finale =
+var Preview =
 /*#__PURE__*/
 function (_React$Component) {
-  _inherits(Finale, _React$Component);
+  _inherits(Preview, _React$Component);
 
-  function Finale() {
-    _classCallCheck(this, Finale);
+  function Preview() {
+    _classCallCheck(this, Preview);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Finale).apply(this, arguments));
+    return _possibleConstructorReturn(this, _getPrototypeOf(Preview).apply(this, arguments));
   }
 
-  _createClass(Finale, [{
+  _createClass(Preview, [{
     key: "render",
     value: function render() {
       var _this$props = this.props,
           sendState = _this$props.sendState,
-          stringData = _this$props.stringData;
+          data = _this$props.data,
+          columns = _this$props.columns;
       return React.createElement("div", {
         className: classnames(styles$c.component)
       }, React.createElement("div", {
         className: "level nav"
-      }, React.createElement(Preview, {
-        data: stringData
+      }, React.createElement(Table$1, {
+        data: data,
+        columns: columns
       }), React.createElement("button", {
         className: "button",
         onClick: function onClick() {
@@ -1672,108 +1920,124 @@ function (_React$Component) {
             view: EDIT
           });
         }
-      }, "Re-edit data")));
+      }, "Edit data"), React.createElement("button", {
+        className: "button",
+        onClick: function onClick() {
+          return sendState({
+            view: INPUT
+          });
+        }
+      }, "New data")));
     }
   }]);
 
-  return Finale;
+  return Preview;
 }(React.Component);
+
+Preview.propTypes = {
+  data: PropTypes.array.isRequired,
+  columns: PropTypes.object.isRequired,
+  sendState: PropTypes.func.isRequired
+};
+
+/**
+ * {
+ *    view: INPUT,
+ *    blob: '',
+ *    data: [
+ *      {
+ *        columnName: {
+ *          raw: '1.2',
+ *          parsed: 1.2,
+ *          transformed: 120,
+ *          annotated: '120%',
+ *        }
+ *      }
+ *    ],
+ *    columns: {
+ *      columnName: {
+ *        order: 0,
+ *        type: 'number',
+ *        transform: {},
+ *        annotations: {},
+ *      }
+ *    }
+ *    map: {},
+ * }
+ */
 
 var Data =
 /*#__PURE__*/
 function (_React$Component) {
   _inherits(Data, _React$Component);
 
-  function Data() {
-    var _getPrototypeOf2;
-
+  function Data(props) {
     var _this;
 
     _classCallCheck(this, Data);
 
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Data)).call.apply(_getPrototypeOf2, [this].concat(args)));
-
-    _defineProperty(_assertThisInitialized(_this), "state", {
-      view: INPUT,
-      rawData: '',
-      stringData: undefined,
-      typedData: undefined,
-      columnTypes: {},
-      columnTransforms: {},
-      dataMap: {}
-    });
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Data).call(this, props));
 
     _defineProperty(_assertThisInitialized(_this), "sendState", function (newState) {
       return _this.setState(newState);
     });
 
-    _defineProperty(_assertThisInitialized(_this), "updateDataMap", function (newMap) {
+    _defineProperty(_assertThisInitialized(_this), "updateMap", function (newMap) {
       return _this.setState(function (state) {
         return {
-          dataMap: Object.assign(state.dataMap, newMap)
+          map: Object.assign(state.map, newMap)
         };
       });
     });
 
     _defineProperty(_assertThisInitialized(_this), "updateContext", function () {
       var _this$state = _this.state,
-          data = _this$state.typedData,
-          columnTypes = _this$state.columnTypes,
-          columnTransforms = _this$state.columnTransforms,
-          dataMap = _this$state.dataMap;
-      var transformers = {};
-      Object.keys(columnTransforms).forEach(function (column) {
-        transformers[column] = new Transformer(columnTransforms[column]);
-      });
+          blob = _this$state.blob,
+          data = _this$state.data,
+          columns = _this$state.columns,
+          map = _this$state.map;
 
       _this.props.updateData({
+        blob: blob,
         data: data,
-        dataMap: dataMap,
-        columnTypes: columnTypes,
-        transformers: transformers
+        columns: columns,
+        map: map
       });
     });
 
+    _this.state = Object.assign({}, props.data);
     return _this;
   }
 
   _createClass(Data, [{
     key: "render",
     value: function render() {
-      var dataMapPrompts = this.props.dataMapPrompts;
+      var mapPrompts = this.props.mapPrompts;
       var _this$state2 = this.state,
           view = _this$state2.view,
-          typedData = _this$state2.typedData,
-          stringData = _this$state2.stringData,
-          columnTypes = _this$state2.columnTypes,
-          rawData = _this$state2.rawData,
-          columnTransforms = _this$state2.columnTransforms,
-          dataMap = _this$state2.dataMap;
+          blob = _this$state2.blob,
+          data = _this$state2.data,
+          columns = _this$state2.columns,
+          map = _this$state2.map;
       return React.createElement("div", {
         className: classnames(styles.component)
-      }, view === INPUT && React.createElement(TextInput, {
-        defaultValue: rawData,
+      }, view === INPUT && React.createElement(Input, {
+        defaultValue: blob,
         sendState: this.sendState
-      }), view === EDIT && React.createElement(DataEdit, {
-        typedData: typedData,
-        stringData: stringData,
-        columnTypes: columnTypes,
-        columnTransforms: columnTransforms,
+      }), view === EDIT && React.createElement(Edit, {
+        data: data,
+        columns: columns,
         sendState: this.sendState
-      }), view === MAP && React.createElement(DataMap, {
-        prompts: dataMapPrompts,
-        columns: typedData.columns,
-        columnTypes: columnTypes,
-        dataMap: dataMap,
-        updateDataMap: this.updateDataMap,
+      }), view === MAP && React.createElement(Map, {
+        map: map,
+        updateMap: this.updateMap,
+        prompts: mapPrompts,
+        columns: columns,
         sendState: this.sendState,
         updateContext: this.updateContext
-      }), view === END && React.createElement(Finale, {
-        stringData: stringData,
+      }), view === PREVIEW && React.createElement(Preview, {
+        data: data,
+        columns: columns,
         sendState: this.sendState
       }));
     }
@@ -1782,6 +2046,31 @@ function (_React$Component) {
   return Data;
 }(React.Component);
 
-Data.defaultProps = {};
+Data.defaultProps = {
+  data: {
+    view: INPUT,
+    blob: '',
+    data: [],
+    columns: {},
+    map: {}
+  }
+};
+Data.propTypes = {
+  data: PropTypes.shape({
+    view: PropTypes.string.isRequried,
+    blob: PropTypes.string.isRequired,
+    data: PropTypes.array.isRequired,
+    columns: PropTypes.object.isRequired,
+    map: PropTypes.objectOf(PropTypes.string).isRequired
+  }),
+  updateData: PropTypes.func.isRequired,
+  mapPrompts: PropTypes.arrayOf(PropTypes.shape({
+    key: PropTypes.string.isRequired,
+    prompt: PropTypes.string.isRequired,
+    members: PropTypes.number.isRequired,
+    type: PropTypes.oneOf(['date', 'number', 'string']),
+    required: PropTypes.bool
+  }))
+};
 
 export default Data;
