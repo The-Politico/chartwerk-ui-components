@@ -2822,6 +2822,8 @@
 
 .chartwerk_ui_components___Hsz0o0s8Dh .level.nav {
   margin-top: 15px; }
+  .chartwerk_ui_components___Hsz0o0s8Dh .level.nav button {
+    font-size: 16px; }
 
 .chartwerk_ui_components___Hsz0o0s8Dh svg {
   margin-left: 5px;
@@ -2831,10 +2833,13 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600");
 .chartwerk_ui_components___2X8B4iz3dp {
   color: #333; }
+  .chartwerk_ui_components___2X8B4iz3dp p {
+    line-height: 22px; }
   .chartwerk_ui_components___2X8B4iz3dp .level.nav {
     margin-top: 15px; }
     .chartwerk_ui_components___2X8B4iz3dp .level.nav button {
-      margin-right: 5px; }
+      margin-right: 5px;
+      font-size: 16px; }
   .chartwerk_ui_components___2X8B4iz3dp div.level.tags {
     margin-bottom: 5px; }
 
@@ -5150,7 +5155,8 @@
 .chartwerk_ui_components___2kr6xD-KDP .level.nav {
   margin-top: 35px; }
   .chartwerk_ui_components___2kr6xD-KDP .level.nav button {
-    margin-right: 5px; }
+    margin-right: 5px;
+    font-size: 16px; }
     .chartwerk_ui_components___2kr6xD-KDP .level.nav button[disabled] {
       opacity: 0.5;
       pointer-events: none; }
@@ -5358,7 +5364,7 @@
 .chartwerk_ui_components___1sddTG5Ptd .level.nav {
   margin-top: 30px; }
   .chartwerk_ui_components___1sddTG5Ptd .level.nav button {
-    font-size: 14px;
+    font-size: 16px;
     margin-right: 5px; }
     .chartwerk_ui_components___1sddTG5Ptd .level.nav button[disabled] {
       opacity: 0.5;
@@ -5366,7 +5372,8 @@
 
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600");
 .chartwerk_ui_components___yo7UjV4T3z {
-  margin-bottom: 25px; }
+  margin-bottom: 25px;
+  position: relative; }
 
 @keyframes chartwerk_ui_components___17i8pG_5aB {
   from {
@@ -5505,13 +5512,22 @@
     font-family: 'Open Sans', sans-serif; }
   .chartwerk_ui_components___yo7UjV4T3z table.table.preview td {
     font-family: monospace; }
+  .chartwerk_ui_components___yo7UjV4T3z div.table-footer {
+    position: absolute;
+    width: calc(100% - 2px);
+    bottom: 25px;
+    left: 1px;
+    height: 15px;
+    background-color: #eee;
+    border-top: 1px solid #ccc; }
   .chartwerk_ui_components___yo7UjV4T3z table.table.preview {
     max-width: 100%;
     overflow-x: scroll;
     display: block;
     border-collapse: collapse;
     margin-bottom: 0px;
-    padding-bottom: 15px; }
+    padding-bottom: 15px;
+    border: 1px solid #ccc; }
     .chartwerk_ui_components___yo7UjV4T3z table.table.preview td.date {
       color: #2e7d32; }
     .chartwerk_ui_components___yo7UjV4T3z table.table.preview td.number {
@@ -5519,9 +5535,36 @@
     .chartwerk_ui_components___yo7UjV4T3z table.table.preview td.string {
       color: #333; }
     .chartwerk_ui_components___yo7UjV4T3z table.table.preview th {
+      font-weight: normal;
+      font-size: 13px; }
+    .chartwerk_ui_components___yo7UjV4T3z table.table.preview td, .chartwerk_ui_components___yo7UjV4T3z table.table.preview th {
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      width: 150px;
       max-width: 150px; }
+    .chartwerk_ui_components___yo7UjV4T3z table.table.preview td, .chartwerk_ui_components___yo7UjV4T3z table.table.preview th {
+      width: 150px;
+      max-width: 150px;
+      padding: 5px 7px; }
+      .chartwerk_ui_components___yo7UjV4T3z table.table.preview td.index, .chartwerk_ui_components___yo7UjV4T3z table.table.preview th.index {
+        width: 35px; }
+    .chartwerk_ui_components___yo7UjV4T3z table.table.preview td {
+      height: 22px;
+      line-height: 22px;
+      border-right: 1px solid #ccc; }
+    .chartwerk_ui_components___yo7UjV4T3z table.table.preview td.index {
+      background-color: #eee;
+      color: #888;
+      height: 22px;
+      line-height: 22px;
+      border-top: 1px solid #ddd;
+      border-right: 1px solid #ddd;
+      padding-left: 2px;
+      text-align: center !important;
+      min-width: 35px;
+      max-width: 35px; }
   .chartwerk_ui_components___yo7UjV4T3z small {
-    color: #999; }
+    color: #999;
+    display: block;
+    margin-top: 10px; }

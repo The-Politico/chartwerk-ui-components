@@ -32,7 +32,7 @@ class EditableCell extends React.PureComponent {
   }
 
   formatDisplayCell = (datum) => {
-    if (!datum) return '';
+    if (!datum.parsed) return '';
     const { type } = this.props.column;
     if (type === 'number') {
       return (

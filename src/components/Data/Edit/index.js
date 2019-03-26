@@ -40,7 +40,7 @@ class Edit extends React.Component {
     return (
       <div className={classnames(styles.component)}>
         <div className='message'>
-          <p>Here's how we parsed your data. You can edit values in the table.</p>
+          <p>Here's how we parsed your data. You can edit values in the table and format or re-type columns by clicking a header.</p>
         </div>
         <Table
           transformColumn={transformColumn}
@@ -61,7 +61,7 @@ class Edit extends React.Component {
           <button
             className='button'
             onClick={() => sendState({ view: INPUT })}
-          >Back</button>
+          >New data</button>
           <button
             className='button'
             onClick={() => sendState({ view: MAP })}

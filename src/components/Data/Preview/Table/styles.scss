@@ -5,6 +5,17 @@
   @import "../../../../theme/_fonts.scss";
 
   margin-bottom: 25px;
+  position: relative;
+
+  div.table-footer{
+    position: absolute;
+    width: calc(100% - 2px);
+    bottom: 25px;
+    left: 1px;
+    height: 15px;
+    background-color: #eee;
+    border-top: 1px solid #ccc;
+  }
 
   table.table.preview{
     max-width: 100%;
@@ -13,22 +24,57 @@
     border-collapse: collapse;
     margin-bottom: 0px;
     padding-bottom: 15px;
+    border: 1px solid #ccc;
 
     td {
         @include color-from-format;
         @extend %monospace;
     }
-
     th{
+      font-weight: normal;
+      font-size: 13px;
+    }
+
+    td, th{
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      width: 150px;
       max-width: 150px;
     }
+
+    td, th{
+      width: 150px;
+      max-width: 150px;
+      padding: 5px 7px;
+      &.index{
+        width: 35px;
+      }
+    }
+    td{
+      height: 22px;
+      line-height: 22px;
+      border-right: 1px solid #ccc;
+    }
+    td.index{
+      background-color: #eee;
+      color: #888;
+      height: 22px;
+      line-height: 22px;
+      border-top: 1px solid #ddd;
+      border-right: 1px solid #ddd;
+      padding-left: 2px;
+      text-align: center !important;
+      min-width: 35px;
+      max-width: 35px;
+    }
   }
+  
 
   small{
     @extend %sans;
     color: #999;
+    display: block;
+    margin-top: 10px;
   }
 }

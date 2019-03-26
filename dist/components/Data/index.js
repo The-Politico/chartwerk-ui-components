@@ -183,6 +183,25 @@ var EDIT = 'edit';
 var MAP = 'map';
 var PREVIEW = 'preview';
 
+/**
+ * A helper to parse dates back from their stringified representation in JSON.
+ * Used to transform the data prop that seeds state when first initializing
+ * the Data component.
+ * @param {Object} data The props that seeds Data state.
+ */
+var parseDates = function parseDates(dataState) {
+  var columns = dataState.columns;
+  var dateColumns = Object.keys(columns).filter(function (c) {
+    return columns[c].type === 'date';
+  });
+  dataState.data.forEach(function (d) {
+    dateColumns.forEach(function (c) {
+      d[c].parsed = new Date(d[c].parsed);
+    });
+  });
+  return dataState;
+};
+
 var styles$1 = {"component":"chartwerk_ui_components___Hsz0o0s8Dh"};
 
 // Regexes used to type and split string data input by a user
@@ -669,7 +688,7 @@ function (_React$PureComponent) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "formatDisplayCell", function (datum) {
-      if (!datum) return '';
+      if (!datum.parsed) return '';
       var type = _this.props.column.type;
 
       if (type === 'number') {
@@ -1540,7 +1559,7 @@ function (_React$Component) {
         className: classnames(styles$2.component)
       }, React.createElement("div", {
         className: "message"
-      }, React.createElement("p", null, "Here's how we parsed your data. You can edit values in the table.")), React.createElement(Table, _extends({
+      }, React.createElement("p", null, "Here's how we parsed your data. You can edit values in the table and format or re-type columns by clicking a header.")), React.createElement(Table, _extends({
         transformColumn: transformColumn,
         setTransformColumn: this.setTransformColumn,
         reTypeColumn: reTypeColumn,
@@ -1558,7 +1577,7 @@ function (_React$Component) {
             view: INPUT
           });
         }
-      }, "Back"), React.createElement("button", {
+      }, "New data"), React.createElement("button", {
         className: "button",
         onClick: function onClick() {
           return sendState({
@@ -1821,7 +1840,7 @@ function (_React$Component) {
             view: EDIT
           });
         }
-      }, "Back"), React.createElement("button", {
+      }, "Edit data"), React.createElement("button", {
         className: "button",
         onClick: function onClick() {
           sendState({
@@ -1850,43 +1869,91 @@ var styles$c = {"component":"chartwerk_ui_components___1sddTG5Ptd"};
 
 var styles$d = {"component":"chartwerk_ui_components___yo7UjV4T3z","spinAround":"chartwerk_ui_components___17i8pG_5aB"};
 
-var Table$1 = function Table(props) {
-  var data = props.data,
-      columns = props.columns;
+var Table$1 =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(Table, _React$Component);
 
-  if (!data) {
-    return null;
+  function Table() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    _classCallCheck(this, Table);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Table)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    _defineProperty(_assertThisInitialized(_this), "formatDisplayCell", function (columnType, datum) {
+      if (!datum) return '';
+
+      if (columnType === 'number') {
+        return datum.annotated || datum.transformed || datum.parsed;
+      }
+      if (columnType === 'date') return datum.parsed.toLocaleDateString('en-US', {
+        timeZone: 'UTC'
+      });
+      return datum.parsed;
+    });
+
+    return _this;
   }
 
-  var previewRows = data.slice(0, 5);
+  _createClass(Table, [{
+    key: "render",
+    value: function render() {
+      var _this2 = this;
 
-  if (previewRows.length === 0) {
-    return null;
-  }
+      var _this$props = this.props,
+          data = _this$props.data,
+          columns = _this$props.columns;
 
-  var headers = keys(previewRows[0]).sort(function (a, b) {
-    return columns[a].order - columns[b].order;
-  });
-  var truncatedRowCount = data.length - previewRows.length;
-  return React.createElement("div", {
-    className: classnames(styles$d.component, 'preview-container')
-  }, React.createElement("table", {
-    className: "table preview"
-  }, React.createElement("thead", null, React.createElement("tr", null, headers.map(function (d) {
-    return React.createElement("th", {
-      key: d
-    }, d);
-  }))), React.createElement("tbody", null, previewRows.map(function (tr, i) {
-    return React.createElement("tr", {
-      key: i
-    }, headers.map(function (k, i) {
-      return React.createElement("td", {
-        className: columns[k].type,
-        key: i
-      }, tr[k].raw);
-    }));
-  }))), React.createElement("small", null, "... and ", truncatedRowCount, " similiar rows."));
-};
+      if (!data) {
+        return null;
+      }
+
+      var previewRows = data.slice(0, 5);
+
+      if (previewRows.length === 0) {
+        return null;
+      }
+
+      var headers = keys(previewRows[0]).sort(function (a, b) {
+        return columns[a].order - columns[b].order;
+      });
+      var truncatedRowCount = data.length - previewRows.length;
+      return React.createElement("div", {
+        className: classnames(styles$d.component, 'preview-container')
+      }, React.createElement("div", {
+        className: "table-footer"
+      }), React.createElement("table", {
+        className: "table preview"
+      }, React.createElement("thead", null, React.createElement("tr", null, React.createElement("th", {
+        className: "cell index"
+      }), headers.map(function (d) {
+        return React.createElement("th", {
+          key: d
+        }, d);
+      }))), React.createElement("tbody", null, previewRows.map(function (row, i) {
+        return React.createElement("tr", {
+          key: i
+        }, React.createElement("td", {
+          className: "cell index"
+        }, i + 1), headers.map(function (column, i) {
+          return React.createElement("td", {
+            className: classnames('cell', columns[column].type),
+            key: i
+          }, _this2.formatDisplayCell(columns[column].type, row[column]));
+        }));
+      }))), React.createElement("small", null, "... and ", truncatedRowCount, " similiar rows."));
+    }
+  }]);
+
+  return Table;
+}(React.Component);
 
 var Preview =
 /*#__PURE__*/
@@ -1940,32 +2007,6 @@ Preview.propTypes = {
   sendState: PropTypes.func.isRequired
 };
 
-/**
- * {
- *    view: INPUT,
- *    blob: '',
- *    data: [
- *      {
- *        columnName: {
- *          raw: '1.2',
- *          parsed: 1.2,
- *          transformed: 120,
- *          annotated: '120%',
- *        }
- *      }
- *    ],
- *    columns: {
- *      columnName: {
- *        order: 0,
- *        type: 'number',
- *        transform: {},
- *        annotations: {},
- *      }
- *    }
- *    map: {},
- * }
- */
-
 var Data =
 /*#__PURE__*/
 function (_React$Component) {
@@ -2005,7 +2046,10 @@ function (_React$Component) {
       });
     });
 
-    _this.state = Object.assign({}, props.data);
+    var view = props.data.data.length > 0 ? PREVIEW : INPUT;
+    _this.state = Object.assign({
+      view: view
+    }, parseDates(props.data));
     return _this;
   }
 
@@ -2061,7 +2105,7 @@ Data.propTypes = {
     blob: PropTypes.string.isRequired,
     data: PropTypes.array.isRequired,
     columns: PropTypes.object.isRequired,
-    map: PropTypes.objectOf(PropTypes.string).isRequired
+    map: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.string, PropTypes.array])).isRequired
   }),
   updateData: PropTypes.func.isRequired,
   mapPrompts: PropTypes.arrayOf(PropTypes.shape({

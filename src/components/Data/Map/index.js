@@ -112,7 +112,7 @@ class Map extends React.Component {
           <button
             className='button'
             onClick={() => sendState({ view: EDIT })}
-          >Back</button>
+          >Edit data</button>
           <button
             className='button'
             onClick={() => {

@@ -4,6 +4,8 @@ import Data from './index';
 import Page from 'Common/Page/';
 import CodeBlock from 'Common/CodeBlock';
 
+import exampleData from './example.json';
+
 const prompts = [{
   key: 'base',
   prompt: 'Which column has dates in it?',
@@ -25,6 +27,7 @@ const prompts = [{
 const App = (props) => (
   <Page title='Data'>
     <Data
+      data={exampleData}
       updateData={(data) => {
         console.log('Here\'s your data!', data);
       }}

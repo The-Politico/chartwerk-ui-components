@@ -5,41 +5,18 @@ import styles from './styles.scss';
 
 import { INPUT, EDIT, MAP, PREVIEW } from './constants/views';
 
+import parseDates from './utils/parseDates';
+
 import Input from './Input';
 import Edit from './Edit';
 import Map from './Map';
 import Preview from './Preview';
 
-/**
- * {
- *    view: INPUT,
- *    blob: '',
- *    data: [
- *      {
- *        columnName: {
- *          raw: '1.2',
- *          parsed: 1.2,
- *          transformed: 120,
- *          annotated: '120%',
- *        }
- *      }
- *    ],
- *    columns: {
- *      columnName: {
- *        order: 0,
- *        type: 'number',
- *        transform: {},
- *        annotations: {},
- *      }
- *    }
- *    map: {},
- * }
- */
-
 class Data extends React.Component {
   constructor(props) {
     super(props);
-    this.state = Object.assign({}, props.data);
+    const view = props.data.data.length > 0 ? PREVIEW : INPUT;
+    this.state = Object.assign({ view }, parseDates(props.data));
   }
 
   sendState = (newState) => this.setState(newState)
@@ -110,7 +87,7 @@ Data.propTypes = {
     blob: PropTypes.string.isRequired,
     data: PropTypes.array.isRequired,
     columns: PropTypes.object.isRequired,
-    map: PropTypes.objectOf(PropTypes.string).isRequired,
+    map: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.string, PropTypes.array])).isRequired,
   }),
   updateData: PropTypes.func.isRequired,
   mapPrompts: PropTypes.arrayOf(PropTypes.shape({

@@ -1,0 +1,1178 @@
+{
+  "blob": "MY dates\tnumbers_a_long_title_that_goes on_forever\tthe longest title of some strings\tmoreString\t currency \tThese are years\tpercents\tmoreDates\tlastStrings\n1/1/19\t2.022\tasd\tsafasfa\t $4,214.12 \t1984\t20%\t2020-02-01\tfasfasfda\n1/2/19\t4\tdsa\tsafasfa\t $4,213.00 \t1984\t30%\t2020-02-02\tasd2314\n2/2/19\t5\tasd\tsafasfa\t $4,212.00 \t1985\t40%\t2020-02-03\tfasfasfda\n2/3/19\t6\tasd\tsafasfa\t $4,211.00 \t1985\t40%\t2020-02-04\tfasfasfda\n2/4/19\t7\tasd\tsafasfa\t $4,210.09 \t1986\t60%\t2020-02-05\tfasfasfda\n2/5/19\t8\tasd\tsafasfa\t $4,209.00 \t1986\t65%\t2020-02-06\tfasfasfda\n2/6/19\t9\tasd\tsafasfa\t $4,208.00 \t1987\t74%\t2020-02-07\tfasfasfda\n2/7/19\t10\tasd\tsafasfa\t $4,207.00 \t1987\t83%\t2020-02-08\tfasfasfda\n2/8/19\t11\tasd\tsafasfa\t $4,206.00 \t1988\t92%\t2020-02-09\tfasfasfda\n2/9/19\t12\tasd\tsafasfa\t $4,205.00 \t1988\t101%\t2020-02-10\tfasfasfda\n2/10/19\t13\tasd\tsafasfa\t $4,204.00 \t1989\t110%\t2020-02-11\tfasfasfda\n2/11/19\t14\tasd\tsafasfa\t $4,203.00 \t1989\t119%\t2020-02-12\tfasfasfda\n2/12/19\t15\tasd\tsafasfa\t $4,202.00 \t1990\t128%\t2020-02-13\tfasfasfda\n2/13/19\t16\tasd\tsafasfa\t $4,201.00 \t1990\t137%\t2020-02-14\tfasfasfda\n2/14/19\t17\tasd\tsafasfa\t $4,200.00 \t1991\t146%\t2020-02-15\tasd2314\n2/15/19\t18\tasd\tsafasfa\t $4,199.00 \t1991\t155%\t2020-02-16\tfasfasfda\n2/16/19\t19\tasd\tsafasfa\t $4,198.00 \t1992\t164%\t2020-02-17\tfasfasfda\n2/17/19\t20\tasd\tsafasfa\t $4,197.00 \t1992\t173%\t2020-02-18\tfasfasfda\n2/18/19\t21\tasd\tsafasfa\t $4,196.00 \t1993\t182%\t2020-02-19\tdsas\n2/19/19\t22\tasd\tsafasfa\t $4,195.00 \t1993\t191%\t2020-02-20\tfasfasfda\n2/20/19\t23\tasd\tsafasfa\t $4,194.00 \t1994\t200%\t2020-02-21\tfasfasfda\n2/21/19\t24\tasd\tsafasfa\t $4,193.00 \t1994\t209%\t2020-02-22\tfasfasfda\n2/22/19\t25\tasd\tsafasfa\t $4,192.00 \t1995\t218%\t2020-02-23\tfasfasfda\n2/23/19\t26\tasd\tsafasfa\t $4,191.00 \t1995\t227%\t2020-02-24\tfasfasfda\n2/24/19\t27\tasd\tsafasfa\t $4,190.00 \t1996\t236%\t2020-02-25\tfasfasfda\n2/25/19\t28\tasd\tsafasfa\t $4,189.00 \t1996\t245%\t2020-02-26\tfasfasfda\n2/26/19\t29\tasd\tsafasfa\t $4,188.00 \t1997\t254%\t2020-02-27\tfasfasfda\n2/27/19\t30\tasd\tsafasfa\t $4,187.00 \t1997\t263%\t2020-02-28\tfasfasfda",
+  "data": [
+    {
+      "MY dates": {
+        "raw": "1/1/19",
+        "parsed": "2019-01-01T05:00:00.000Z"
+      },
+      "numbers_a_long_title_that_goes on_forever": {
+        "raw": "2.022",
+        "parsed": 2.022
+      },
+      "the longest title of some strings": {
+        "raw": "asd",
+        "parsed": "asd"
+      },
+      "moreString": {
+        "raw": "safasfa",
+        "parsed": "safasfa"
+      },
+      " currency ": {
+        "raw": "$4,214.12",
+        "parsed": 4214.12,
+        "annotated": "$4,214.12"
+      },
+      "These are years": {
+        "raw": "1984",
+        "parsed": "1984-01-01T00:00:00.000Z"
+      },
+      "percents": {
+        "raw": "20%",
+        "parsed": 20,
+        "annotated": "20%"
+      },
+      "moreDates": {
+        "raw": "2020-02-01",
+        "parsed": "2020-02-01T00:00:00.000Z"
+      },
+      "lastStrings": {
+        "raw": "fasfasfda",
+        "parsed": "fasfasfda"
+      }
+    },
+    {
+      "MY dates": {
+        "raw": "1/2/19",
+        "parsed": "2019-01-02T05:00:00.000Z"
+      },
+      "numbers_a_long_title_that_goes on_forever": {
+        "raw": "4",
+        "parsed": 4
+      },
+      "the longest title of some strings": {
+        "raw": "dsa",
+        "parsed": "dsa"
+      },
+      "moreString": {
+        "raw": "safasfa",
+        "parsed": "safasfa"
+      },
+      " currency ": {
+        "raw": "$4,213.00",
+        "parsed": 4213,
+        "annotated": "$4,213.00"
+      },
+      "These are years": {
+        "raw": "1984",
+        "parsed": "1984-01-01T00:00:00.000Z"
+      },
+      "percents": {
+        "raw": "30%",
+        "parsed": 30,
+        "annotated": "30%"
+      },
+      "moreDates": {
+        "raw": "2020-02-02",
+        "parsed": "2020-02-02T00:00:00.000Z"
+      },
+      "lastStrings": {
+        "raw": "asd2314",
+        "parsed": "asd2314"
+      }
+    },
+    {
+      "MY dates": {
+        "raw": "2/2/19",
+        "parsed": "2019-02-02T05:00:00.000Z"
+      },
+      "numbers_a_long_title_that_goes on_forever": {
+        "raw": "5",
+        "parsed": 5
+      },
+      "the longest title of some strings": {
+        "raw": "asd",
+        "parsed": "asd"
+      },
+      "moreString": {
+        "raw": "safasfa",
+        "parsed": "safasfa"
+      },
+      " currency ": {
+        "raw": "$4,212.00",
+        "parsed": 4212,
+        "annotated": "$4,212.00"
+      },
+      "These are years": {
+        "raw": "1985",
+        "parsed": "1985-01-01T00:00:00.000Z"
+      },
+      "percents": {
+        "raw": "40%",
+        "parsed": 40,
+        "annotated": "40%"
+      },
+      "moreDates": {
+        "raw": "2020-02-03",
+        "parsed": "2020-02-03T00:00:00.000Z"
+      },
+      "lastStrings": {
+        "raw": "fasfasfda",
+        "parsed": "fasfasfda"
+      }
+    },
+    {
+      "MY dates": {
+        "raw": "2/3/19",
+        "parsed": "2019-02-03T05:00:00.000Z"
+      },
+      "numbers_a_long_title_that_goes on_forever": {
+        "raw": "6",
+        "parsed": 6
+      },
+      "the longest title of some strings": {
+        "raw": "asd",
+        "parsed": "asd"
+      },
+      "moreString": {
+        "raw": "safasfa",
+        "parsed": "safasfa"
+      },
+      " currency ": {
+        "raw": "$4,211.00",
+        "parsed": 4211,
+        "annotated": "$4,211.00"
+      },
+      "These are years": {
+        "raw": "1985",
+        "parsed": "1985-01-01T00:00:00.000Z"
+      },
+      "percents": {
+        "raw": "40%",
+        "parsed": 40,
+        "annotated": "40%"
+      },
+      "moreDates": {
+        "raw": "2020-02-04",
+        "parsed": "2020-02-04T00:00:00.000Z"
+      },
+      "lastStrings": {
+        "raw": "fasfasfda",
+        "parsed": "fasfasfda"
+      }
+    },
+    {
+      "MY dates": {
+        "raw": "2/4/19",
+        "parsed": "2019-02-04T05:00:00.000Z"
+      },
+      "numbers_a_long_title_that_goes on_forever": {
+        "raw": "7",
+        "parsed": 7
+      },
+      "the longest title of some strings": {
+        "raw": "asd",
+        "parsed": "asd"
+      },
+      "moreString": {
+        "raw": "safasfa",
+        "parsed": "safasfa"
+      },
+      " currency ": {
+        "raw": "$4,210.09",
+        "parsed": 4210.09,
+        "annotated": "$4,210.09"
+      },
+      "These are years": {
+        "raw": "1986",
+        "parsed": "1986-01-01T00:00:00.000Z"
+      },
+      "percents": {
+        "raw": "60%",
+        "parsed": 60,
+        "annotated": "60%"
+      },
+      "moreDates": {
+        "raw": "2020-02-05",
+        "parsed": "2020-02-05T00:00:00.000Z"
+      },
+      "lastStrings": {
+        "raw": "fasfasfda",
+        "parsed": "fasfasfda"
+      }
+    },
+    {
+      "MY dates": {
+        "raw": "2/5/19",
+        "parsed": "2019-02-05T05:00:00.000Z"
+      },
+      "numbers_a_long_title_that_goes on_forever": {
+        "raw": "8",
+        "parsed": 8
+      },
+      "the longest title of some strings": {
+        "raw": "asd",
+        "parsed": "asd"
+      },
+      "moreString": {
+        "raw": "safasfa",
+        "parsed": "safasfa"
+      },
+      " currency ": {
+        "raw": "$4,209.00",
+        "parsed": 4209,
+        "annotated": "$4,209.00"
+      },
+      "These are years": {
+        "raw": "1986",
+        "parsed": "1986-01-01T00:00:00.000Z"
+      },
+      "percents": {
+        "raw": "65%",
+        "parsed": 65,
+        "annotated": "65%"
+      },
+      "moreDates": {
+        "raw": "2020-02-06",
+        "parsed": "2020-02-06T00:00:00.000Z"
+      },
+      "lastStrings": {
+        "raw": "fasfasfda",
+        "parsed": "fasfasfda"
+      }
+    },
+    {
+      "MY dates": {
+        "raw": "2/6/19",
+        "parsed": "2019-02-06T05:00:00.000Z"
+      },
+      "numbers_a_long_title_that_goes on_forever": {
+        "raw": "9",
+        "parsed": 9
+      },
+      "the longest title of some strings": {
+        "raw": "asd",
+        "parsed": "asd"
+      },
+      "moreString": {
+        "raw": "safasfa",
+        "parsed": "safasfa"
+      },
+      " currency ": {
+        "raw": "$4,208.00",
+        "parsed": 4208,
+        "annotated": "$4,208.00"
+      },
+      "These are years": {
+        "raw": "1987",
+        "parsed": "1987-01-01T00:00:00.000Z"
+      },
+      "percents": {
+        "raw": "74%",
+        "parsed": 74,
+        "annotated": "74%"
+      },
+      "moreDates": {
+        "raw": "2020-02-07",
+        "parsed": "2020-02-07T00:00:00.000Z"
+      },
+      "lastStrings": {
+        "raw": "fasfasfda",
+        "parsed": "fasfasfda"
+      }
+    },
+    {
+      "MY dates": {
+        "raw": "2/7/19",
+        "parsed": "2019-02-07T05:00:00.000Z"
+      },
+      "numbers_a_long_title_that_goes on_forever": {
+        "raw": "10",
+        "parsed": 10
+      },
+      "the longest title of some strings": {
+        "raw": "asd",
+        "parsed": "asd"
+      },
+      "moreString": {
+        "raw": "safasfa",
+        "parsed": "safasfa"
+      },
+      " currency ": {
+        "raw": "$4,207.00",
+        "parsed": 4207,
+        "annotated": "$4,207.00"
+      },
+      "These are years": {
+        "raw": "1987",
+        "parsed": "1987-01-01T00:00:00.000Z"
+      },
+      "percents": {
+        "raw": "83%",
+        "parsed": 83,
+        "annotated": "83%"
+      },
+      "moreDates": {
+        "raw": "2020-02-08",
+        "parsed": "2020-02-08T00:00:00.000Z"
+      },
+      "lastStrings": {
+        "raw": "fasfasfda",
+        "parsed": "fasfasfda"
+      }
+    },
+    {
+      "MY dates": {
+        "raw": "2/8/19",
+        "parsed": "2019-02-08T05:00:00.000Z"
+      },
+      "numbers_a_long_title_that_goes on_forever": {
+        "raw": "11",
+        "parsed": 11
+      },
+      "the longest title of some strings": {
+        "raw": "asd",
+        "parsed": "asd"
+      },
+      "moreString": {
+        "raw": "safasfa",
+        "parsed": "safasfa"
+      },
+      " currency ": {
+        "raw": "$4,206.00",
+        "parsed": 4206,
+        "annotated": "$4,206.00"
+      },
+      "These are years": {
+        "raw": "1988",
+        "parsed": "1988-01-01T00:00:00.000Z"
+      },
+      "percents": {
+        "raw": "92%",
+        "parsed": 92,
+        "annotated": "92%"
+      },
+      "moreDates": {
+        "raw": "2020-02-09",
+        "parsed": "2020-02-09T00:00:00.000Z"
+      },
+      "lastStrings": {
+        "raw": "fasfasfda",
+        "parsed": "fasfasfda"
+      }
+    },
+    {
+      "MY dates": {
+        "raw": "2/9/19",
+        "parsed": "2019-02-09T05:00:00.000Z"
+      },
+      "numbers_a_long_title_that_goes on_forever": {
+        "raw": "12",
+        "parsed": 12
+      },
+      "the longest title of some strings": {
+        "raw": "asd",
+        "parsed": "asd"
+      },
+      "moreString": {
+        "raw": "safasfa",
+        "parsed": "safasfa"
+      },
+      " currency ": {
+        "raw": "$4,205.00",
+        "parsed": 4205,
+        "annotated": "$4,205.00"
+      },
+      "These are years": {
+        "raw": "1988",
+        "parsed": "1988-01-01T00:00:00.000Z"
+      },
+      "percents": {
+        "raw": "101%",
+        "parsed": 101,
+        "annotated": "101%"
+      },
+      "moreDates": {
+        "raw": "2020-02-10",
+        "parsed": "2020-02-10T00:00:00.000Z"
+      },
+      "lastStrings": {
+        "raw": "fasfasfda",
+        "parsed": "fasfasfda"
+      }
+    },
+    {
+      "MY dates": {
+        "raw": "2/10/19",
+        "parsed": "2019-02-10T05:00:00.000Z"
+      },
+      "numbers_a_long_title_that_goes on_forever": {
+        "raw": "13",
+        "parsed": 13
+      },
+      "the longest title of some strings": {
+        "raw": "asd",
+        "parsed": "asd"
+      },
+      "moreString": {
+        "raw": "safasfa",
+        "parsed": "safasfa"
+      },
+      " currency ": {
+        "raw": "$4,204.00",
+        "parsed": 4204,
+        "annotated": "$4,204.00"
+      },
+      "These are years": {
+        "raw": "1989",
+        "parsed": "1989-01-01T00:00:00.000Z"
+      },
+      "percents": {
+        "raw": "110%",
+        "parsed": 110,
+        "annotated": "110%"
+      },
+      "moreDates": {
+        "raw": "2020-02-11",
+        "parsed": "2020-02-11T00:00:00.000Z"
+      },
+      "lastStrings": {
+        "raw": "fasfasfda",
+        "parsed": "fasfasfda"
+      }
+    },
+    {
+      "MY dates": {
+        "raw": "2/11/19",
+        "parsed": "2019-02-11T05:00:00.000Z"
+      },
+      "numbers_a_long_title_that_goes on_forever": {
+        "raw": "14",
+        "parsed": 14
+      },
+      "the longest title of some strings": {
+        "raw": "asd",
+        "parsed": "asd"
+      },
+      "moreString": {
+        "raw": "safasfa",
+        "parsed": "safasfa"
+      },
+      " currency ": {
+        "raw": "$4,203.00",
+        "parsed": 4203,
+        "annotated": "$4,203.00"
+      },
+      "These are years": {
+        "raw": "1989",
+        "parsed": "1989-01-01T00:00:00.000Z"
+      },
+      "percents": {
+        "raw": "119%",
+        "parsed": 119,
+        "annotated": "119%"
+      },
+      "moreDates": {
+        "raw": "2020-02-12",
+        "parsed": "2020-02-12T00:00:00.000Z"
+      },
+      "lastStrings": {
+        "raw": "fasfasfda",
+        "parsed": "fasfasfda"
+      }
+    },
+    {
+      "MY dates": {
+        "raw": "2/12/19",
+        "parsed": "2019-02-12T05:00:00.000Z"
+      },
+      "numbers_a_long_title_that_goes on_forever": {
+        "raw": "15",
+        "parsed": 15
+      },
+      "the longest title of some strings": {
+        "raw": "asd",
+        "parsed": "asd"
+      },
+      "moreString": {
+        "raw": "safasfa",
+        "parsed": "safasfa"
+      },
+      " currency ": {
+        "raw": "$4,202.00",
+        "parsed": 4202,
+        "annotated": "$4,202.00"
+      },
+      "These are years": {
+        "raw": "1990",
+        "parsed": "1990-01-01T00:00:00.000Z"
+      },
+      "percents": {
+        "raw": "128%",
+        "parsed": 128,
+        "annotated": "128%"
+      },
+      "moreDates": {
+        "raw": "2020-02-13",
+        "parsed": "2020-02-13T00:00:00.000Z"
+      },
+      "lastStrings": {
+        "raw": "fasfasfda",
+        "parsed": "fasfasfda"
+      }
+    },
+    {
+      "MY dates": {
+        "raw": "2/13/19",
+        "parsed": "2019-02-13T05:00:00.000Z"
+      },
+      "numbers_a_long_title_that_goes on_forever": {
+        "raw": "16",
+        "parsed": 16
+      },
+      "the longest title of some strings": {
+        "raw": "asd",
+        "parsed": "asd"
+      },
+      "moreString": {
+        "raw": "safasfa",
+        "parsed": "safasfa"
+      },
+      " currency ": {
+        "raw": "$4,201.00",
+        "parsed": 4201,
+        "annotated": "$4,201.00"
+      },
+      "These are years": {
+        "raw": "1990",
+        "parsed": "1990-01-01T00:00:00.000Z"
+      },
+      "percents": {
+        "raw": "137%",
+        "parsed": 137,
+        "annotated": "137%"
+      },
+      "moreDates": {
+        "raw": "2020-02-14",
+        "parsed": "2020-02-14T00:00:00.000Z"
+      },
+      "lastStrings": {
+        "raw": "fasfasfda",
+        "parsed": "fasfasfda"
+      }
+    },
+    {
+      "MY dates": {
+        "raw": "2/14/19",
+        "parsed": "2019-02-14T05:00:00.000Z"
+      },
+      "numbers_a_long_title_that_goes on_forever": {
+        "raw": "17",
+        "parsed": 17
+      },
+      "the longest title of some strings": {
+        "raw": "asd",
+        "parsed": "asd"
+      },
+      "moreString": {
+        "raw": "safasfa",
+        "parsed": "safasfa"
+      },
+      " currency ": {
+        "raw": "$4,200.00",
+        "parsed": 4200,
+        "annotated": "$4,200.00"
+      },
+      "These are years": {
+        "raw": "1991",
+        "parsed": "1991-01-01T00:00:00.000Z"
+      },
+      "percents": {
+        "raw": "146%",
+        "parsed": 146,
+        "annotated": "146%"
+      },
+      "moreDates": {
+        "raw": "2020-02-15",
+        "parsed": "2020-02-15T00:00:00.000Z"
+      },
+      "lastStrings": {
+        "raw": "asd2314",
+        "parsed": "asd2314"
+      }
+    },
+    {
+      "MY dates": {
+        "raw": "2/15/19",
+        "parsed": "2019-02-15T05:00:00.000Z"
+      },
+      "numbers_a_long_title_that_goes on_forever": {
+        "raw": "18",
+        "parsed": 18
+      },
+      "the longest title of some strings": {
+        "raw": "asd",
+        "parsed": "asd"
+      },
+      "moreString": {
+        "raw": "safasfa",
+        "parsed": "safasfa"
+      },
+      " currency ": {
+        "raw": "$4,199.00",
+        "parsed": 4199,
+        "annotated": "$4,199.00"
+      },
+      "These are years": {
+        "raw": "1991",
+        "parsed": "1991-01-01T00:00:00.000Z"
+      },
+      "percents": {
+        "raw": "155%",
+        "parsed": 155,
+        "annotated": "155%"
+      },
+      "moreDates": {
+        "raw": "2020-02-16",
+        "parsed": "2020-02-16T00:00:00.000Z"
+      },
+      "lastStrings": {
+        "raw": "fasfasfda",
+        "parsed": "fasfasfda"
+      }
+    },
+    {
+      "MY dates": {
+        "raw": "2/16/19",
+        "parsed": "2019-02-16T05:00:00.000Z"
+      },
+      "numbers_a_long_title_that_goes on_forever": {
+        "raw": "19",
+        "parsed": 19
+      },
+      "the longest title of some strings": {
+        "raw": "asd",
+        "parsed": "asd"
+      },
+      "moreString": {
+        "raw": "safasfa",
+        "parsed": "safasfa"
+      },
+      " currency ": {
+        "raw": "$4,198.00",
+        "parsed": 4198,
+        "annotated": "$4,198.00"
+      },
+      "These are years": {
+        "raw": "1992",
+        "parsed": "1992-01-01T00:00:00.000Z"
+      },
+      "percents": {
+        "raw": "164%",
+        "parsed": 164,
+        "annotated": "164%"
+      },
+      "moreDates": {
+        "raw": "2020-02-17",
+        "parsed": "2020-02-17T00:00:00.000Z"
+      },
+      "lastStrings": {
+        "raw": "fasfasfda",
+        "parsed": "fasfasfda"
+      }
+    },
+    {
+      "MY dates": {
+        "raw": "2/17/19",
+        "parsed": "2019-02-17T05:00:00.000Z"
+      },
+      "numbers_a_long_title_that_goes on_forever": {
+        "raw": "20",
+        "parsed": 20
+      },
+      "the longest title of some strings": {
+        "raw": "asd",
+        "parsed": "asd"
+      },
+      "moreString": {
+        "raw": "safasfa",
+        "parsed": "safasfa"
+      },
+      " currency ": {
+        "raw": "$4,197.00",
+        "parsed": 4197,
+        "annotated": "$4,197.00"
+      },
+      "These are years": {
+        "raw": "1992",
+        "parsed": "1992-01-01T00:00:00.000Z"
+      },
+      "percents": {
+        "raw": "173%",
+        "parsed": 173,
+        "annotated": "173%"
+      },
+      "moreDates": {
+        "raw": "2020-02-18",
+        "parsed": "2020-02-18T00:00:00.000Z"
+      },
+      "lastStrings": {
+        "raw": "fasfasfda",
+        "parsed": "fasfasfda"
+      }
+    },
+    {
+      "MY dates": {
+        "raw": "2/18/19",
+        "parsed": "2019-02-18T05:00:00.000Z"
+      },
+      "numbers_a_long_title_that_goes on_forever": {
+        "raw": "21",
+        "parsed": 21
+      },
+      "the longest title of some strings": {
+        "raw": "asd",
+        "parsed": "asd"
+      },
+      "moreString": {
+        "raw": "safasfa",
+        "parsed": "safasfa"
+      },
+      " currency ": {
+        "raw": "$4,196.00",
+        "parsed": 4196,
+        "annotated": "$4,196.00"
+      },
+      "These are years": {
+        "raw": "1993",
+        "parsed": "1993-01-01T00:00:00.000Z"
+      },
+      "percents": {
+        "raw": "182%",
+        "parsed": 182,
+        "annotated": "182%"
+      },
+      "moreDates": {
+        "raw": "2020-02-19",
+        "parsed": "2020-02-19T00:00:00.000Z"
+      },
+      "lastStrings": {
+        "raw": "dsas",
+        "parsed": "dsas"
+      }
+    },
+    {
+      "MY dates": {
+        "raw": "2/19/19",
+        "parsed": "2019-02-19T05:00:00.000Z"
+      },
+      "numbers_a_long_title_that_goes on_forever": {
+        "raw": "22",
+        "parsed": 22
+      },
+      "the longest title of some strings": {
+        "raw": "asd",
+        "parsed": "asd"
+      },
+      "moreString": {
+        "raw": "safasfa",
+        "parsed": "safasfa"
+      },
+      " currency ": {
+        "raw": "$4,195.00",
+        "parsed": 4195,
+        "annotated": "$4,195.00"
+      },
+      "These are years": {
+        "raw": "1993",
+        "parsed": "1993-01-01T00:00:00.000Z"
+      },
+      "percents": {
+        "raw": "191%",
+        "parsed": 191,
+        "annotated": "191%"
+      },
+      "moreDates": {
+        "raw": "2020-02-20",
+        "parsed": "2020-02-20T00:00:00.000Z"
+      },
+      "lastStrings": {
+        "raw": "fasfasfda",
+        "parsed": "fasfasfda"
+      }
+    },
+    {
+      "MY dates": {
+        "raw": "2/20/19",
+        "parsed": "2019-02-20T05:00:00.000Z"
+      },
+      "numbers_a_long_title_that_goes on_forever": {
+        "raw": "23",
+        "parsed": 23
+      },
+      "the longest title of some strings": {
+        "raw": "asd",
+        "parsed": "asd"
+      },
+      "moreString": {
+        "raw": "safasfa",
+        "parsed": "safasfa"
+      },
+      " currency ": {
+        "raw": "$4,194.00",
+        "parsed": 4194,
+        "annotated": "$4,194.00"
+      },
+      "These are years": {
+        "raw": "1994",
+        "parsed": "1994-01-01T00:00:00.000Z"
+      },
+      "percents": {
+        "raw": "200%",
+        "parsed": 200,
+        "annotated": "200%"
+      },
+      "moreDates": {
+        "raw": "2020-02-21",
+        "parsed": "2020-02-21T00:00:00.000Z"
+      },
+      "lastStrings": {
+        "raw": "fasfasfda",
+        "parsed": "fasfasfda"
+      }
+    },
+    {
+      "MY dates": {
+        "raw": "2/21/19",
+        "parsed": "2019-02-21T05:00:00.000Z"
+      },
+      "numbers_a_long_title_that_goes on_forever": {
+        "raw": "24",
+        "parsed": 24
+      },
+      "the longest title of some strings": {
+        "raw": "asd",
+        "parsed": "asd"
+      },
+      "moreString": {
+        "raw": "safasfa",
+        "parsed": "safasfa"
+      },
+      " currency ": {
+        "raw": "$4,193.00",
+        "parsed": 4193,
+        "annotated": "$4,193.00"
+      },
+      "These are years": {
+        "raw": "1994",
+        "parsed": "1994-01-01T00:00:00.000Z"
+      },
+      "percents": {
+        "raw": "209%",
+        "parsed": 209,
+        "annotated": "209%"
+      },
+      "moreDates": {
+        "raw": "2020-02-22",
+        "parsed": "2020-02-22T00:00:00.000Z"
+      },
+      "lastStrings": {
+        "raw": "fasfasfda",
+        "parsed": "fasfasfda"
+      }
+    },
+    {
+      "MY dates": {
+        "raw": "2/22/19",
+        "parsed": "2019-02-22T05:00:00.000Z"
+      },
+      "numbers_a_long_title_that_goes on_forever": {
+        "raw": "25",
+        "parsed": 25
+      },
+      "the longest title of some strings": {
+        "raw": "asd",
+        "parsed": "asd"
+      },
+      "moreString": {
+        "raw": "safasfa",
+        "parsed": "safasfa"
+      },
+      " currency ": {
+        "raw": "$4,192.00",
+        "parsed": 4192,
+        "annotated": "$4,192.00"
+      },
+      "These are years": {
+        "raw": "1995",
+        "parsed": "1995-01-01T00:00:00.000Z"
+      },
+      "percents": {
+        "raw": "218%",
+        "parsed": 218,
+        "annotated": "218%"
+      },
+      "moreDates": {
+        "raw": "2020-02-23",
+        "parsed": "2020-02-23T00:00:00.000Z"
+      },
+      "lastStrings": {
+        "raw": "fasfasfda",
+        "parsed": "fasfasfda"
+      }
+    },
+    {
+      "MY dates": {
+        "raw": "2/23/19",
+        "parsed": "2019-02-23T05:00:00.000Z"
+      },
+      "numbers_a_long_title_that_goes on_forever": {
+        "raw": "26",
+        "parsed": 26
+      },
+      "the longest title of some strings": {
+        "raw": "asd",
+        "parsed": "asd"
+      },
+      "moreString": {
+        "raw": "safasfa",
+        "parsed": "safasfa"
+      },
+      " currency ": {
+        "raw": "$4,191.00",
+        "parsed": 4191,
+        "annotated": "$4,191.00"
+      },
+      "These are years": {
+        "raw": "1995",
+        "parsed": "1995-01-01T00:00:00.000Z"
+      },
+      "percents": {
+        "raw": "227%",
+        "parsed": 227,
+        "annotated": "227%"
+      },
+      "moreDates": {
+        "raw": "2020-02-24",
+        "parsed": "2020-02-24T00:00:00.000Z"
+      },
+      "lastStrings": {
+        "raw": "fasfasfda",
+        "parsed": "fasfasfda"
+      }
+    },
+    {
+      "MY dates": {
+        "raw": "2/24/19",
+        "parsed": "2019-02-24T05:00:00.000Z"
+      },
+      "numbers_a_long_title_that_goes on_forever": {
+        "raw": "27",
+        "parsed": 27
+      },
+      "the longest title of some strings": {
+        "raw": "asd",
+        "parsed": "asd"
+      },
+      "moreString": {
+        "raw": "safasfa",
+        "parsed": "safasfa"
+      },
+      " currency ": {
+        "raw": "$4,190.00",
+        "parsed": 4190,
+        "annotated": "$4,190.00"
+      },
+      "These are years": {
+        "raw": "1996",
+        "parsed": "1996-01-01T00:00:00.000Z"
+      },
+      "percents": {
+        "raw": "236%",
+        "parsed": 236,
+        "annotated": "236%"
+      },
+      "moreDates": {
+        "raw": "2020-02-25",
+        "parsed": "2020-02-25T00:00:00.000Z"
+      },
+      "lastStrings": {
+        "raw": "fasfasfda",
+        "parsed": "fasfasfda"
+      }
+    },
+    {
+      "MY dates": {
+        "raw": "2/25/19",
+        "parsed": "2019-02-25T05:00:00.000Z"
+      },
+      "numbers_a_long_title_that_goes on_forever": {
+        "raw": "28",
+        "parsed": 28
+      },
+      "the longest title of some strings": {
+        "raw": "asd",
+        "parsed": "asd"
+      },
+      "moreString": {
+        "raw": "safasfa",
+        "parsed": "safasfa"
+      },
+      " currency ": {
+        "raw": "$4,189.00",
+        "parsed": 4189,
+        "annotated": "$4,189.00"
+      },
+      "These are years": {
+        "raw": "1996",
+        "parsed": "1996-01-01T00:00:00.000Z"
+      },
+      "percents": {
+        "raw": "245%",
+        "parsed": 245,
+        "annotated": "245%"
+      },
+      "moreDates": {
+        "raw": "2020-02-26",
+        "parsed": "2020-02-26T00:00:00.000Z"
+      },
+      "lastStrings": {
+        "raw": "fasfasfda",
+        "parsed": "fasfasfda"
+      }
+    },
+    {
+      "MY dates": {
+        "raw": "2/26/19",
+        "parsed": "2019-02-26T05:00:00.000Z"
+      },
+      "numbers_a_long_title_that_goes on_forever": {
+        "raw": "29",
+        "parsed": 29
+      },
+      "the longest title of some strings": {
+        "raw": "asd",
+        "parsed": "asd"
+      },
+      "moreString": {
+        "raw": "safasfa",
+        "parsed": "safasfa"
+      },
+      " currency ": {
+        "raw": "$4,188.00",
+        "parsed": 4188,
+        "annotated": "$4,188.00"
+      },
+      "These are years": {
+        "raw": "1997",
+        "parsed": "1997-01-01T00:00:00.000Z"
+      },
+      "percents": {
+        "raw": "254%",
+        "parsed": 254,
+        "annotated": "254%"
+      },
+      "moreDates": {
+        "raw": "2020-02-27",
+        "parsed": "2020-02-27T00:00:00.000Z"
+      },
+      "lastStrings": {
+        "raw": "fasfasfda",
+        "parsed": "fasfasfda"
+      }
+    },
+    {
+      "MY dates": {
+        "raw": "2/27/19",
+        "parsed": "2019-02-27T05:00:00.000Z"
+      },
+      "numbers_a_long_title_that_goes on_forever": {
+        "raw": "30",
+        "parsed": 30
+      },
+      "the longest title of some strings": {
+        "raw": "asd",
+        "parsed": "asd"
+      },
+      "moreString": {
+        "raw": "safasfa",
+        "parsed": "safasfa"
+      },
+      " currency ": {
+        "raw": "$4,187.00",
+        "parsed": 4187,
+        "annotated": "$4,187.00"
+      },
+      "These are years": {
+        "raw": "1997",
+        "parsed": "1997-01-01T00:00:00.000Z"
+      },
+      "percents": {
+        "raw": "263%",
+        "parsed": 263,
+        "annotated": "263%"
+      },
+      "moreDates": {
+        "raw": "2020-02-28",
+        "parsed": "2020-02-28T00:00:00.000Z"
+      },
+      "lastStrings": {
+        "raw": "fasfasfda",
+        "parsed": "fasfasfda"
+      }
+    }
+  ],
+  "columns": {
+    "MY dates": {
+      "order": 0,
+      "type": "date"
+    },
+    "numbers_a_long_title_that_goes on_forever": {
+      "order": 1,
+      "type": "number"
+    },
+    "the longest title of some strings": {
+      "order": 2,
+      "type": "string"
+    },
+    "moreString": {
+      "order": 3,
+      "type": "string"
+    },
+    " currency ": {
+      "order": 4,
+      "type": "number",
+      "annotations": {
+        "rounding": "fixed point",
+        "precision": 2,
+        "prefix": "$"
+      }
+    },
+    "These are years": {
+      "order": 5,
+      "type": "date"
+    },
+    "percents": {
+      "order": 6,
+      "type": "number",
+      "annotations": {
+        "suffix": "%"
+      }
+    },
+    "moreDates": {
+      "order": 7,
+      "type": "date"
+    },
+    "lastStrings": {
+      "order": 8,
+      "type": "string"
+    }
+  },
+  "map": {
+    "base": "MY dates",
+    "value": [
+      "numbers_a_long_title_that_goes on_forever",
+      " currency "
+    ]
+  }
+}
