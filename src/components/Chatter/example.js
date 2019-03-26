@@ -8,7 +8,7 @@ import Chatter from './index';
 class App extends React.Component {
   state = {
     chatter: {
-      headline: '',
+      headline: 'An example headline',
       description: '',
       source: '',
     },
