@@ -4,4 +4,4 @@
 
 Reusable components for creating interfaces that make charts.
 
-See the [contributing guide](./Contributing.md).
+See the [contributing guide](./CONTRIBUTING.md).
