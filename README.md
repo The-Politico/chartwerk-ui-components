@@ -3,3 +3,5 @@
 # chartwerk-ui-components
 
 Reusable components for creating interfaces that make charts.
+
+See the [contributing guide](./Contributing.md).

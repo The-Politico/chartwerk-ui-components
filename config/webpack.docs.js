@@ -89,9 +89,6 @@ module.exports = (env, argv) => ({
             limit: 100000,
           },
         },
-      }, {
-        test: /\.data$/,
-        use: { loader: 'raw-loader' },
       },
     ],
   },
