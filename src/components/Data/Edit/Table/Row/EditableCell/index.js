@@ -4,9 +4,7 @@ import classnames from 'classnames';
 
 import { datumCellWidth } from '../../widths';
 
-import Transformer from 'Components/Data/utils/number/transformer';
-
-class EditableCell extends React.Component {
+class EditableCell extends React.PureComponent {
   constructor(props) {
     super(props);
     const { row, columnKey } = props;
@@ -36,19 +34,19 @@ class EditableCell extends React.Component {
   formatDisplayCell = (datum) => {
     if (!datum) return '';
     const { type } = this.props.column;
-    if (type === 'number') return this.applyTransforms(datum);
-    if (type === 'date') return datum.toLocaleDateString('en-US', { timeZone: 'UTC' });
-    return datum;
+    if (type === 'number') {
+      return (
+        datum.annotated || datum.transformed || datum.parsed
+      );
+    };
+    if (type === 'date') return datum.parsed.toLocaleDateString('en-US', { timeZone: 'UTC' });
+    return datum.parsed;
   }
 
   sendUpdate = () => {
     const { columnKey, rowIndex, update } = this.props;
     const type = this.correctType();
     update(type, rowIndex, columnKey, this.state.value);
-  }
-
-  applyTransforms = (value) => {
-    return this.transformer.transform(value);
   }
 
   onEdit = ({ target }) => {
@@ -68,10 +66,9 @@ class EditableCell extends React.Component {
 
   render() {
     const { editing, value } = this.state;
-    const { columnKey, editingColumn, transforms, row } = this.props;
+    const { columnKey, editingColumn, row } = this.props;
     const type = this.correctType();
-    const datum = row[columnKey].parsed;
-    this.transformer = new Transformer(transforms || {});
+    const datum = row[columnKey];
     return (
       <div
         style={datumCellWidth}

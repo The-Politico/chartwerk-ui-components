@@ -45,8 +45,6 @@ class Input extends React.Component {
       columns[column] = {
         order: i,
         type: majorityType,
-        transform: {},
-        annotate: {},
       };
       if (!unanimous) {
         parsedData = explicitlyType(parsedData, stringData, column, majorityType);

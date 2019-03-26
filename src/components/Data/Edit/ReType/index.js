@@ -16,7 +16,7 @@ class ReType extends React.Component {
     columns[reTypeColumn].type = newType;
     // Always delete numeric format config on a retype
     delete columns[reTypeColumn].transform;
-    delete columns[reTypeColumn].annotate;
+    delete columns[reTypeColumn].annotations;
 
     sendState({
       data: zipDataCollections(stringData, reTypedData),

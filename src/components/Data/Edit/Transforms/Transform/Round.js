@@ -1,14 +1,12 @@
 import React from 'react';
 
-import Transformer from 'Components/Data/utils/number/transformer';
-
-const transformer = new Transformer();
+import { FIXED, DIGITS } from 'Components/Data/utils/number/Annotator';
 
 class Round extends React.Component {
   render() {
     const { rounding, precision, update } = this.props;
-    const currentFormat = rounding || transformer.fixed;
-    const fixed = currentFormat === transformer.fixed;
+    const currentFormat = rounding || FIXED;
+    const fixed = currentFormat === FIXED;
     return (
       <div className='field-container'>
         <label className='label'>Round</label>
@@ -24,7 +22,7 @@ class Round extends React.Component {
               value={precision === 0 ? 0 : precision || ''}
               onChange={({ target }) => update(
                 {
-                  rounding: fixed ? transformer.fixed : transformer.digits,
+                  rounding: fixed ? FIXED : DIGITS,
                   precision: target.value === '0' ? 0.0 : parseFloat(target.value) || null,
                 }
               )}
@@ -34,8 +32,9 @@ class Round extends React.Component {
             <a
               className='button'
               onClick={() => update({
-                rounding: fixed ? transformer.digits : transformer.fixed,
+                rounding: fixed ? DIGITS : FIXED,
               })}
+              disabled={!precision}
             >
               {fixed ? 'decimals' : 'sig. digits'}
             </a>

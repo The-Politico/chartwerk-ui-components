@@ -10,8 +10,6 @@ import Edit from './Edit';
 import Map from './Map';
 import Preview from './Preview';
 
-import Transformer from './utils/number/transformer';
-
 /**
  * {
  *    view: INPUT,
@@ -31,7 +29,7 @@ import Transformer from './utils/number/transformer';
  *        order: 0,
  *        type: 'number',
  *        transform: {},
- *        annotate: {},
+ *        annotations: {},
  *      }
  *    }
  *    map: {},
@@ -51,20 +49,9 @@ class Data extends React.Component {
   ));
 
   updateContext = () => {
-    const { typedData: data, columnTypes, columnTransforms, map } = this.state;
+    const { blob, data, columns, map } = this.state;
 
-    const transformers = {};
-
-    Object.keys(columnTransforms).forEach((column) => {
-      transformers[column] = new Transformer(columnTransforms[column]);
-    });
-
-    this.props.updateData({
-      data,
-      map,
-      columnTypes,
-      transformers,
-    });
+    this.props.updateData({ blob, data, columns, map });
   }
 
   render() {

@@ -2,15 +2,13 @@ import React from 'react';
 import { faTimes, faDivide } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import Transformer from 'Components/Data/utils/number/transformer';
-
-const transformer = new Transformer();
+import { MULTIPLY, DIVIDE } from 'Components/Data/utils/number/Transformer';
 
 class Multiply extends React.Component {
   render() {
     const { operation, multiplier, update } = this.props;
-    const currentOperation = operation || transformer.divide;
-    const multiplying = currentOperation === transformer.multiply;
+    const currentOperation = operation || DIVIDE;
+    const multiplying = currentOperation === MULTIPLY;
     return (
       <div className='field-container'>
         <label className='label'>
@@ -21,8 +19,9 @@ class Multiply extends React.Component {
             <a
               className='button'
               onClick={() => update({
-                operation: multiplying ? transformer.divide : transformer.multiply,
+                operation: multiplying ? DIVIDE : MULTIPLY,
               })}
+              disabled={!multiplier}
             >
               <FontAwesomeIcon
                 icon={multiplying ? faTimes : faDivide}
@@ -41,7 +40,7 @@ class Multiply extends React.Component {
               onChange={({ target }) => update(
                 {
                   multiplier: parseFloat(target.value) || null,
-                  operation: multiplying ? transformer.multiply : transformer.divide,
+                  operation: multiplying ? MULTIPLY : DIVIDE,
                 }
               )}
             />

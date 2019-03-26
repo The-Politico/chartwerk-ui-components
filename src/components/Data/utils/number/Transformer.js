@@ -1,7 +1,7 @@
 import { isPositiveNumber } from './checkers';
 
-const MULTIPLY = 'multiply';
-const DIVIDE = 'divide';
+export const MULTIPLY = 'multiply';
+export const DIVIDE = 'divide';
 
 export default class Transformer {
   constructor({ operation, multiplier } = {}) {

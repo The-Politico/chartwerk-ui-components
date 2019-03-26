@@ -7,30 +7,36 @@ import Round from './Round';
 import Annotate from './Annotate';
 
 class Transform extends React.Component {
-  update = (updates) => {
-    const { column, transforms, updateTransform } = this.props;
-    updateTransform(column, Object.assign(transforms, updates));
+  updateTransform = (updates) => {
+    const { columnKey, transform, updateTransform } = this.props;
+    updateTransform(columnKey, Object.assign(transform, updates));
+  }
+
+  updateAnnotations = (updates) => {
+    const { columnKey, annotations, updateAnnotations } = this.props;
+    updateAnnotations(columnKey, Object.assign(annotations, updates));
   }
 
   render() {
-    const { transforms } = this.props;
-    const { operation, multiplier, rounding, precision, prefix, suffix } = transforms;
+    const { transform, annotations } = this.props;
+    const { operation, multiplier } = transform;
+    const { rounding, precision, prefix, suffix } = annotations;
     return (
       <div className={classnames(styles.component)}>
         <Multiply
           operation={operation}
           multiplier={multiplier}
-          update={this.update}
+          update={this.updateTransform}
         />
         <Round
           rounding={rounding}
           precision={precision}
-          update={this.update}
+          update={this.updateAnnotations}
         />
         <Annotate
           prefix={prefix}
           suffix={suffix}
-          update={this.update}
+          update={this.updateAnnotations}
         />
       </div>
     );

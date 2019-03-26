@@ -2,8 +2,8 @@ import * as d3 from 'd3-format';
 
 import { isPositiveNumber, isString } from './checkers';
 
-const FIXED = 'fixed point';
-const DIGITS = 'significant digits';
+export const FIXED = 'fixed point';
+export const DIGITS = 'significant digits';
 
 export default class Annotator {
   constructor({ rounding, precision, prefix, suffix } = {}) {
@@ -16,14 +16,14 @@ export default class Annotator {
   fixed = FIXED
   digits = DIGITS
 
-  get format() {
+  get formatString() {
     const precisionFormat = this.rounding === FIXED ? 'f' : 'r';
+    return this.precision !== null && this.precision >= 0 ?
+      `,.${this.precision}${precisionFormat}` : ',';
+  }
 
-    if (this.precision !== null && this.precision >= 0) {
-      return d3.format(`,.${this.precision}${precisionFormat}`);
-    } else {
-      return d3.format(',');
-    }
+  get format() {
+    return d3.format(this.formatString);
   }
 
   annotate(d) {
