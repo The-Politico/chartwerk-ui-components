@@ -165,12 +165,29 @@ function (_React$Component) {
 }(React.Component);
 
 Breakpoint.defaultProps = {
-  breakpoints: [290, 350, 600],
-  breakpoint: 600
+  breakpoints: [290, 600],
+  breakpoint: 290
 };
 Breakpoint.propTypes = {
-  breakpoints: PropTypes.arrayOf(PropTypes.number),
-  breakpoint: PropTypes.number,
+  breakpoints: PropTypes.arrayOf(function (propValue, key, componentName, location, propFullName) {
+    var breakpoint = propValue[key];
+
+    if (isNaN(breakpoint) || !Number.isInteger(breakpoint)) {
+      return new Error("Invalid prop `".concat(propFullName, "` supplied to `").concat(componentName, "`. ") + "Should be an integer.");
+    }
+  }),
+  breakpoint: function breakpoint(props, propName, componentName) {
+    var breakpoint = props[propName];
+    var breakpoints = props.breakpoints;
+
+    if (isNaN(breakpoint) || !Number.isInteger(breakpoint)) {
+      return new Error("Invalid prop `".concat(propName, "` supplied to `").concat(componentName, "`. ") + "Should be an integer.");
+    }
+
+    if (breakpoints.indexOf(breakpoint) === -1) {
+      return new Error("Invalid prop `".concat(propName, "` supplied to `").concat(componentName, "`. ") + "Should be an integer included in the `breakpoints` prop array.");
+    }
+  },
   updateBreakpoint: PropTypes.func.isRequired
 };
 
