@@ -1,3 +1,101 @@
+.chartwerk_ui_components___39-jLywSgw {
+  margin: 15px 0 20px; }
+
+@keyframes chartwerk_ui_components___3jYO_6s8Ws {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(359deg); } }
+  .chartwerk_ui_components___39-jLywSgw .level:not(:last-child) {
+    margin-bottom: 1.5rem; }
+  .chartwerk_ui_components___39-jLywSgw .level {
+    align-items: center;
+    justify-content: space-between; }
+    .chartwerk_ui_components___39-jLywSgw .level code {
+      border-radius: 4px; }
+    .chartwerk_ui_components___39-jLywSgw .level img {
+      display: inline-block;
+      vertical-align: top; }
+    .chartwerk_ui_components___39-jLywSgw .level.is-mobile {
+      display: flex; }
+      .chartwerk_ui_components___39-jLywSgw .level.is-mobile .level-left,
+      .chartwerk_ui_components___39-jLywSgw .level.is-mobile .level-right {
+        display: flex; }
+      .chartwerk_ui_components___39-jLywSgw .level.is-mobile .level-left + .level-right {
+        margin-top: 0; }
+      .chartwerk_ui_components___39-jLywSgw .level.is-mobile .level-item:not(:last-child) {
+        margin-bottom: 0;
+        margin-right: 0.75rem; }
+      .chartwerk_ui_components___39-jLywSgw .level.is-mobile .level-item:not(.is-narrow) {
+        flex-grow: 1; }
+    @media screen and (min-width: 769px), print {
+      .chartwerk_ui_components___39-jLywSgw .level {
+        display: flex; }
+        .chartwerk_ui_components___39-jLywSgw .level > .level-item:not(.is-narrow) {
+          flex-grow: 1; } }
+  .chartwerk_ui_components___39-jLywSgw .level-item {
+    align-items: center;
+    display: flex;
+    flex-basis: auto;
+    flex-grow: 0;
+    flex-shrink: 0;
+    justify-content: center; }
+    .chartwerk_ui_components___39-jLywSgw .level-item .title,
+    .chartwerk_ui_components___39-jLywSgw .level-item .subtitle {
+      margin-bottom: 0; }
+    @media screen and (max-width: 768px) {
+      .chartwerk_ui_components___39-jLywSgw .level-item:not(:last-child) {
+        margin-bottom: 0.75rem; } }
+  .chartwerk_ui_components___39-jLywSgw .level-left,
+  .chartwerk_ui_components___39-jLywSgw .level-right {
+    flex-basis: auto;
+    flex-grow: 0;
+    flex-shrink: 0; }
+    .chartwerk_ui_components___39-jLywSgw .level-left .level-item.is-flexible,
+    .chartwerk_ui_components___39-jLywSgw .level-right .level-item.is-flexible {
+      flex-grow: 1; }
+    @media screen and (min-width: 769px), print {
+      .chartwerk_ui_components___39-jLywSgw .level-left .level-item:not(:last-child),
+      .chartwerk_ui_components___39-jLywSgw .level-right .level-item:not(:last-child) {
+        margin-right: 0.75rem; } }
+  .chartwerk_ui_components___39-jLywSgw .level-left {
+    align-items: center;
+    justify-content: flex-start; }
+    @media screen and (max-width: 768px) {
+      .chartwerk_ui_components___39-jLywSgw .level-left + .level-right {
+        margin-top: 1.5rem; } }
+    @media screen and (min-width: 769px), print {
+      .chartwerk_ui_components___39-jLywSgw .level-left {
+        display: flex; } }
+  .chartwerk_ui_components___39-jLywSgw .level-right {
+    align-items: center;
+    justify-content: flex-end; }
+    @media screen and (min-width: 769px), print {
+      .chartwerk_ui_components___39-jLywSgw .level-right {
+        display: flex; } }
+  .chartwerk_ui_components___39-jLywSgw svg {
+    color: #bbb;
+    font-size: 18px; }
+  .chartwerk_ui_components___39-jLywSgw .level-item {
+    padding: 0 10px; }
+  .chartwerk_ui_components___39-jLywSgw .gutter {
+    height: 20px;
+    width: 100%;
+    background-color: #eee;
+    position: relative; }
+    .chartwerk_ui_components___39-jLywSgw .gutter .point-option {
+      height: 20px;
+      display: inline-block;
+      cursor: pointer; }
+      .chartwerk_ui_components___39-jLywSgw .gutter .point-option:hover {
+        background-color: #ddd; }
+    .chartwerk_ui_components___39-jLywSgw .gutter .active-point {
+      height: 20px;
+      position: absolute;
+      background-color: #3273dc;
+      top: 0;
+      transition: left .2s; }
+
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600");
 .chartwerk_ui_components___1CPabYE21v {
   font-family: 'Open Sans', sans-serif; }

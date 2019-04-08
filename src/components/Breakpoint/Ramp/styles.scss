@@ -1,0 +1,38 @@
+.component :global {
+  @import "~bulma/sass/utilities/_all.sass";
+  @import "~bulma/sass/components/level.sass";
+
+  margin: 15px 0 20px;
+
+  svg{
+    color: #bbb;
+    font-size: 18px;
+  }
+
+  .level-item{
+    padding: 0 10px;
+  }
+  .gutter{
+    height: 20px;
+    width: 100%;
+    background-color: #eee;
+    position: relative;
+
+    .point-option{
+      height: 20px;
+      display: inline-block;
+      cursor: pointer;
+      &:hover{
+        background-color: #ddd;
+      }
+    }
+
+    .active-point{
+      height: 20px;
+      position: absolute;
+      background-color: #3273dc;
+      top: 0;
+      transition: left .2s;
+    }
+  }
+}

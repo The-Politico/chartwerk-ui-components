@@ -1,0 +1,17 @@
+@import "../../../theme/_fonts.scss";
+
+.component :global {
+  display: table;
+  min-height: 200px;
+  width: 100%;
+  background-color: #eee;
+  @extend %sans;
+  div{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    color: #bbb;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+}
