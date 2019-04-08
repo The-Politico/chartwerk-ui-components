@@ -29,7 +29,7 @@ class Page extends React.Component {
 
 Page.defaultProps = {
   link: '../',
-  title: 'Make chart interfaces with these components.',
+  title: 'Chartwerk interface components',
 };
 
 export default Page;

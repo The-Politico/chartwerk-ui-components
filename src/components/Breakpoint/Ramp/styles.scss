@@ -1,3 +1,5 @@
+@import "../../../theme/_colors.scss";
+
 .component :global {
   @import "~bulma/sass/utilities/_all.sass";
   @import "~bulma/sass/components/level.sass";
@@ -30,7 +32,7 @@
     .active-point{
       height: 20px;
       position: absolute;
-      background-color: #3273dc;
+      background-color: $blue;
       top: 0;
       transition: left .2s;
     }
