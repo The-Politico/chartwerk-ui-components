@@ -25,27 +25,6 @@ const commonConfig = {
     'react-dom',
     ...Object.keys(pkg.dependencies),
   ],
-  plugins: [
-    json(),
-    alias({
-      resolve: ['.jsx', '.js'],
-      Common: path.resolve(process.cwd(), 'src/common/'),
-      Components: path.resolve(process.cwd(), 'src/components/'),
-      Constants: path.resolve(process.cwd(), 'src/constants/'),
-    }),
-    postcss({
-      modules: {
-        generateScopedName: 'chartwerk_ui_components___[hash:base64:10]',
-      },
-      extract: true,
-    }),
-    babel(babelOpts),
-    resolve({
-      preferBuiltins: true,
-      extensions: ['.js', '.jsx'],
-      modulesOnly: true,
-    }),
-  ],
 };
 
 export default glob.sync('./src/components/*/index.js').map(file => {
@@ -57,6 +36,27 @@ export default glob.sync('./src/components/*/index.js').map(file => {
       format: 'es',
       banner: 'import \'./index.css\';',
     },
+    plugins: [
+      json(),
+      alias({
+        resolve: ['.jsx', '.js'],
+        Common: path.resolve(process.cwd(), 'src/common/'),
+        Components: path.resolve(process.cwd(), 'src/components/'),
+        Constants: path.resolve(process.cwd(), 'src/constants/'),
+      }),
+      postcss({
+        modules: {
+          generateScopedName: 'chartwerk_ui_components___[hash:base64:10]',
+        },
+        extract: true,
+      }),
+      babel(babelOpts),
+      resolve({
+        preferBuiltins: true,
+        extensions: ['.js', '.jsx'],
+        modulesOnly: true,
+      }),
+    ],
   };
   return {
     ...config,
