@@ -1,5 +1,5 @@
-export const datumWidth = 140;
+export const datumWidth = 145;
 export const indexWidth = 35;
 
-export const datumCellWidth = { width: '140px' };
-export const indexCellWidth = { width: '35px' };
+export const datumCellWidth = { width: `${datumWidth}px` };
+export const indexCellWidth = { width: `${indexWidth}px` };

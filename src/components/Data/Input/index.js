@@ -73,11 +73,13 @@ class Input extends React.Component {
           onChange={e => this.setState({ value: e.target.value })}
           placeholder='Paste spreadsheet or comma, tab or pipe separated data here.'
         />
-        {parseError && <div className='level error'>
-          <p>
-            <b>Uh-oh!</b> We couldn't parse your data. Try pasting it in again?
-          </p>
-        </div>}
+        {parseError && (
+          <div className='level error'>
+            <p>
+              <b>Uh-oh!</b> We couldn't parse your data. Try pasting it in again?
+            </p>
+          </div>
+        )}
         <div className='level nav'>
           <button
             onClick={this.startParsing}
@@ -96,8 +98,7 @@ class Input extends React.Component {
               fixedWidth
               spin
               hidden={!parsing}
-            />
-          }
+            />}
         </div>
       </div>
     );

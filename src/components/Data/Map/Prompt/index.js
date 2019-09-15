@@ -43,8 +43,7 @@ class Prompt extends React.Component {
             disabled: isFull && !member,
           })}
           onClick={() => member ?
-            this.removeFromMapping(column) : this.addToMapping(column)
-          }
+            this.removeFromMapping(column) : this.addToMapping(column)}
         >
           {column}
         </div>

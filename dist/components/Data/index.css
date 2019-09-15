@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600|Inconsolata&display=swap");
 .chartwerk_ui_components___2cqd8bK7hI, .chartwerk_ui_components___2cqd8bK7hI .message p {
   font-family: 'Open Sans', sans-serif; }
 
@@ -129,7 +129,7 @@
       .chartwerk_ui_components___2cqd8bK7hI .button.is-white.is-inverted {
         background-color: #333;
         color: #fff; }
-        .chartwerk_ui_components___2cqd8bK7hI .button.is-white.is-inverted:hover {
+        .chartwerk_ui_components___2cqd8bK7hI .button.is-white.is-inverted:hover, .chartwerk_ui_components___2cqd8bK7hI .button.is-white.is-inverted.is-hovered {
           background-color: #262626; }
         .chartwerk_ui_components___2cqd8bK7hI .button.is-white.is-inverted[disabled],
         fieldset[disabled] .chartwerk_ui_components___2cqd8bK7hI .button.is-white.is-inverted {
@@ -143,12 +143,14 @@
         background-color: transparent;
         border-color: #fff;
         color: #fff; }
-        .chartwerk_ui_components___2cqd8bK7hI .button.is-white.is-outlined:hover, .chartwerk_ui_components___2cqd8bK7hI .button.is-white.is-outlined:focus {
+        .chartwerk_ui_components___2cqd8bK7hI .button.is-white.is-outlined:hover, .chartwerk_ui_components___2cqd8bK7hI .button.is-white.is-outlined.is-hovered, .chartwerk_ui_components___2cqd8bK7hI .button.is-white.is-outlined:focus, .chartwerk_ui_components___2cqd8bK7hI .button.is-white.is-outlined.is-focused {
           background-color: #fff;
           border-color: #fff;
           color: #333; }
         .chartwerk_ui_components___2cqd8bK7hI .button.is-white.is-outlined.is-loading::after {
           border-color: transparent transparent #fff #fff !important; }
+        .chartwerk_ui_components___2cqd8bK7hI .button.is-white.is-outlined.is-loading:hover::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-white.is-outlined.is-loading.is-hovered::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-white.is-outlined.is-loading:focus::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-white.is-outlined.is-loading.is-focused::after {
+          border-color: transparent transparent #333 #333 !important; }
         .chartwerk_ui_components___2cqd8bK7hI .button.is-white.is-outlined[disabled],
         fieldset[disabled] .chartwerk_ui_components___2cqd8bK7hI .button.is-white.is-outlined {
           background-color: transparent;
@@ -159,9 +161,11 @@
         background-color: transparent;
         border-color: #333;
         color: #333; }
-        .chartwerk_ui_components___2cqd8bK7hI .button.is-white.is-inverted.is-outlined:hover, .chartwerk_ui_components___2cqd8bK7hI .button.is-white.is-inverted.is-outlined:focus {
+        .chartwerk_ui_components___2cqd8bK7hI .button.is-white.is-inverted.is-outlined:hover, .chartwerk_ui_components___2cqd8bK7hI .button.is-white.is-inverted.is-outlined.is-hovered, .chartwerk_ui_components___2cqd8bK7hI .button.is-white.is-inverted.is-outlined:focus, .chartwerk_ui_components___2cqd8bK7hI .button.is-white.is-inverted.is-outlined.is-focused {
           background-color: #333;
           color: #fff; }
+        .chartwerk_ui_components___2cqd8bK7hI .button.is-white.is-inverted.is-outlined.is-loading:hover::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-white.is-inverted.is-outlined.is-loading.is-hovered::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-white.is-inverted.is-outlined.is-loading:focus::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-white.is-inverted.is-outlined.is-loading.is-focused::after {
+          border-color: transparent transparent #fff #fff !important; }
         .chartwerk_ui_components___2cqd8bK7hI .button.is-white.is-inverted.is-outlined[disabled],
         fieldset[disabled] .chartwerk_ui_components___2cqd8bK7hI .button.is-white.is-inverted.is-outlined {
           background-color: transparent;
@@ -193,7 +197,7 @@
       .chartwerk_ui_components___2cqd8bK7hI .button.is-black.is-inverted {
         background-color: #fff;
         color: #333; }
-        .chartwerk_ui_components___2cqd8bK7hI .button.is-black.is-inverted:hover {
+        .chartwerk_ui_components___2cqd8bK7hI .button.is-black.is-inverted:hover, .chartwerk_ui_components___2cqd8bK7hI .button.is-black.is-inverted.is-hovered {
           background-color: #f2f2f2; }
         .chartwerk_ui_components___2cqd8bK7hI .button.is-black.is-inverted[disabled],
         fieldset[disabled] .chartwerk_ui_components___2cqd8bK7hI .button.is-black.is-inverted {
@@ -207,12 +211,14 @@
         background-color: transparent;
         border-color: #333;
         color: #333; }
-        .chartwerk_ui_components___2cqd8bK7hI .button.is-black.is-outlined:hover, .chartwerk_ui_components___2cqd8bK7hI .button.is-black.is-outlined:focus {
+        .chartwerk_ui_components___2cqd8bK7hI .button.is-black.is-outlined:hover, .chartwerk_ui_components___2cqd8bK7hI .button.is-black.is-outlined.is-hovered, .chartwerk_ui_components___2cqd8bK7hI .button.is-black.is-outlined:focus, .chartwerk_ui_components___2cqd8bK7hI .button.is-black.is-outlined.is-focused {
           background-color: #333;
           border-color: #333;
           color: #fff; }
         .chartwerk_ui_components___2cqd8bK7hI .button.is-black.is-outlined.is-loading::after {
           border-color: transparent transparent #333 #333 !important; }
+        .chartwerk_ui_components___2cqd8bK7hI .button.is-black.is-outlined.is-loading:hover::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-black.is-outlined.is-loading.is-hovered::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-black.is-outlined.is-loading:focus::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-black.is-outlined.is-loading.is-focused::after {
+          border-color: transparent transparent #fff #fff !important; }
         .chartwerk_ui_components___2cqd8bK7hI .button.is-black.is-outlined[disabled],
         fieldset[disabled] .chartwerk_ui_components___2cqd8bK7hI .button.is-black.is-outlined {
           background-color: transparent;
@@ -223,9 +229,11 @@
         background-color: transparent;
         border-color: #fff;
         color: #fff; }
-        .chartwerk_ui_components___2cqd8bK7hI .button.is-black.is-inverted.is-outlined:hover, .chartwerk_ui_components___2cqd8bK7hI .button.is-black.is-inverted.is-outlined:focus {
+        .chartwerk_ui_components___2cqd8bK7hI .button.is-black.is-inverted.is-outlined:hover, .chartwerk_ui_components___2cqd8bK7hI .button.is-black.is-inverted.is-outlined.is-hovered, .chartwerk_ui_components___2cqd8bK7hI .button.is-black.is-inverted.is-outlined:focus, .chartwerk_ui_components___2cqd8bK7hI .button.is-black.is-inverted.is-outlined.is-focused {
           background-color: #fff;
           color: #333; }
+        .chartwerk_ui_components___2cqd8bK7hI .button.is-black.is-inverted.is-outlined.is-loading:hover::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-black.is-inverted.is-outlined.is-loading.is-hovered::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-black.is-inverted.is-outlined.is-loading:focus::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-black.is-inverted.is-outlined.is-loading.is-focused::after {
+          border-color: transparent transparent #333 #333 !important; }
         .chartwerk_ui_components___2cqd8bK7hI .button.is-black.is-inverted.is-outlined[disabled],
         fieldset[disabled] .chartwerk_ui_components___2cqd8bK7hI .button.is-black.is-inverted.is-outlined {
           background-color: transparent;
@@ -257,7 +265,7 @@
       .chartwerk_ui_components___2cqd8bK7hI .button.is-light.is-inverted {
         background-color: #363636;
         color: whitesmoke; }
-        .chartwerk_ui_components___2cqd8bK7hI .button.is-light.is-inverted:hover {
+        .chartwerk_ui_components___2cqd8bK7hI .button.is-light.is-inverted:hover, .chartwerk_ui_components___2cqd8bK7hI .button.is-light.is-inverted.is-hovered {
           background-color: #292929; }
         .chartwerk_ui_components___2cqd8bK7hI .button.is-light.is-inverted[disabled],
         fieldset[disabled] .chartwerk_ui_components___2cqd8bK7hI .button.is-light.is-inverted {
@@ -271,12 +279,14 @@
         background-color: transparent;
         border-color: whitesmoke;
         color: whitesmoke; }
-        .chartwerk_ui_components___2cqd8bK7hI .button.is-light.is-outlined:hover, .chartwerk_ui_components___2cqd8bK7hI .button.is-light.is-outlined:focus {
+        .chartwerk_ui_components___2cqd8bK7hI .button.is-light.is-outlined:hover, .chartwerk_ui_components___2cqd8bK7hI .button.is-light.is-outlined.is-hovered, .chartwerk_ui_components___2cqd8bK7hI .button.is-light.is-outlined:focus, .chartwerk_ui_components___2cqd8bK7hI .button.is-light.is-outlined.is-focused {
           background-color: whitesmoke;
           border-color: whitesmoke;
           color: #363636; }
         .chartwerk_ui_components___2cqd8bK7hI .button.is-light.is-outlined.is-loading::after {
           border-color: transparent transparent whitesmoke whitesmoke !important; }
+        .chartwerk_ui_components___2cqd8bK7hI .button.is-light.is-outlined.is-loading:hover::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-light.is-outlined.is-loading.is-hovered::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-light.is-outlined.is-loading:focus::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-light.is-outlined.is-loading.is-focused::after {
+          border-color: transparent transparent #363636 #363636 !important; }
         .chartwerk_ui_components___2cqd8bK7hI .button.is-light.is-outlined[disabled],
         fieldset[disabled] .chartwerk_ui_components___2cqd8bK7hI .button.is-light.is-outlined {
           background-color: transparent;
@@ -287,9 +297,11 @@
         background-color: transparent;
         border-color: #363636;
         color: #363636; }
-        .chartwerk_ui_components___2cqd8bK7hI .button.is-light.is-inverted.is-outlined:hover, .chartwerk_ui_components___2cqd8bK7hI .button.is-light.is-inverted.is-outlined:focus {
+        .chartwerk_ui_components___2cqd8bK7hI .button.is-light.is-inverted.is-outlined:hover, .chartwerk_ui_components___2cqd8bK7hI .button.is-light.is-inverted.is-outlined.is-hovered, .chartwerk_ui_components___2cqd8bK7hI .button.is-light.is-inverted.is-outlined:focus, .chartwerk_ui_components___2cqd8bK7hI .button.is-light.is-inverted.is-outlined.is-focused {
           background-color: #363636;
           color: whitesmoke; }
+        .chartwerk_ui_components___2cqd8bK7hI .button.is-light.is-inverted.is-outlined.is-loading:hover::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-light.is-inverted.is-outlined.is-loading.is-hovered::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-light.is-inverted.is-outlined.is-loading:focus::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-light.is-inverted.is-outlined.is-loading.is-focused::after {
+          border-color: transparent transparent whitesmoke whitesmoke !important; }
         .chartwerk_ui_components___2cqd8bK7hI .button.is-light.is-inverted.is-outlined[disabled],
         fieldset[disabled] .chartwerk_ui_components___2cqd8bK7hI .button.is-light.is-inverted.is-outlined {
           background-color: transparent;
@@ -321,7 +333,7 @@
       .chartwerk_ui_components___2cqd8bK7hI .button.is-dark.is-inverted {
         background-color: whitesmoke;
         color: #363636; }
-        .chartwerk_ui_components___2cqd8bK7hI .button.is-dark.is-inverted:hover {
+        .chartwerk_ui_components___2cqd8bK7hI .button.is-dark.is-inverted:hover, .chartwerk_ui_components___2cqd8bK7hI .button.is-dark.is-inverted.is-hovered {
           background-color: #e8e8e8; }
         .chartwerk_ui_components___2cqd8bK7hI .button.is-dark.is-inverted[disabled],
         fieldset[disabled] .chartwerk_ui_components___2cqd8bK7hI .button.is-dark.is-inverted {
@@ -335,12 +347,14 @@
         background-color: transparent;
         border-color: #363636;
         color: #363636; }
-        .chartwerk_ui_components___2cqd8bK7hI .button.is-dark.is-outlined:hover, .chartwerk_ui_components___2cqd8bK7hI .button.is-dark.is-outlined:focus {
+        .chartwerk_ui_components___2cqd8bK7hI .button.is-dark.is-outlined:hover, .chartwerk_ui_components___2cqd8bK7hI .button.is-dark.is-outlined.is-hovered, .chartwerk_ui_components___2cqd8bK7hI .button.is-dark.is-outlined:focus, .chartwerk_ui_components___2cqd8bK7hI .button.is-dark.is-outlined.is-focused {
           background-color: #363636;
           border-color: #363636;
           color: whitesmoke; }
         .chartwerk_ui_components___2cqd8bK7hI .button.is-dark.is-outlined.is-loading::after {
           border-color: transparent transparent #363636 #363636 !important; }
+        .chartwerk_ui_components___2cqd8bK7hI .button.is-dark.is-outlined.is-loading:hover::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-dark.is-outlined.is-loading.is-hovered::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-dark.is-outlined.is-loading:focus::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-dark.is-outlined.is-loading.is-focused::after {
+          border-color: transparent transparent whitesmoke whitesmoke !important; }
         .chartwerk_ui_components___2cqd8bK7hI .button.is-dark.is-outlined[disabled],
         fieldset[disabled] .chartwerk_ui_components___2cqd8bK7hI .button.is-dark.is-outlined {
           background-color: transparent;
@@ -351,9 +365,11 @@
         background-color: transparent;
         border-color: whitesmoke;
         color: whitesmoke; }
-        .chartwerk_ui_components___2cqd8bK7hI .button.is-dark.is-inverted.is-outlined:hover, .chartwerk_ui_components___2cqd8bK7hI .button.is-dark.is-inverted.is-outlined:focus {
+        .chartwerk_ui_components___2cqd8bK7hI .button.is-dark.is-inverted.is-outlined:hover, .chartwerk_ui_components___2cqd8bK7hI .button.is-dark.is-inverted.is-outlined.is-hovered, .chartwerk_ui_components___2cqd8bK7hI .button.is-dark.is-inverted.is-outlined:focus, .chartwerk_ui_components___2cqd8bK7hI .button.is-dark.is-inverted.is-outlined.is-focused {
           background-color: whitesmoke;
           color: #363636; }
+        .chartwerk_ui_components___2cqd8bK7hI .button.is-dark.is-inverted.is-outlined.is-loading:hover::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-dark.is-inverted.is-outlined.is-loading.is-hovered::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-dark.is-inverted.is-outlined.is-loading:focus::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-dark.is-inverted.is-outlined.is-loading.is-focused::after {
+          border-color: transparent transparent #363636 #363636 !important; }
         .chartwerk_ui_components___2cqd8bK7hI .button.is-dark.is-inverted.is-outlined[disabled],
         fieldset[disabled] .chartwerk_ui_components___2cqd8bK7hI .button.is-dark.is-inverted.is-outlined {
           background-color: transparent;
@@ -385,7 +401,7 @@
       .chartwerk_ui_components___2cqd8bK7hI .button.is-primary.is-inverted {
         background-color: #fff;
         color: #00d1b2; }
-        .chartwerk_ui_components___2cqd8bK7hI .button.is-primary.is-inverted:hover {
+        .chartwerk_ui_components___2cqd8bK7hI .button.is-primary.is-inverted:hover, .chartwerk_ui_components___2cqd8bK7hI .button.is-primary.is-inverted.is-hovered {
           background-color: #f2f2f2; }
         .chartwerk_ui_components___2cqd8bK7hI .button.is-primary.is-inverted[disabled],
         fieldset[disabled] .chartwerk_ui_components___2cqd8bK7hI .button.is-primary.is-inverted {
@@ -399,12 +415,14 @@
         background-color: transparent;
         border-color: #00d1b2;
         color: #00d1b2; }
-        .chartwerk_ui_components___2cqd8bK7hI .button.is-primary.is-outlined:hover, .chartwerk_ui_components___2cqd8bK7hI .button.is-primary.is-outlined:focus {
+        .chartwerk_ui_components___2cqd8bK7hI .button.is-primary.is-outlined:hover, .chartwerk_ui_components___2cqd8bK7hI .button.is-primary.is-outlined.is-hovered, .chartwerk_ui_components___2cqd8bK7hI .button.is-primary.is-outlined:focus, .chartwerk_ui_components___2cqd8bK7hI .button.is-primary.is-outlined.is-focused {
           background-color: #00d1b2;
           border-color: #00d1b2;
           color: #fff; }
         .chartwerk_ui_components___2cqd8bK7hI .button.is-primary.is-outlined.is-loading::after {
           border-color: transparent transparent #00d1b2 #00d1b2 !important; }
+        .chartwerk_ui_components___2cqd8bK7hI .button.is-primary.is-outlined.is-loading:hover::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-primary.is-outlined.is-loading.is-hovered::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-primary.is-outlined.is-loading:focus::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-primary.is-outlined.is-loading.is-focused::after {
+          border-color: transparent transparent #fff #fff !important; }
         .chartwerk_ui_components___2cqd8bK7hI .button.is-primary.is-outlined[disabled],
         fieldset[disabled] .chartwerk_ui_components___2cqd8bK7hI .button.is-primary.is-outlined {
           background-color: transparent;
@@ -415,9 +433,11 @@
         background-color: transparent;
         border-color: #fff;
         color: #fff; }
-        .chartwerk_ui_components___2cqd8bK7hI .button.is-primary.is-inverted.is-outlined:hover, .chartwerk_ui_components___2cqd8bK7hI .button.is-primary.is-inverted.is-outlined:focus {
+        .chartwerk_ui_components___2cqd8bK7hI .button.is-primary.is-inverted.is-outlined:hover, .chartwerk_ui_components___2cqd8bK7hI .button.is-primary.is-inverted.is-outlined.is-hovered, .chartwerk_ui_components___2cqd8bK7hI .button.is-primary.is-inverted.is-outlined:focus, .chartwerk_ui_components___2cqd8bK7hI .button.is-primary.is-inverted.is-outlined.is-focused {
           background-color: #fff;
           color: #00d1b2; }
+        .chartwerk_ui_components___2cqd8bK7hI .button.is-primary.is-inverted.is-outlined.is-loading:hover::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-primary.is-inverted.is-outlined.is-loading.is-hovered::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-primary.is-inverted.is-outlined.is-loading:focus::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-primary.is-inverted.is-outlined.is-loading.is-focused::after {
+          border-color: transparent transparent #00d1b2 #00d1b2 !important; }
         .chartwerk_ui_components___2cqd8bK7hI .button.is-primary.is-inverted.is-outlined[disabled],
         fieldset[disabled] .chartwerk_ui_components___2cqd8bK7hI .button.is-primary.is-inverted.is-outlined {
           background-color: transparent;
@@ -449,7 +469,7 @@
       .chartwerk_ui_components___2cqd8bK7hI .button.is-link.is-inverted {
         background-color: #fff;
         color: #1565c0; }
-        .chartwerk_ui_components___2cqd8bK7hI .button.is-link.is-inverted:hover {
+        .chartwerk_ui_components___2cqd8bK7hI .button.is-link.is-inverted:hover, .chartwerk_ui_components___2cqd8bK7hI .button.is-link.is-inverted.is-hovered {
           background-color: #f2f2f2; }
         .chartwerk_ui_components___2cqd8bK7hI .button.is-link.is-inverted[disabled],
         fieldset[disabled] .chartwerk_ui_components___2cqd8bK7hI .button.is-link.is-inverted {
@@ -463,12 +483,14 @@
         background-color: transparent;
         border-color: #1565c0;
         color: #1565c0; }
-        .chartwerk_ui_components___2cqd8bK7hI .button.is-link.is-outlined:hover, .chartwerk_ui_components___2cqd8bK7hI .button.is-link.is-outlined:focus {
+        .chartwerk_ui_components___2cqd8bK7hI .button.is-link.is-outlined:hover, .chartwerk_ui_components___2cqd8bK7hI .button.is-link.is-outlined.is-hovered, .chartwerk_ui_components___2cqd8bK7hI .button.is-link.is-outlined:focus, .chartwerk_ui_components___2cqd8bK7hI .button.is-link.is-outlined.is-focused {
           background-color: #1565c0;
           border-color: #1565c0;
           color: #fff; }
         .chartwerk_ui_components___2cqd8bK7hI .button.is-link.is-outlined.is-loading::after {
           border-color: transparent transparent #1565c0 #1565c0 !important; }
+        .chartwerk_ui_components___2cqd8bK7hI .button.is-link.is-outlined.is-loading:hover::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-link.is-outlined.is-loading.is-hovered::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-link.is-outlined.is-loading:focus::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-link.is-outlined.is-loading.is-focused::after {
+          border-color: transparent transparent #fff #fff !important; }
         .chartwerk_ui_components___2cqd8bK7hI .button.is-link.is-outlined[disabled],
         fieldset[disabled] .chartwerk_ui_components___2cqd8bK7hI .button.is-link.is-outlined {
           background-color: transparent;
@@ -479,9 +501,11 @@
         background-color: transparent;
         border-color: #fff;
         color: #fff; }
-        .chartwerk_ui_components___2cqd8bK7hI .button.is-link.is-inverted.is-outlined:hover, .chartwerk_ui_components___2cqd8bK7hI .button.is-link.is-inverted.is-outlined:focus {
+        .chartwerk_ui_components___2cqd8bK7hI .button.is-link.is-inverted.is-outlined:hover, .chartwerk_ui_components___2cqd8bK7hI .button.is-link.is-inverted.is-outlined.is-hovered, .chartwerk_ui_components___2cqd8bK7hI .button.is-link.is-inverted.is-outlined:focus, .chartwerk_ui_components___2cqd8bK7hI .button.is-link.is-inverted.is-outlined.is-focused {
           background-color: #fff;
           color: #1565c0; }
+        .chartwerk_ui_components___2cqd8bK7hI .button.is-link.is-inverted.is-outlined.is-loading:hover::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-link.is-inverted.is-outlined.is-loading.is-hovered::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-link.is-inverted.is-outlined.is-loading:focus::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-link.is-inverted.is-outlined.is-loading.is-focused::after {
+          border-color: transparent transparent #1565c0 #1565c0 !important; }
         .chartwerk_ui_components___2cqd8bK7hI .button.is-link.is-inverted.is-outlined[disabled],
         fieldset[disabled] .chartwerk_ui_components___2cqd8bK7hI .button.is-link.is-inverted.is-outlined {
           background-color: transparent;
@@ -513,7 +537,7 @@
       .chartwerk_ui_components___2cqd8bK7hI .button.is-info.is-inverted {
         background-color: #fff;
         color: #209cee; }
-        .chartwerk_ui_components___2cqd8bK7hI .button.is-info.is-inverted:hover {
+        .chartwerk_ui_components___2cqd8bK7hI .button.is-info.is-inverted:hover, .chartwerk_ui_components___2cqd8bK7hI .button.is-info.is-inverted.is-hovered {
           background-color: #f2f2f2; }
         .chartwerk_ui_components___2cqd8bK7hI .button.is-info.is-inverted[disabled],
         fieldset[disabled] .chartwerk_ui_components___2cqd8bK7hI .button.is-info.is-inverted {
@@ -527,12 +551,14 @@
         background-color: transparent;
         border-color: #209cee;
         color: #209cee; }
-        .chartwerk_ui_components___2cqd8bK7hI .button.is-info.is-outlined:hover, .chartwerk_ui_components___2cqd8bK7hI .button.is-info.is-outlined:focus {
+        .chartwerk_ui_components___2cqd8bK7hI .button.is-info.is-outlined:hover, .chartwerk_ui_components___2cqd8bK7hI .button.is-info.is-outlined.is-hovered, .chartwerk_ui_components___2cqd8bK7hI .button.is-info.is-outlined:focus, .chartwerk_ui_components___2cqd8bK7hI .button.is-info.is-outlined.is-focused {
           background-color: #209cee;
           border-color: #209cee;
           color: #fff; }
         .chartwerk_ui_components___2cqd8bK7hI .button.is-info.is-outlined.is-loading::after {
           border-color: transparent transparent #209cee #209cee !important; }
+        .chartwerk_ui_components___2cqd8bK7hI .button.is-info.is-outlined.is-loading:hover::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-info.is-outlined.is-loading.is-hovered::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-info.is-outlined.is-loading:focus::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-info.is-outlined.is-loading.is-focused::after {
+          border-color: transparent transparent #fff #fff !important; }
         .chartwerk_ui_components___2cqd8bK7hI .button.is-info.is-outlined[disabled],
         fieldset[disabled] .chartwerk_ui_components___2cqd8bK7hI .button.is-info.is-outlined {
           background-color: transparent;
@@ -543,9 +569,11 @@
         background-color: transparent;
         border-color: #fff;
         color: #fff; }
-        .chartwerk_ui_components___2cqd8bK7hI .button.is-info.is-inverted.is-outlined:hover, .chartwerk_ui_components___2cqd8bK7hI .button.is-info.is-inverted.is-outlined:focus {
+        .chartwerk_ui_components___2cqd8bK7hI .button.is-info.is-inverted.is-outlined:hover, .chartwerk_ui_components___2cqd8bK7hI .button.is-info.is-inverted.is-outlined.is-hovered, .chartwerk_ui_components___2cqd8bK7hI .button.is-info.is-inverted.is-outlined:focus, .chartwerk_ui_components___2cqd8bK7hI .button.is-info.is-inverted.is-outlined.is-focused {
           background-color: #fff;
           color: #209cee; }
+        .chartwerk_ui_components___2cqd8bK7hI .button.is-info.is-inverted.is-outlined.is-loading:hover::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-info.is-inverted.is-outlined.is-loading.is-hovered::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-info.is-inverted.is-outlined.is-loading:focus::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-info.is-inverted.is-outlined.is-loading.is-focused::after {
+          border-color: transparent transparent #209cee #209cee !important; }
         .chartwerk_ui_components___2cqd8bK7hI .button.is-info.is-inverted.is-outlined[disabled],
         fieldset[disabled] .chartwerk_ui_components___2cqd8bK7hI .button.is-info.is-inverted.is-outlined {
           background-color: transparent;
@@ -577,7 +605,7 @@
       .chartwerk_ui_components___2cqd8bK7hI .button.is-success.is-inverted {
         background-color: #fff;
         color: #2e7d32; }
-        .chartwerk_ui_components___2cqd8bK7hI .button.is-success.is-inverted:hover {
+        .chartwerk_ui_components___2cqd8bK7hI .button.is-success.is-inverted:hover, .chartwerk_ui_components___2cqd8bK7hI .button.is-success.is-inverted.is-hovered {
           background-color: #f2f2f2; }
         .chartwerk_ui_components___2cqd8bK7hI .button.is-success.is-inverted[disabled],
         fieldset[disabled] .chartwerk_ui_components___2cqd8bK7hI .button.is-success.is-inverted {
@@ -591,12 +619,14 @@
         background-color: transparent;
         border-color: #2e7d32;
         color: #2e7d32; }
-        .chartwerk_ui_components___2cqd8bK7hI .button.is-success.is-outlined:hover, .chartwerk_ui_components___2cqd8bK7hI .button.is-success.is-outlined:focus {
+        .chartwerk_ui_components___2cqd8bK7hI .button.is-success.is-outlined:hover, .chartwerk_ui_components___2cqd8bK7hI .button.is-success.is-outlined.is-hovered, .chartwerk_ui_components___2cqd8bK7hI .button.is-success.is-outlined:focus, .chartwerk_ui_components___2cqd8bK7hI .button.is-success.is-outlined.is-focused {
           background-color: #2e7d32;
           border-color: #2e7d32;
           color: #fff; }
         .chartwerk_ui_components___2cqd8bK7hI .button.is-success.is-outlined.is-loading::after {
           border-color: transparent transparent #2e7d32 #2e7d32 !important; }
+        .chartwerk_ui_components___2cqd8bK7hI .button.is-success.is-outlined.is-loading:hover::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-success.is-outlined.is-loading.is-hovered::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-success.is-outlined.is-loading:focus::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-success.is-outlined.is-loading.is-focused::after {
+          border-color: transparent transparent #fff #fff !important; }
         .chartwerk_ui_components___2cqd8bK7hI .button.is-success.is-outlined[disabled],
         fieldset[disabled] .chartwerk_ui_components___2cqd8bK7hI .button.is-success.is-outlined {
           background-color: transparent;
@@ -607,9 +637,11 @@
         background-color: transparent;
         border-color: #fff;
         color: #fff; }
-        .chartwerk_ui_components___2cqd8bK7hI .button.is-success.is-inverted.is-outlined:hover, .chartwerk_ui_components___2cqd8bK7hI .button.is-success.is-inverted.is-outlined:focus {
+        .chartwerk_ui_components___2cqd8bK7hI .button.is-success.is-inverted.is-outlined:hover, .chartwerk_ui_components___2cqd8bK7hI .button.is-success.is-inverted.is-outlined.is-hovered, .chartwerk_ui_components___2cqd8bK7hI .button.is-success.is-inverted.is-outlined:focus, .chartwerk_ui_components___2cqd8bK7hI .button.is-success.is-inverted.is-outlined.is-focused {
           background-color: #fff;
           color: #2e7d32; }
+        .chartwerk_ui_components___2cqd8bK7hI .button.is-success.is-inverted.is-outlined.is-loading:hover::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-success.is-inverted.is-outlined.is-loading.is-hovered::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-success.is-inverted.is-outlined.is-loading:focus::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-success.is-inverted.is-outlined.is-loading.is-focused::after {
+          border-color: transparent transparent #2e7d32 #2e7d32 !important; }
         .chartwerk_ui_components___2cqd8bK7hI .button.is-success.is-inverted.is-outlined[disabled],
         fieldset[disabled] .chartwerk_ui_components___2cqd8bK7hI .button.is-success.is-inverted.is-outlined {
           background-color: transparent;
@@ -641,7 +673,7 @@
       .chartwerk_ui_components___2cqd8bK7hI .button.is-warning.is-inverted {
         background-color: rgba(0, 0, 0, 0.7);
         color: #ffdd57; }
-        .chartwerk_ui_components___2cqd8bK7hI .button.is-warning.is-inverted:hover {
+        .chartwerk_ui_components___2cqd8bK7hI .button.is-warning.is-inverted:hover, .chartwerk_ui_components___2cqd8bK7hI .button.is-warning.is-inverted.is-hovered {
           background-color: rgba(0, 0, 0, 0.7); }
         .chartwerk_ui_components___2cqd8bK7hI .button.is-warning.is-inverted[disabled],
         fieldset[disabled] .chartwerk_ui_components___2cqd8bK7hI .button.is-warning.is-inverted {
@@ -655,12 +687,14 @@
         background-color: transparent;
         border-color: #ffdd57;
         color: #ffdd57; }
-        .chartwerk_ui_components___2cqd8bK7hI .button.is-warning.is-outlined:hover, .chartwerk_ui_components___2cqd8bK7hI .button.is-warning.is-outlined:focus {
+        .chartwerk_ui_components___2cqd8bK7hI .button.is-warning.is-outlined:hover, .chartwerk_ui_components___2cqd8bK7hI .button.is-warning.is-outlined.is-hovered, .chartwerk_ui_components___2cqd8bK7hI .button.is-warning.is-outlined:focus, .chartwerk_ui_components___2cqd8bK7hI .button.is-warning.is-outlined.is-focused {
           background-color: #ffdd57;
           border-color: #ffdd57;
           color: rgba(0, 0, 0, 0.7); }
         .chartwerk_ui_components___2cqd8bK7hI .button.is-warning.is-outlined.is-loading::after {
           border-color: transparent transparent #ffdd57 #ffdd57 !important; }
+        .chartwerk_ui_components___2cqd8bK7hI .button.is-warning.is-outlined.is-loading:hover::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-warning.is-outlined.is-loading.is-hovered::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-warning.is-outlined.is-loading:focus::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-warning.is-outlined.is-loading.is-focused::after {
+          border-color: transparent transparent rgba(0, 0, 0, 0.7) rgba(0, 0, 0, 0.7) !important; }
         .chartwerk_ui_components___2cqd8bK7hI .button.is-warning.is-outlined[disabled],
         fieldset[disabled] .chartwerk_ui_components___2cqd8bK7hI .button.is-warning.is-outlined {
           background-color: transparent;
@@ -671,9 +705,11 @@
         background-color: transparent;
         border-color: rgba(0, 0, 0, 0.7);
         color: rgba(0, 0, 0, 0.7); }
-        .chartwerk_ui_components___2cqd8bK7hI .button.is-warning.is-inverted.is-outlined:hover, .chartwerk_ui_components___2cqd8bK7hI .button.is-warning.is-inverted.is-outlined:focus {
+        .chartwerk_ui_components___2cqd8bK7hI .button.is-warning.is-inverted.is-outlined:hover, .chartwerk_ui_components___2cqd8bK7hI .button.is-warning.is-inverted.is-outlined.is-hovered, .chartwerk_ui_components___2cqd8bK7hI .button.is-warning.is-inverted.is-outlined:focus, .chartwerk_ui_components___2cqd8bK7hI .button.is-warning.is-inverted.is-outlined.is-focused {
           background-color: rgba(0, 0, 0, 0.7);
           color: #ffdd57; }
+        .chartwerk_ui_components___2cqd8bK7hI .button.is-warning.is-inverted.is-outlined.is-loading:hover::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-warning.is-inverted.is-outlined.is-loading.is-hovered::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-warning.is-inverted.is-outlined.is-loading:focus::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-warning.is-inverted.is-outlined.is-loading.is-focused::after {
+          border-color: transparent transparent #ffdd57 #ffdd57 !important; }
         .chartwerk_ui_components___2cqd8bK7hI .button.is-warning.is-inverted.is-outlined[disabled],
         fieldset[disabled] .chartwerk_ui_components___2cqd8bK7hI .button.is-warning.is-inverted.is-outlined {
           background-color: transparent;
@@ -705,7 +741,7 @@
       .chartwerk_ui_components___2cqd8bK7hI .button.is-danger.is-inverted {
         background-color: #fff;
         color: #C91507; }
-        .chartwerk_ui_components___2cqd8bK7hI .button.is-danger.is-inverted:hover {
+        .chartwerk_ui_components___2cqd8bK7hI .button.is-danger.is-inverted:hover, .chartwerk_ui_components___2cqd8bK7hI .button.is-danger.is-inverted.is-hovered {
           background-color: #f2f2f2; }
         .chartwerk_ui_components___2cqd8bK7hI .button.is-danger.is-inverted[disabled],
         fieldset[disabled] .chartwerk_ui_components___2cqd8bK7hI .button.is-danger.is-inverted {
@@ -719,12 +755,14 @@
         background-color: transparent;
         border-color: #C91507;
         color: #C91507; }
-        .chartwerk_ui_components___2cqd8bK7hI .button.is-danger.is-outlined:hover, .chartwerk_ui_components___2cqd8bK7hI .button.is-danger.is-outlined:focus {
+        .chartwerk_ui_components___2cqd8bK7hI .button.is-danger.is-outlined:hover, .chartwerk_ui_components___2cqd8bK7hI .button.is-danger.is-outlined.is-hovered, .chartwerk_ui_components___2cqd8bK7hI .button.is-danger.is-outlined:focus, .chartwerk_ui_components___2cqd8bK7hI .button.is-danger.is-outlined.is-focused {
           background-color: #C91507;
           border-color: #C91507;
           color: #fff; }
         .chartwerk_ui_components___2cqd8bK7hI .button.is-danger.is-outlined.is-loading::after {
           border-color: transparent transparent #C91507 #C91507 !important; }
+        .chartwerk_ui_components___2cqd8bK7hI .button.is-danger.is-outlined.is-loading:hover::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-danger.is-outlined.is-loading.is-hovered::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-danger.is-outlined.is-loading:focus::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-danger.is-outlined.is-loading.is-focused::after {
+          border-color: transparent transparent #fff #fff !important; }
         .chartwerk_ui_components___2cqd8bK7hI .button.is-danger.is-outlined[disabled],
         fieldset[disabled] .chartwerk_ui_components___2cqd8bK7hI .button.is-danger.is-outlined {
           background-color: transparent;
@@ -735,9 +773,11 @@
         background-color: transparent;
         border-color: #fff;
         color: #fff; }
-        .chartwerk_ui_components___2cqd8bK7hI .button.is-danger.is-inverted.is-outlined:hover, .chartwerk_ui_components___2cqd8bK7hI .button.is-danger.is-inverted.is-outlined:focus {
+        .chartwerk_ui_components___2cqd8bK7hI .button.is-danger.is-inverted.is-outlined:hover, .chartwerk_ui_components___2cqd8bK7hI .button.is-danger.is-inverted.is-outlined.is-hovered, .chartwerk_ui_components___2cqd8bK7hI .button.is-danger.is-inverted.is-outlined:focus, .chartwerk_ui_components___2cqd8bK7hI .button.is-danger.is-inverted.is-outlined.is-focused {
           background-color: #fff;
           color: #C91507; }
+        .chartwerk_ui_components___2cqd8bK7hI .button.is-danger.is-inverted.is-outlined.is-loading:hover::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-danger.is-inverted.is-outlined.is-loading.is-hovered::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-danger.is-inverted.is-outlined.is-loading:focus::after, .chartwerk_ui_components___2cqd8bK7hI .button.is-danger.is-inverted.is-outlined.is-loading.is-focused::after {
+          border-color: transparent transparent #C91507 #C91507 !important; }
         .chartwerk_ui_components___2cqd8bK7hI .button.is-danger.is-inverted.is-outlined[disabled],
         fieldset[disabled] .chartwerk_ui_components___2cqd8bK7hI .button.is-danger.is-inverted.is-outlined {
           background-color: transparent;
@@ -816,16 +856,27 @@
       .chartwerk_ui_components___2cqd8bK7hI .buttons.has-addons .button:focus:hover, .chartwerk_ui_components___2cqd8bK7hI .buttons.has-addons .button.is-focused:hover, .chartwerk_ui_components___2cqd8bK7hI .buttons.has-addons .button:active:hover, .chartwerk_ui_components___2cqd8bK7hI .buttons.has-addons .button.is-active:hover, .chartwerk_ui_components___2cqd8bK7hI .buttons.has-addons .button.is-selected:hover {
         z-index: 4; }
     .chartwerk_ui_components___2cqd8bK7hI .buttons.has-addons .button.is-expanded {
-      flex-grow: 1; }
+      flex-grow: 1;
+      flex-shrink: 1; }
     .chartwerk_ui_components___2cqd8bK7hI .buttons.is-centered {
       justify-content: center; }
+      .chartwerk_ui_components___2cqd8bK7hI .buttons.is-centered:not(.has-addons) .button:not(.is-fullwidth) {
+        margin-left: 0.25rem;
+        margin-right: 0.25rem; }
     .chartwerk_ui_components___2cqd8bK7hI .buttons.is-right {
       justify-content: flex-end; }
+      .chartwerk_ui_components___2cqd8bK7hI .buttons.is-right:not(.has-addons) .button:not(.is-fullwidth) {
+        margin-left: 0.25rem;
+        margin-right: 0.25rem; }
   .chartwerk_ui_components___2cqd8bK7hI .message p {
     font-size: 14px; }
     .chartwerk_ui_components___2cqd8bK7hI .message p b {
       color: #C91507;
       font-weight: bold; }
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600|Inconsolata&display=swap");
+.chartwerk_ui_components___Hsz0o0s8Dh textarea {
+  font-family: 'Inconsolata', monospace; }
 
 .chartwerk_ui_components___Hsz0o0s8Dh small {
   color: #333; }
@@ -835,7 +886,6 @@
   max-width: 100%;
   min-width: 100%;
   min-height: 200px;
-  font-family: monospace;
   outline: none;
   padding: 10px;
   box-sizing: border-box; }
@@ -859,7 +909,7 @@
   margin-top: 8px;
   color: #1565c0; }
 
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600|Inconsolata&display=swap");
 .chartwerk_ui_components___2X8B4iz3dp {
   color: #333; }
   .chartwerk_ui_components___2X8B4iz3dp p {
@@ -872,9 +922,9 @@
   .chartwerk_ui_components___2X8B4iz3dp div.level.tags {
     margin-bottom: 5px; }
 
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600|Inconsolata&display=swap");
 .chartwerk_ui_components___2tNjOiYN5j div.table {
-  font-family: monospace; }
+  font-family: 'Inconsolata', monospace; }
 
 .chartwerk_ui_components___2tNjOiYN5j {
   color: #333;
@@ -889,8 +939,7 @@
   .chartwerk_ui_components___2tNjOiYN5j .table-container {
     width: 100%;
     border: 1px solid #ccc;
-    overflow-x: scroll;
-    padding-bottom: 12px; }
+    overflow-x: scroll; }
   .chartwerk_ui_components___2tNjOiYN5j div.table div.row {
     white-space: nowrap;
     width: auto; }
@@ -906,12 +955,12 @@
         .chartwerk_ui_components___2tNjOiYN5j div.table div.row div.cell.editing-column input {
           background-color: #e3f2fd; }
 
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600|Inconsolata&display=swap");
 .chartwerk_ui_components___2KmMU7PtV6 div.cell.header {
   font-family: 'Open Sans', sans-serif; }
 
 .chartwerk_ui_components___2KmMU7PtV6 div.cell.type {
-  font-family: monospace; }
+  font-family: 'Inconsolata', monospace; }
 
 .chartwerk_ui_components___2KmMU7PtV6 {
   margin-left: -1px; }
@@ -966,7 +1015,7 @@
   padding-left: 2px;
   text-align: center !important; }
 
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600|Inconsolata&display=swap");
 .chartwerk_ui_components___16FpMFvss8 {
   border-right: 1px solid #eee;
   border-bottom: 1px solid #eee;
@@ -1011,14 +1060,6 @@
       font-size: 1rem; }
     .chartwerk_ui_components___m7nuPQ3NIt .tags.are-large .tag:not(.is-normal):not(.is-medium) {
       font-size: 1.25rem; }
-    .chartwerk_ui_components___m7nuPQ3NIt .tags.has-addons .tag {
-      margin-right: 0; }
-      .chartwerk_ui_components___m7nuPQ3NIt .tags.has-addons .tag:not(:first-child) {
-        border-bottom-left-radius: 0;
-        border-top-left-radius: 0; }
-      .chartwerk_ui_components___m7nuPQ3NIt .tags.has-addons .tag:not(:last-child) {
-        border-bottom-right-radius: 0;
-        border-top-right-radius: 0; }
     .chartwerk_ui_components___m7nuPQ3NIt .tags.is-centered {
       justify-content: center; }
       .chartwerk_ui_components___m7nuPQ3NIt .tags.is-centered .tag {
@@ -1129,7 +1170,7 @@
   .chartwerk_ui_components___m7nuPQ3NIt a.tag:hover {
     text-decoration: underline; }
 
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600|Inconsolata&display=swap");
 .chartwerk_ui_components___2ea2SZEwIv label.label {
   font-family: 'Open Sans', sans-serif; }
 
@@ -1174,8 +1215,7 @@
   position: relative;
   width: 1em; }
 
-.chartwerk_ui_components___2ea2SZEwIv .input,
-.chartwerk_ui_components___2ea2SZEwIv .textarea, .chartwerk_ui_components___2ea2SZEwIv .select select, .chartwerk_ui_components___2ea2SZEwIv .file-cta,
+.chartwerk_ui_components___2ea2SZEwIv .input, .chartwerk_ui_components___2ea2SZEwIv .textarea, .chartwerk_ui_components___2ea2SZEwIv .select select, .chartwerk_ui_components___2ea2SZEwIv .file-cta,
 .chartwerk_ui_components___2ea2SZEwIv .file-name {
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -1194,18 +1234,13 @@
   padding-top: calc(0.375em - 1px);
   position: relative;
   vertical-align: top; }
-  .chartwerk_ui_components___2ea2SZEwIv .input:focus,
-  .chartwerk_ui_components___2ea2SZEwIv .textarea:focus, .chartwerk_ui_components___2ea2SZEwIv .select select:focus, .chartwerk_ui_components___2ea2SZEwIv .file-cta:focus,
-  .chartwerk_ui_components___2ea2SZEwIv .file-name:focus, .chartwerk_ui_components___2ea2SZEwIv .is-focused.input,
-  .chartwerk_ui_components___2ea2SZEwIv .is-focused.textarea, .chartwerk_ui_components___2ea2SZEwIv .select select.is-focused, .chartwerk_ui_components___2ea2SZEwIv .is-focused.file-cta,
-  .chartwerk_ui_components___2ea2SZEwIv .is-focused.file-name, .chartwerk_ui_components___2ea2SZEwIv .input:active,
-  .chartwerk_ui_components___2ea2SZEwIv .textarea:active, .chartwerk_ui_components___2ea2SZEwIv .select select:active, .chartwerk_ui_components___2ea2SZEwIv .file-cta:active,
-  .chartwerk_ui_components___2ea2SZEwIv .file-name:active, .chartwerk_ui_components___2ea2SZEwIv .is-active.input,
-  .chartwerk_ui_components___2ea2SZEwIv .is-active.textarea, .chartwerk_ui_components___2ea2SZEwIv .select select.is-active, .chartwerk_ui_components___2ea2SZEwIv .is-active.file-cta,
+  .chartwerk_ui_components___2ea2SZEwIv .input:focus, .chartwerk_ui_components___2ea2SZEwIv .textarea:focus, .chartwerk_ui_components___2ea2SZEwIv .select select:focus, .chartwerk_ui_components___2ea2SZEwIv .file-cta:focus,
+  .chartwerk_ui_components___2ea2SZEwIv .file-name:focus, .chartwerk_ui_components___2ea2SZEwIv .is-focused.input, .chartwerk_ui_components___2ea2SZEwIv .is-focused.textarea, .chartwerk_ui_components___2ea2SZEwIv .select select.is-focused, .chartwerk_ui_components___2ea2SZEwIv .is-focused.file-cta,
+  .chartwerk_ui_components___2ea2SZEwIv .is-focused.file-name, .chartwerk_ui_components___2ea2SZEwIv .input:active, .chartwerk_ui_components___2ea2SZEwIv .textarea:active, .chartwerk_ui_components___2ea2SZEwIv .select select:active, .chartwerk_ui_components___2ea2SZEwIv .file-cta:active,
+  .chartwerk_ui_components___2ea2SZEwIv .file-name:active, .chartwerk_ui_components___2ea2SZEwIv .is-active.input, .chartwerk_ui_components___2ea2SZEwIv .is-active.textarea, .chartwerk_ui_components___2ea2SZEwIv .select select.is-active, .chartwerk_ui_components___2ea2SZEwIv .is-active.file-cta,
   .chartwerk_ui_components___2ea2SZEwIv .is-active.file-name {
     outline: none; }
-  .chartwerk_ui_components___2ea2SZEwIv .input[disabled],
-  .chartwerk_ui_components___2ea2SZEwIv .textarea[disabled], .chartwerk_ui_components___2ea2SZEwIv .select select[disabled], .chartwerk_ui_components___2ea2SZEwIv .file-cta[disabled],
+  .chartwerk_ui_components___2ea2SZEwIv .input[disabled], .chartwerk_ui_components___2ea2SZEwIv .textarea[disabled], .chartwerk_ui_components___2ea2SZEwIv .select select[disabled], .chartwerk_ui_components___2ea2SZEwIv .file-cta[disabled],
   .chartwerk_ui_components___2ea2SZEwIv .file-name[disabled],
   fieldset[disabled] .chartwerk_ui_components___2ea2SZEwIv .input,
   fieldset[disabled] .chartwerk_ui_components___2ea2SZEwIv .textarea,
@@ -1214,179 +1249,110 @@
   fieldset[disabled] .chartwerk_ui_components___2ea2SZEwIv .file-name {
     cursor: not-allowed; }
 
-.chartwerk_ui_components___2ea2SZEwIv .input,
-.chartwerk_ui_components___2ea2SZEwIv .textarea {
+.chartwerk_ui_components___2ea2SZEwIv .input, .chartwerk_ui_components___2ea2SZEwIv .textarea, .chartwerk_ui_components___2ea2SZEwIv .select select {
   background-color: #fff;
   border-color: #dbdbdb;
-  color: #363636;
-  box-shadow: inset 0 1px 2px rgba(51, 51, 51, 0.1);
-  max-width: 100%;
-  width: 100%; }
-  .chartwerk_ui_components___2ea2SZEwIv .input::-moz-placeholder,
-  .chartwerk_ui_components___2ea2SZEwIv .textarea::-moz-placeholder {
+  border-radius: 4px;
+  color: #363636; }
+  .chartwerk_ui_components___2ea2SZEwIv .input::-moz-placeholder, .chartwerk_ui_components___2ea2SZEwIv .textarea::-moz-placeholder, .chartwerk_ui_components___2ea2SZEwIv .select select::-moz-placeholder {
     color: rgba(54, 54, 54, 0.3); }
-  .chartwerk_ui_components___2ea2SZEwIv .input::-webkit-input-placeholder,
-  .chartwerk_ui_components___2ea2SZEwIv .textarea::-webkit-input-placeholder {
+  .chartwerk_ui_components___2ea2SZEwIv .input::-webkit-input-placeholder, .chartwerk_ui_components___2ea2SZEwIv .textarea::-webkit-input-placeholder, .chartwerk_ui_components___2ea2SZEwIv .select select::-webkit-input-placeholder {
     color: rgba(54, 54, 54, 0.3); }
-  .chartwerk_ui_components___2ea2SZEwIv .input:-moz-placeholder,
-  .chartwerk_ui_components___2ea2SZEwIv .textarea:-moz-placeholder {
+  .chartwerk_ui_components___2ea2SZEwIv .input:-moz-placeholder, .chartwerk_ui_components___2ea2SZEwIv .textarea:-moz-placeholder, .chartwerk_ui_components___2ea2SZEwIv .select select:-moz-placeholder {
     color: rgba(54, 54, 54, 0.3); }
-  .chartwerk_ui_components___2ea2SZEwIv .input:-ms-input-placeholder,
-  .chartwerk_ui_components___2ea2SZEwIv .textarea:-ms-input-placeholder {
+  .chartwerk_ui_components___2ea2SZEwIv .input:-ms-input-placeholder, .chartwerk_ui_components___2ea2SZEwIv .textarea:-ms-input-placeholder, .chartwerk_ui_components___2ea2SZEwIv .select select:-ms-input-placeholder {
     color: rgba(54, 54, 54, 0.3); }
-  .chartwerk_ui_components___2ea2SZEwIv .input:hover, .chartwerk_ui_components___2ea2SZEwIv .input.is-hovered,
-  .chartwerk_ui_components___2ea2SZEwIv .textarea:hover,
-  .chartwerk_ui_components___2ea2SZEwIv .textarea.is-hovered {
+  .chartwerk_ui_components___2ea2SZEwIv .input:hover, .chartwerk_ui_components___2ea2SZEwIv .textarea:hover, .chartwerk_ui_components___2ea2SZEwIv .select select:hover, .chartwerk_ui_components___2ea2SZEwIv .is-hovered.input, .chartwerk_ui_components___2ea2SZEwIv .is-hovered.textarea, .chartwerk_ui_components___2ea2SZEwIv .select select.is-hovered {
     border-color: #b5b5b5; }
-  .chartwerk_ui_components___2ea2SZEwIv .input:focus, .chartwerk_ui_components___2ea2SZEwIv .input.is-focused, .chartwerk_ui_components___2ea2SZEwIv .input:active, .chartwerk_ui_components___2ea2SZEwIv .input.is-active,
-  .chartwerk_ui_components___2ea2SZEwIv .textarea:focus,
-  .chartwerk_ui_components___2ea2SZEwIv .textarea.is-focused,
-  .chartwerk_ui_components___2ea2SZEwIv .textarea:active,
-  .chartwerk_ui_components___2ea2SZEwIv .textarea.is-active {
+  .chartwerk_ui_components___2ea2SZEwIv .input:focus, .chartwerk_ui_components___2ea2SZEwIv .textarea:focus, .chartwerk_ui_components___2ea2SZEwIv .select select:focus, .chartwerk_ui_components___2ea2SZEwIv .is-focused.input, .chartwerk_ui_components___2ea2SZEwIv .is-focused.textarea, .chartwerk_ui_components___2ea2SZEwIv .select select.is-focused, .chartwerk_ui_components___2ea2SZEwIv .input:active, .chartwerk_ui_components___2ea2SZEwIv .textarea:active, .chartwerk_ui_components___2ea2SZEwIv .select select:active, .chartwerk_ui_components___2ea2SZEwIv .is-active.input, .chartwerk_ui_components___2ea2SZEwIv .is-active.textarea, .chartwerk_ui_components___2ea2SZEwIv .select select.is-active {
     border-color: #1565c0;
     box-shadow: 0 0 0 0.125em rgba(21, 101, 192, 0.25); }
-  .chartwerk_ui_components___2ea2SZEwIv .input[disabled],
+  .chartwerk_ui_components___2ea2SZEwIv .input[disabled], .chartwerk_ui_components___2ea2SZEwIv .textarea[disabled], .chartwerk_ui_components___2ea2SZEwIv .select select[disabled],
   fieldset[disabled] .chartwerk_ui_components___2ea2SZEwIv .input,
-  .chartwerk_ui_components___2ea2SZEwIv .textarea[disabled],
-  fieldset[disabled]
-  .chartwerk_ui_components___2ea2SZEwIv .textarea {
+  fieldset[disabled] .chartwerk_ui_components___2ea2SZEwIv .textarea,
+  fieldset[disabled] .chartwerk_ui_components___2ea2SZEwIv .select select {
     background-color: whitesmoke;
     border-color: whitesmoke;
     box-shadow: none;
     color: #7a7a7a; }
-    .chartwerk_ui_components___2ea2SZEwIv .input[disabled]::-moz-placeholder,
+    .chartwerk_ui_components___2ea2SZEwIv .input[disabled]::-moz-placeholder, .chartwerk_ui_components___2ea2SZEwIv .textarea[disabled]::-moz-placeholder, .chartwerk_ui_components___2ea2SZEwIv .select select[disabled]::-moz-placeholder,
     fieldset[disabled] .chartwerk_ui_components___2ea2SZEwIv .input::-moz-placeholder,
-    .chartwerk_ui_components___2ea2SZEwIv .textarea[disabled]::-moz-placeholder,
-    fieldset[disabled]
-    .chartwerk_ui_components___2ea2SZEwIv .textarea::-moz-placeholder {
+    fieldset[disabled] .chartwerk_ui_components___2ea2SZEwIv .textarea::-moz-placeholder,
+    fieldset[disabled] .chartwerk_ui_components___2ea2SZEwIv .select select::-moz-placeholder {
       color: rgba(122, 122, 122, 0.3); }
-    .chartwerk_ui_components___2ea2SZEwIv .input[disabled]::-webkit-input-placeholder,
+    .chartwerk_ui_components___2ea2SZEwIv .input[disabled]::-webkit-input-placeholder, .chartwerk_ui_components___2ea2SZEwIv .textarea[disabled]::-webkit-input-placeholder, .chartwerk_ui_components___2ea2SZEwIv .select select[disabled]::-webkit-input-placeholder,
     fieldset[disabled] .chartwerk_ui_components___2ea2SZEwIv .input::-webkit-input-placeholder,
-    .chartwerk_ui_components___2ea2SZEwIv .textarea[disabled]::-webkit-input-placeholder,
-    fieldset[disabled]
-    .chartwerk_ui_components___2ea2SZEwIv .textarea::-webkit-input-placeholder {
+    fieldset[disabled] .chartwerk_ui_components___2ea2SZEwIv .textarea::-webkit-input-placeholder,
+    fieldset[disabled] .chartwerk_ui_components___2ea2SZEwIv .select select::-webkit-input-placeholder {
       color: rgba(122, 122, 122, 0.3); }
-    .chartwerk_ui_components___2ea2SZEwIv .input[disabled]:-moz-placeholder,
+    .chartwerk_ui_components___2ea2SZEwIv .input[disabled]:-moz-placeholder, .chartwerk_ui_components___2ea2SZEwIv .textarea[disabled]:-moz-placeholder, .chartwerk_ui_components___2ea2SZEwIv .select select[disabled]:-moz-placeholder,
     fieldset[disabled] .chartwerk_ui_components___2ea2SZEwIv .input:-moz-placeholder,
-    .chartwerk_ui_components___2ea2SZEwIv .textarea[disabled]:-moz-placeholder,
-    fieldset[disabled]
-    .chartwerk_ui_components___2ea2SZEwIv .textarea:-moz-placeholder {
+    fieldset[disabled] .chartwerk_ui_components___2ea2SZEwIv .textarea:-moz-placeholder,
+    fieldset[disabled] .chartwerk_ui_components___2ea2SZEwIv .select select:-moz-placeholder {
       color: rgba(122, 122, 122, 0.3); }
-    .chartwerk_ui_components___2ea2SZEwIv .input[disabled]:-ms-input-placeholder,
+    .chartwerk_ui_components___2ea2SZEwIv .input[disabled]:-ms-input-placeholder, .chartwerk_ui_components___2ea2SZEwIv .textarea[disabled]:-ms-input-placeholder, .chartwerk_ui_components___2ea2SZEwIv .select select[disabled]:-ms-input-placeholder,
     fieldset[disabled] .chartwerk_ui_components___2ea2SZEwIv .input:-ms-input-placeholder,
-    .chartwerk_ui_components___2ea2SZEwIv .textarea[disabled]:-ms-input-placeholder,
-    fieldset[disabled]
-    .chartwerk_ui_components___2ea2SZEwIv .textarea:-ms-input-placeholder {
+    fieldset[disabled] .chartwerk_ui_components___2ea2SZEwIv .textarea:-ms-input-placeholder,
+    fieldset[disabled] .chartwerk_ui_components___2ea2SZEwIv .select select:-ms-input-placeholder {
       color: rgba(122, 122, 122, 0.3); }
-  .chartwerk_ui_components___2ea2SZEwIv .input[readonly],
-  .chartwerk_ui_components___2ea2SZEwIv .textarea[readonly] {
+
+.chartwerk_ui_components___2ea2SZEwIv .input, .chartwerk_ui_components___2ea2SZEwIv .textarea {
+  box-shadow: inset 0 1px 2px rgba(51, 51, 51, 0.1);
+  max-width: 100%;
+  width: 100%; }
+  .chartwerk_ui_components___2ea2SZEwIv .input[readonly], .chartwerk_ui_components___2ea2SZEwIv .textarea[readonly] {
     box-shadow: none; }
-  .chartwerk_ui_components___2ea2SZEwIv .input.is-white,
-  .chartwerk_ui_components___2ea2SZEwIv .textarea.is-white {
+  .chartwerk_ui_components___2ea2SZEwIv .is-white.input, .chartwerk_ui_components___2ea2SZEwIv .is-white.textarea {
     border-color: #fff; }
-    .chartwerk_ui_components___2ea2SZEwIv .input.is-white:focus, .chartwerk_ui_components___2ea2SZEwIv .input.is-white.is-focused, .chartwerk_ui_components___2ea2SZEwIv .input.is-white:active, .chartwerk_ui_components___2ea2SZEwIv .input.is-white.is-active,
-    .chartwerk_ui_components___2ea2SZEwIv .textarea.is-white:focus,
-    .chartwerk_ui_components___2ea2SZEwIv .textarea.is-white.is-focused,
-    .chartwerk_ui_components___2ea2SZEwIv .textarea.is-white:active,
-    .chartwerk_ui_components___2ea2SZEwIv .textarea.is-white.is-active {
+    .chartwerk_ui_components___2ea2SZEwIv .is-white.input:focus, .chartwerk_ui_components___2ea2SZEwIv .is-white.textarea:focus, .chartwerk_ui_components___2ea2SZEwIv .is-white.is-focused.input, .chartwerk_ui_components___2ea2SZEwIv .is-white.is-focused.textarea, .chartwerk_ui_components___2ea2SZEwIv .is-white.input:active, .chartwerk_ui_components___2ea2SZEwIv .is-white.textarea:active, .chartwerk_ui_components___2ea2SZEwIv .is-white.is-active.input, .chartwerk_ui_components___2ea2SZEwIv .is-white.is-active.textarea {
       box-shadow: 0 0 0 0.125em rgba(255, 255, 255, 0.25); }
-  .chartwerk_ui_components___2ea2SZEwIv .input.is-black,
-  .chartwerk_ui_components___2ea2SZEwIv .textarea.is-black {
+  .chartwerk_ui_components___2ea2SZEwIv .is-black.input, .chartwerk_ui_components___2ea2SZEwIv .is-black.textarea {
     border-color: #333; }
-    .chartwerk_ui_components___2ea2SZEwIv .input.is-black:focus, .chartwerk_ui_components___2ea2SZEwIv .input.is-black.is-focused, .chartwerk_ui_components___2ea2SZEwIv .input.is-black:active, .chartwerk_ui_components___2ea2SZEwIv .input.is-black.is-active,
-    .chartwerk_ui_components___2ea2SZEwIv .textarea.is-black:focus,
-    .chartwerk_ui_components___2ea2SZEwIv .textarea.is-black.is-focused,
-    .chartwerk_ui_components___2ea2SZEwIv .textarea.is-black:active,
-    .chartwerk_ui_components___2ea2SZEwIv .textarea.is-black.is-active {
+    .chartwerk_ui_components___2ea2SZEwIv .is-black.input:focus, .chartwerk_ui_components___2ea2SZEwIv .is-black.textarea:focus, .chartwerk_ui_components___2ea2SZEwIv .is-black.is-focused.input, .chartwerk_ui_components___2ea2SZEwIv .is-black.is-focused.textarea, .chartwerk_ui_components___2ea2SZEwIv .is-black.input:active, .chartwerk_ui_components___2ea2SZEwIv .is-black.textarea:active, .chartwerk_ui_components___2ea2SZEwIv .is-black.is-active.input, .chartwerk_ui_components___2ea2SZEwIv .is-black.is-active.textarea {
       box-shadow: 0 0 0 0.125em rgba(51, 51, 51, 0.25); }
-  .chartwerk_ui_components___2ea2SZEwIv .input.is-light,
-  .chartwerk_ui_components___2ea2SZEwIv .textarea.is-light {
+  .chartwerk_ui_components___2ea2SZEwIv .is-light.input, .chartwerk_ui_components___2ea2SZEwIv .is-light.textarea {
     border-color: whitesmoke; }
-    .chartwerk_ui_components___2ea2SZEwIv .input.is-light:focus, .chartwerk_ui_components___2ea2SZEwIv .input.is-light.is-focused, .chartwerk_ui_components___2ea2SZEwIv .input.is-light:active, .chartwerk_ui_components___2ea2SZEwIv .input.is-light.is-active,
-    .chartwerk_ui_components___2ea2SZEwIv .textarea.is-light:focus,
-    .chartwerk_ui_components___2ea2SZEwIv .textarea.is-light.is-focused,
-    .chartwerk_ui_components___2ea2SZEwIv .textarea.is-light:active,
-    .chartwerk_ui_components___2ea2SZEwIv .textarea.is-light.is-active {
+    .chartwerk_ui_components___2ea2SZEwIv .is-light.input:focus, .chartwerk_ui_components___2ea2SZEwIv .is-light.textarea:focus, .chartwerk_ui_components___2ea2SZEwIv .is-light.is-focused.input, .chartwerk_ui_components___2ea2SZEwIv .is-light.is-focused.textarea, .chartwerk_ui_components___2ea2SZEwIv .is-light.input:active, .chartwerk_ui_components___2ea2SZEwIv .is-light.textarea:active, .chartwerk_ui_components___2ea2SZEwIv .is-light.is-active.input, .chartwerk_ui_components___2ea2SZEwIv .is-light.is-active.textarea {
       box-shadow: 0 0 0 0.125em rgba(245, 245, 245, 0.25); }
-  .chartwerk_ui_components___2ea2SZEwIv .input.is-dark,
-  .chartwerk_ui_components___2ea2SZEwIv .textarea.is-dark {
+  .chartwerk_ui_components___2ea2SZEwIv .is-dark.input, .chartwerk_ui_components___2ea2SZEwIv .is-dark.textarea {
     border-color: #363636; }
-    .chartwerk_ui_components___2ea2SZEwIv .input.is-dark:focus, .chartwerk_ui_components___2ea2SZEwIv .input.is-dark.is-focused, .chartwerk_ui_components___2ea2SZEwIv .input.is-dark:active, .chartwerk_ui_components___2ea2SZEwIv .input.is-dark.is-active,
-    .chartwerk_ui_components___2ea2SZEwIv .textarea.is-dark:focus,
-    .chartwerk_ui_components___2ea2SZEwIv .textarea.is-dark.is-focused,
-    .chartwerk_ui_components___2ea2SZEwIv .textarea.is-dark:active,
-    .chartwerk_ui_components___2ea2SZEwIv .textarea.is-dark.is-active {
+    .chartwerk_ui_components___2ea2SZEwIv .is-dark.input:focus, .chartwerk_ui_components___2ea2SZEwIv .is-dark.textarea:focus, .chartwerk_ui_components___2ea2SZEwIv .is-dark.is-focused.input, .chartwerk_ui_components___2ea2SZEwIv .is-dark.is-focused.textarea, .chartwerk_ui_components___2ea2SZEwIv .is-dark.input:active, .chartwerk_ui_components___2ea2SZEwIv .is-dark.textarea:active, .chartwerk_ui_components___2ea2SZEwIv .is-dark.is-active.input, .chartwerk_ui_components___2ea2SZEwIv .is-dark.is-active.textarea {
       box-shadow: 0 0 0 0.125em rgba(54, 54, 54, 0.25); }
-  .chartwerk_ui_components___2ea2SZEwIv .input.is-primary,
-  .chartwerk_ui_components___2ea2SZEwIv .textarea.is-primary {
+  .chartwerk_ui_components___2ea2SZEwIv .is-primary.input, .chartwerk_ui_components___2ea2SZEwIv .is-primary.textarea {
     border-color: #00d1b2; }
-    .chartwerk_ui_components___2ea2SZEwIv .input.is-primary:focus, .chartwerk_ui_components___2ea2SZEwIv .input.is-primary.is-focused, .chartwerk_ui_components___2ea2SZEwIv .input.is-primary:active, .chartwerk_ui_components___2ea2SZEwIv .input.is-primary.is-active,
-    .chartwerk_ui_components___2ea2SZEwIv .textarea.is-primary:focus,
-    .chartwerk_ui_components___2ea2SZEwIv .textarea.is-primary.is-focused,
-    .chartwerk_ui_components___2ea2SZEwIv .textarea.is-primary:active,
-    .chartwerk_ui_components___2ea2SZEwIv .textarea.is-primary.is-active {
+    .chartwerk_ui_components___2ea2SZEwIv .is-primary.input:focus, .chartwerk_ui_components___2ea2SZEwIv .is-primary.textarea:focus, .chartwerk_ui_components___2ea2SZEwIv .is-primary.is-focused.input, .chartwerk_ui_components___2ea2SZEwIv .is-primary.is-focused.textarea, .chartwerk_ui_components___2ea2SZEwIv .is-primary.input:active, .chartwerk_ui_components___2ea2SZEwIv .is-primary.textarea:active, .chartwerk_ui_components___2ea2SZEwIv .is-primary.is-active.input, .chartwerk_ui_components___2ea2SZEwIv .is-primary.is-active.textarea {
       box-shadow: 0 0 0 0.125em rgba(0, 209, 178, 0.25); }
-  .chartwerk_ui_components___2ea2SZEwIv .input.is-link,
-  .chartwerk_ui_components___2ea2SZEwIv .textarea.is-link {
+  .chartwerk_ui_components___2ea2SZEwIv .is-link.input, .chartwerk_ui_components___2ea2SZEwIv .is-link.textarea {
     border-color: #1565c0; }
-    .chartwerk_ui_components___2ea2SZEwIv .input.is-link:focus, .chartwerk_ui_components___2ea2SZEwIv .input.is-link.is-focused, .chartwerk_ui_components___2ea2SZEwIv .input.is-link:active, .chartwerk_ui_components___2ea2SZEwIv .input.is-link.is-active,
-    .chartwerk_ui_components___2ea2SZEwIv .textarea.is-link:focus,
-    .chartwerk_ui_components___2ea2SZEwIv .textarea.is-link.is-focused,
-    .chartwerk_ui_components___2ea2SZEwIv .textarea.is-link:active,
-    .chartwerk_ui_components___2ea2SZEwIv .textarea.is-link.is-active {
+    .chartwerk_ui_components___2ea2SZEwIv .is-link.input:focus, .chartwerk_ui_components___2ea2SZEwIv .is-link.textarea:focus, .chartwerk_ui_components___2ea2SZEwIv .is-link.is-focused.input, .chartwerk_ui_components___2ea2SZEwIv .is-link.is-focused.textarea, .chartwerk_ui_components___2ea2SZEwIv .is-link.input:active, .chartwerk_ui_components___2ea2SZEwIv .is-link.textarea:active, .chartwerk_ui_components___2ea2SZEwIv .is-link.is-active.input, .chartwerk_ui_components___2ea2SZEwIv .is-link.is-active.textarea {
       box-shadow: 0 0 0 0.125em rgba(21, 101, 192, 0.25); }
-  .chartwerk_ui_components___2ea2SZEwIv .input.is-info,
-  .chartwerk_ui_components___2ea2SZEwIv .textarea.is-info {
+  .chartwerk_ui_components___2ea2SZEwIv .is-info.input, .chartwerk_ui_components___2ea2SZEwIv .is-info.textarea {
     border-color: #209cee; }
-    .chartwerk_ui_components___2ea2SZEwIv .input.is-info:focus, .chartwerk_ui_components___2ea2SZEwIv .input.is-info.is-focused, .chartwerk_ui_components___2ea2SZEwIv .input.is-info:active, .chartwerk_ui_components___2ea2SZEwIv .input.is-info.is-active,
-    .chartwerk_ui_components___2ea2SZEwIv .textarea.is-info:focus,
-    .chartwerk_ui_components___2ea2SZEwIv .textarea.is-info.is-focused,
-    .chartwerk_ui_components___2ea2SZEwIv .textarea.is-info:active,
-    .chartwerk_ui_components___2ea2SZEwIv .textarea.is-info.is-active {
+    .chartwerk_ui_components___2ea2SZEwIv .is-info.input:focus, .chartwerk_ui_components___2ea2SZEwIv .is-info.textarea:focus, .chartwerk_ui_components___2ea2SZEwIv .is-info.is-focused.input, .chartwerk_ui_components___2ea2SZEwIv .is-info.is-focused.textarea, .chartwerk_ui_components___2ea2SZEwIv .is-info.input:active, .chartwerk_ui_components___2ea2SZEwIv .is-info.textarea:active, .chartwerk_ui_components___2ea2SZEwIv .is-info.is-active.input, .chartwerk_ui_components___2ea2SZEwIv .is-info.is-active.textarea {
       box-shadow: 0 0 0 0.125em rgba(32, 156, 238, 0.25); }
-  .chartwerk_ui_components___2ea2SZEwIv .input.is-success,
-  .chartwerk_ui_components___2ea2SZEwIv .textarea.is-success {
+  .chartwerk_ui_components___2ea2SZEwIv .is-success.input, .chartwerk_ui_components___2ea2SZEwIv .is-success.textarea {
     border-color: #2e7d32; }
-    .chartwerk_ui_components___2ea2SZEwIv .input.is-success:focus, .chartwerk_ui_components___2ea2SZEwIv .input.is-success.is-focused, .chartwerk_ui_components___2ea2SZEwIv .input.is-success:active, .chartwerk_ui_components___2ea2SZEwIv .input.is-success.is-active,
-    .chartwerk_ui_components___2ea2SZEwIv .textarea.is-success:focus,
-    .chartwerk_ui_components___2ea2SZEwIv .textarea.is-success.is-focused,
-    .chartwerk_ui_components___2ea2SZEwIv .textarea.is-success:active,
-    .chartwerk_ui_components___2ea2SZEwIv .textarea.is-success.is-active {
+    .chartwerk_ui_components___2ea2SZEwIv .is-success.input:focus, .chartwerk_ui_components___2ea2SZEwIv .is-success.textarea:focus, .chartwerk_ui_components___2ea2SZEwIv .is-success.is-focused.input, .chartwerk_ui_components___2ea2SZEwIv .is-success.is-focused.textarea, .chartwerk_ui_components___2ea2SZEwIv .is-success.input:active, .chartwerk_ui_components___2ea2SZEwIv .is-success.textarea:active, .chartwerk_ui_components___2ea2SZEwIv .is-success.is-active.input, .chartwerk_ui_components___2ea2SZEwIv .is-success.is-active.textarea {
       box-shadow: 0 0 0 0.125em rgba(46, 125, 50, 0.25); }
-  .chartwerk_ui_components___2ea2SZEwIv .input.is-warning,
-  .chartwerk_ui_components___2ea2SZEwIv .textarea.is-warning {
+  .chartwerk_ui_components___2ea2SZEwIv .is-warning.input, .chartwerk_ui_components___2ea2SZEwIv .is-warning.textarea {
     border-color: #ffdd57; }
-    .chartwerk_ui_components___2ea2SZEwIv .input.is-warning:focus, .chartwerk_ui_components___2ea2SZEwIv .input.is-warning.is-focused, .chartwerk_ui_components___2ea2SZEwIv .input.is-warning:active, .chartwerk_ui_components___2ea2SZEwIv .input.is-warning.is-active,
-    .chartwerk_ui_components___2ea2SZEwIv .textarea.is-warning:focus,
-    .chartwerk_ui_components___2ea2SZEwIv .textarea.is-warning.is-focused,
-    .chartwerk_ui_components___2ea2SZEwIv .textarea.is-warning:active,
-    .chartwerk_ui_components___2ea2SZEwIv .textarea.is-warning.is-active {
+    .chartwerk_ui_components___2ea2SZEwIv .is-warning.input:focus, .chartwerk_ui_components___2ea2SZEwIv .is-warning.textarea:focus, .chartwerk_ui_components___2ea2SZEwIv .is-warning.is-focused.input, .chartwerk_ui_components___2ea2SZEwIv .is-warning.is-focused.textarea, .chartwerk_ui_components___2ea2SZEwIv .is-warning.input:active, .chartwerk_ui_components___2ea2SZEwIv .is-warning.textarea:active, .chartwerk_ui_components___2ea2SZEwIv .is-warning.is-active.input, .chartwerk_ui_components___2ea2SZEwIv .is-warning.is-active.textarea {
       box-shadow: 0 0 0 0.125em rgba(255, 221, 87, 0.25); }
-  .chartwerk_ui_components___2ea2SZEwIv .input.is-danger,
-  .chartwerk_ui_components___2ea2SZEwIv .textarea.is-danger {
+  .chartwerk_ui_components___2ea2SZEwIv .is-danger.input, .chartwerk_ui_components___2ea2SZEwIv .is-danger.textarea {
     border-color: #C91507; }
-    .chartwerk_ui_components___2ea2SZEwIv .input.is-danger:focus, .chartwerk_ui_components___2ea2SZEwIv .input.is-danger.is-focused, .chartwerk_ui_components___2ea2SZEwIv .input.is-danger:active, .chartwerk_ui_components___2ea2SZEwIv .input.is-danger.is-active,
-    .chartwerk_ui_components___2ea2SZEwIv .textarea.is-danger:focus,
-    .chartwerk_ui_components___2ea2SZEwIv .textarea.is-danger.is-focused,
-    .chartwerk_ui_components___2ea2SZEwIv .textarea.is-danger:active,
-    .chartwerk_ui_components___2ea2SZEwIv .textarea.is-danger.is-active {
+    .chartwerk_ui_components___2ea2SZEwIv .is-danger.input:focus, .chartwerk_ui_components___2ea2SZEwIv .is-danger.textarea:focus, .chartwerk_ui_components___2ea2SZEwIv .is-danger.is-focused.input, .chartwerk_ui_components___2ea2SZEwIv .is-danger.is-focused.textarea, .chartwerk_ui_components___2ea2SZEwIv .is-danger.input:active, .chartwerk_ui_components___2ea2SZEwIv .is-danger.textarea:active, .chartwerk_ui_components___2ea2SZEwIv .is-danger.is-active.input, .chartwerk_ui_components___2ea2SZEwIv .is-danger.is-active.textarea {
       box-shadow: 0 0 0 0.125em rgba(201, 21, 7, 0.25); }
-  .chartwerk_ui_components___2ea2SZEwIv .input.is-small,
-  .chartwerk_ui_components___2ea2SZEwIv .textarea.is-small {
+  .chartwerk_ui_components___2ea2SZEwIv .is-small.input, .chartwerk_ui_components___2ea2SZEwIv .is-small.textarea {
     border-radius: 2px;
     font-size: 0.75rem; }
-  .chartwerk_ui_components___2ea2SZEwIv .input.is-medium,
-  .chartwerk_ui_components___2ea2SZEwIv .textarea.is-medium {
+  .chartwerk_ui_components___2ea2SZEwIv .is-medium.input, .chartwerk_ui_components___2ea2SZEwIv .is-medium.textarea {
     font-size: 1.25rem; }
-  .chartwerk_ui_components___2ea2SZEwIv .input.is-large,
-  .chartwerk_ui_components___2ea2SZEwIv .textarea.is-large {
+  .chartwerk_ui_components___2ea2SZEwIv .is-large.input, .chartwerk_ui_components___2ea2SZEwIv .is-large.textarea {
     font-size: 1.5rem; }
-  .chartwerk_ui_components___2ea2SZEwIv .input.is-fullwidth,
-  .chartwerk_ui_components___2ea2SZEwIv .textarea.is-fullwidth {
+  .chartwerk_ui_components___2ea2SZEwIv .is-fullwidth.input, .chartwerk_ui_components___2ea2SZEwIv .is-fullwidth.textarea {
     display: block;
     width: 100%; }
-  .chartwerk_ui_components___2ea2SZEwIv .input.is-inline,
-  .chartwerk_ui_components___2ea2SZEwIv .textarea.is-inline {
+  .chartwerk_ui_components___2ea2SZEwIv .is-inline.input, .chartwerk_ui_components___2ea2SZEwIv .is-inline.textarea {
     display: inline;
     width: auto; }
 
@@ -1416,23 +1382,18 @@
   .chartwerk_ui_components___2ea2SZEwIv .textarea.has-fixed-size {
     resize: none; }
 
-.chartwerk_ui_components___2ea2SZEwIv .checkbox,
-.chartwerk_ui_components___2ea2SZEwIv .radio {
+.chartwerk_ui_components___2ea2SZEwIv .checkbox, .chartwerk_ui_components___2ea2SZEwIv .radio {
   cursor: pointer;
   display: inline-block;
   line-height: 1.25;
   position: relative; }
-  .chartwerk_ui_components___2ea2SZEwIv .checkbox input,
-  .chartwerk_ui_components___2ea2SZEwIv .radio input {
+  .chartwerk_ui_components___2ea2SZEwIv .checkbox input, .chartwerk_ui_components___2ea2SZEwIv .radio input {
     cursor: pointer; }
-  .chartwerk_ui_components___2ea2SZEwIv .checkbox:hover,
-  .chartwerk_ui_components___2ea2SZEwIv .radio:hover {
+  .chartwerk_ui_components___2ea2SZEwIv .checkbox:hover, .chartwerk_ui_components___2ea2SZEwIv .radio:hover {
     color: #363636; }
-  .chartwerk_ui_components___2ea2SZEwIv .checkbox[disabled],
+  .chartwerk_ui_components___2ea2SZEwIv .checkbox[disabled], .chartwerk_ui_components___2ea2SZEwIv .radio[disabled],
   fieldset[disabled] .chartwerk_ui_components___2ea2SZEwIv .checkbox,
-  .chartwerk_ui_components___2ea2SZEwIv .radio[disabled],
-  fieldset[disabled]
-  .chartwerk_ui_components___2ea2SZEwIv .radio {
+  fieldset[disabled] .chartwerk_ui_components___2ea2SZEwIv .radio {
     color: #7a7a7a;
     cursor: not-allowed; }
 
@@ -1454,45 +1415,11 @@
     border-radius: 290486px;
     padding-left: 1em; }
   .chartwerk_ui_components___2ea2SZEwIv .select select {
-    background-color: #fff;
-    border-color: #dbdbdb;
-    color: #363636;
     cursor: pointer;
     display: block;
     font-size: 1em;
     max-width: 100%;
     outline: none; }
-    .chartwerk_ui_components___2ea2SZEwIv .select select::-moz-placeholder {
-      color: rgba(54, 54, 54, 0.3); }
-    .chartwerk_ui_components___2ea2SZEwIv .select select::-webkit-input-placeholder {
-      color: rgba(54, 54, 54, 0.3); }
-    .chartwerk_ui_components___2ea2SZEwIv .select select:-moz-placeholder {
-      color: rgba(54, 54, 54, 0.3); }
-    .chartwerk_ui_components___2ea2SZEwIv .select select:-ms-input-placeholder {
-      color: rgba(54, 54, 54, 0.3); }
-    .chartwerk_ui_components___2ea2SZEwIv .select select:hover, .chartwerk_ui_components___2ea2SZEwIv .select select.is-hovered {
-      border-color: #b5b5b5; }
-    .chartwerk_ui_components___2ea2SZEwIv .select select:focus, .chartwerk_ui_components___2ea2SZEwIv .select select.is-focused, .chartwerk_ui_components___2ea2SZEwIv .select select:active, .chartwerk_ui_components___2ea2SZEwIv .select select.is-active {
-      border-color: #1565c0;
-      box-shadow: 0 0 0 0.125em rgba(21, 101, 192, 0.25); }
-    .chartwerk_ui_components___2ea2SZEwIv .select select[disabled],
-    fieldset[disabled] .chartwerk_ui_components___2ea2SZEwIv .select select {
-      background-color: whitesmoke;
-      border-color: whitesmoke;
-      box-shadow: none;
-      color: #7a7a7a; }
-      .chartwerk_ui_components___2ea2SZEwIv .select select[disabled]::-moz-placeholder,
-      fieldset[disabled] .chartwerk_ui_components___2ea2SZEwIv .select select::-moz-placeholder {
-        color: rgba(122, 122, 122, 0.3); }
-      .chartwerk_ui_components___2ea2SZEwIv .select select[disabled]::-webkit-input-placeholder,
-      fieldset[disabled] .chartwerk_ui_components___2ea2SZEwIv .select select::-webkit-input-placeholder {
-        color: rgba(122, 122, 122, 0.3); }
-      .chartwerk_ui_components___2ea2SZEwIv .select select[disabled]:-moz-placeholder,
-      fieldset[disabled] .chartwerk_ui_components___2ea2SZEwIv .select select:-moz-placeholder {
-        color: rgba(122, 122, 122, 0.3); }
-      .chartwerk_ui_components___2ea2SZEwIv .select select[disabled]:-ms-input-placeholder,
-      fieldset[disabled] .chartwerk_ui_components___2ea2SZEwIv .select select:-ms-input-placeholder {
-        color: rgba(122, 122, 122, 0.3); }
     .chartwerk_ui_components___2ea2SZEwIv .select select::-ms-expand {
       display: none; }
     .chartwerk_ui_components___2ea2SZEwIv .select select[disabled]:hover,
@@ -1986,7 +1913,8 @@
     .chartwerk_ui_components___2ea2SZEwIv .field.has-addons .control .select select:not([disabled]).is-active:hover {
       z-index: 4; }
   .chartwerk_ui_components___2ea2SZEwIv .field.has-addons .control.is-expanded {
-    flex-grow: 1; }
+    flex-grow: 1;
+    flex-shrink: 1; }
   .chartwerk_ui_components___2ea2SZEwIv .field.has-addons.has-addons-centered {
     justify-content: center; }
   .chartwerk_ui_components___2ea2SZEwIv .field.has-addons.has-addons-right {
@@ -2163,12 +2091,12 @@
   .chartwerk_ui_components___2ea2SZEwIv .annotate input.right {
     text-align: right; }
 
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600|Inconsolata&display=swap");
 .chartwerk_ui_components___tzZL-K6tZP {
   font-family: 'Open Sans', sans-serif; }
 
 .chartwerk_ui_components___tzZL-K6tZP .control label {
-  font-family: monospace; }
+  font-family: 'Inconsolata', monospace; }
 
 @keyframes chartwerk_ui_components___1CkecKiYGn {
   from {
@@ -2211,8 +2139,7 @@
   position: relative;
   width: 1em; }
 
-.chartwerk_ui_components___tzZL-K6tZP .input,
-.chartwerk_ui_components___tzZL-K6tZP .textarea, .chartwerk_ui_components___tzZL-K6tZP .select select, .chartwerk_ui_components___tzZL-K6tZP .file-cta,
+.chartwerk_ui_components___tzZL-K6tZP .input, .chartwerk_ui_components___tzZL-K6tZP .textarea, .chartwerk_ui_components___tzZL-K6tZP .select select, .chartwerk_ui_components___tzZL-K6tZP .file-cta,
 .chartwerk_ui_components___tzZL-K6tZP .file-name {
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -2231,18 +2158,13 @@
   padding-top: calc(0.375em - 1px);
   position: relative;
   vertical-align: top; }
-  .chartwerk_ui_components___tzZL-K6tZP .input:focus,
-  .chartwerk_ui_components___tzZL-K6tZP .textarea:focus, .chartwerk_ui_components___tzZL-K6tZP .select select:focus, .chartwerk_ui_components___tzZL-K6tZP .file-cta:focus,
-  .chartwerk_ui_components___tzZL-K6tZP .file-name:focus, .chartwerk_ui_components___tzZL-K6tZP .is-focused.input,
-  .chartwerk_ui_components___tzZL-K6tZP .is-focused.textarea, .chartwerk_ui_components___tzZL-K6tZP .select select.is-focused, .chartwerk_ui_components___tzZL-K6tZP .is-focused.file-cta,
-  .chartwerk_ui_components___tzZL-K6tZP .is-focused.file-name, .chartwerk_ui_components___tzZL-K6tZP .input:active,
-  .chartwerk_ui_components___tzZL-K6tZP .textarea:active, .chartwerk_ui_components___tzZL-K6tZP .select select:active, .chartwerk_ui_components___tzZL-K6tZP .file-cta:active,
-  .chartwerk_ui_components___tzZL-K6tZP .file-name:active, .chartwerk_ui_components___tzZL-K6tZP .is-active.input,
-  .chartwerk_ui_components___tzZL-K6tZP .is-active.textarea, .chartwerk_ui_components___tzZL-K6tZP .select select.is-active, .chartwerk_ui_components___tzZL-K6tZP .is-active.file-cta,
+  .chartwerk_ui_components___tzZL-K6tZP .input:focus, .chartwerk_ui_components___tzZL-K6tZP .textarea:focus, .chartwerk_ui_components___tzZL-K6tZP .select select:focus, .chartwerk_ui_components___tzZL-K6tZP .file-cta:focus,
+  .chartwerk_ui_components___tzZL-K6tZP .file-name:focus, .chartwerk_ui_components___tzZL-K6tZP .is-focused.input, .chartwerk_ui_components___tzZL-K6tZP .is-focused.textarea, .chartwerk_ui_components___tzZL-K6tZP .select select.is-focused, .chartwerk_ui_components___tzZL-K6tZP .is-focused.file-cta,
+  .chartwerk_ui_components___tzZL-K6tZP .is-focused.file-name, .chartwerk_ui_components___tzZL-K6tZP .input:active, .chartwerk_ui_components___tzZL-K6tZP .textarea:active, .chartwerk_ui_components___tzZL-K6tZP .select select:active, .chartwerk_ui_components___tzZL-K6tZP .file-cta:active,
+  .chartwerk_ui_components___tzZL-K6tZP .file-name:active, .chartwerk_ui_components___tzZL-K6tZP .is-active.input, .chartwerk_ui_components___tzZL-K6tZP .is-active.textarea, .chartwerk_ui_components___tzZL-K6tZP .select select.is-active, .chartwerk_ui_components___tzZL-K6tZP .is-active.file-cta,
   .chartwerk_ui_components___tzZL-K6tZP .is-active.file-name {
     outline: none; }
-  .chartwerk_ui_components___tzZL-K6tZP .input[disabled],
-  .chartwerk_ui_components___tzZL-K6tZP .textarea[disabled], .chartwerk_ui_components___tzZL-K6tZP .select select[disabled], .chartwerk_ui_components___tzZL-K6tZP .file-cta[disabled],
+  .chartwerk_ui_components___tzZL-K6tZP .input[disabled], .chartwerk_ui_components___tzZL-K6tZP .textarea[disabled], .chartwerk_ui_components___tzZL-K6tZP .select select[disabled], .chartwerk_ui_components___tzZL-K6tZP .file-cta[disabled],
   .chartwerk_ui_components___tzZL-K6tZP .file-name[disabled],
   fieldset[disabled] .chartwerk_ui_components___tzZL-K6tZP .input,
   fieldset[disabled] .chartwerk_ui_components___tzZL-K6tZP .textarea,
@@ -2251,179 +2173,110 @@
   fieldset[disabled] .chartwerk_ui_components___tzZL-K6tZP .file-name {
     cursor: not-allowed; }
 
-.chartwerk_ui_components___tzZL-K6tZP .input,
-.chartwerk_ui_components___tzZL-K6tZP .textarea {
+.chartwerk_ui_components___tzZL-K6tZP .input, .chartwerk_ui_components___tzZL-K6tZP .textarea, .chartwerk_ui_components___tzZL-K6tZP .select select {
   background-color: #fff;
   border-color: #dbdbdb;
-  color: #363636;
-  box-shadow: inset 0 1px 2px rgba(51, 51, 51, 0.1);
-  max-width: 100%;
-  width: 100%; }
-  .chartwerk_ui_components___tzZL-K6tZP .input::-moz-placeholder,
-  .chartwerk_ui_components___tzZL-K6tZP .textarea::-moz-placeholder {
+  border-radius: 4px;
+  color: #363636; }
+  .chartwerk_ui_components___tzZL-K6tZP .input::-moz-placeholder, .chartwerk_ui_components___tzZL-K6tZP .textarea::-moz-placeholder, .chartwerk_ui_components___tzZL-K6tZP .select select::-moz-placeholder {
     color: rgba(54, 54, 54, 0.3); }
-  .chartwerk_ui_components___tzZL-K6tZP .input::-webkit-input-placeholder,
-  .chartwerk_ui_components___tzZL-K6tZP .textarea::-webkit-input-placeholder {
+  .chartwerk_ui_components___tzZL-K6tZP .input::-webkit-input-placeholder, .chartwerk_ui_components___tzZL-K6tZP .textarea::-webkit-input-placeholder, .chartwerk_ui_components___tzZL-K6tZP .select select::-webkit-input-placeholder {
     color: rgba(54, 54, 54, 0.3); }
-  .chartwerk_ui_components___tzZL-K6tZP .input:-moz-placeholder,
-  .chartwerk_ui_components___tzZL-K6tZP .textarea:-moz-placeholder {
+  .chartwerk_ui_components___tzZL-K6tZP .input:-moz-placeholder, .chartwerk_ui_components___tzZL-K6tZP .textarea:-moz-placeholder, .chartwerk_ui_components___tzZL-K6tZP .select select:-moz-placeholder {
     color: rgba(54, 54, 54, 0.3); }
-  .chartwerk_ui_components___tzZL-K6tZP .input:-ms-input-placeholder,
-  .chartwerk_ui_components___tzZL-K6tZP .textarea:-ms-input-placeholder {
+  .chartwerk_ui_components___tzZL-K6tZP .input:-ms-input-placeholder, .chartwerk_ui_components___tzZL-K6tZP .textarea:-ms-input-placeholder, .chartwerk_ui_components___tzZL-K6tZP .select select:-ms-input-placeholder {
     color: rgba(54, 54, 54, 0.3); }
-  .chartwerk_ui_components___tzZL-K6tZP .input:hover, .chartwerk_ui_components___tzZL-K6tZP .input.is-hovered,
-  .chartwerk_ui_components___tzZL-K6tZP .textarea:hover,
-  .chartwerk_ui_components___tzZL-K6tZP .textarea.is-hovered {
+  .chartwerk_ui_components___tzZL-K6tZP .input:hover, .chartwerk_ui_components___tzZL-K6tZP .textarea:hover, .chartwerk_ui_components___tzZL-K6tZP .select select:hover, .chartwerk_ui_components___tzZL-K6tZP .is-hovered.input, .chartwerk_ui_components___tzZL-K6tZP .is-hovered.textarea, .chartwerk_ui_components___tzZL-K6tZP .select select.is-hovered {
     border-color: #b5b5b5; }
-  .chartwerk_ui_components___tzZL-K6tZP .input:focus, .chartwerk_ui_components___tzZL-K6tZP .input.is-focused, .chartwerk_ui_components___tzZL-K6tZP .input:active, .chartwerk_ui_components___tzZL-K6tZP .input.is-active,
-  .chartwerk_ui_components___tzZL-K6tZP .textarea:focus,
-  .chartwerk_ui_components___tzZL-K6tZP .textarea.is-focused,
-  .chartwerk_ui_components___tzZL-K6tZP .textarea:active,
-  .chartwerk_ui_components___tzZL-K6tZP .textarea.is-active {
+  .chartwerk_ui_components___tzZL-K6tZP .input:focus, .chartwerk_ui_components___tzZL-K6tZP .textarea:focus, .chartwerk_ui_components___tzZL-K6tZP .select select:focus, .chartwerk_ui_components___tzZL-K6tZP .is-focused.input, .chartwerk_ui_components___tzZL-K6tZP .is-focused.textarea, .chartwerk_ui_components___tzZL-K6tZP .select select.is-focused, .chartwerk_ui_components___tzZL-K6tZP .input:active, .chartwerk_ui_components___tzZL-K6tZP .textarea:active, .chartwerk_ui_components___tzZL-K6tZP .select select:active, .chartwerk_ui_components___tzZL-K6tZP .is-active.input, .chartwerk_ui_components___tzZL-K6tZP .is-active.textarea, .chartwerk_ui_components___tzZL-K6tZP .select select.is-active {
     border-color: #1565c0;
     box-shadow: 0 0 0 0.125em rgba(21, 101, 192, 0.25); }
-  .chartwerk_ui_components___tzZL-K6tZP .input[disabled],
+  .chartwerk_ui_components___tzZL-K6tZP .input[disabled], .chartwerk_ui_components___tzZL-K6tZP .textarea[disabled], .chartwerk_ui_components___tzZL-K6tZP .select select[disabled],
   fieldset[disabled] .chartwerk_ui_components___tzZL-K6tZP .input,
-  .chartwerk_ui_components___tzZL-K6tZP .textarea[disabled],
-  fieldset[disabled]
-  .chartwerk_ui_components___tzZL-K6tZP .textarea {
+  fieldset[disabled] .chartwerk_ui_components___tzZL-K6tZP .textarea,
+  fieldset[disabled] .chartwerk_ui_components___tzZL-K6tZP .select select {
     background-color: whitesmoke;
     border-color: whitesmoke;
     box-shadow: none;
     color: #7a7a7a; }
-    .chartwerk_ui_components___tzZL-K6tZP .input[disabled]::-moz-placeholder,
+    .chartwerk_ui_components___tzZL-K6tZP .input[disabled]::-moz-placeholder, .chartwerk_ui_components___tzZL-K6tZP .textarea[disabled]::-moz-placeholder, .chartwerk_ui_components___tzZL-K6tZP .select select[disabled]::-moz-placeholder,
     fieldset[disabled] .chartwerk_ui_components___tzZL-K6tZP .input::-moz-placeholder,
-    .chartwerk_ui_components___tzZL-K6tZP .textarea[disabled]::-moz-placeholder,
-    fieldset[disabled]
-    .chartwerk_ui_components___tzZL-K6tZP .textarea::-moz-placeholder {
+    fieldset[disabled] .chartwerk_ui_components___tzZL-K6tZP .textarea::-moz-placeholder,
+    fieldset[disabled] .chartwerk_ui_components___tzZL-K6tZP .select select::-moz-placeholder {
       color: rgba(122, 122, 122, 0.3); }
-    .chartwerk_ui_components___tzZL-K6tZP .input[disabled]::-webkit-input-placeholder,
+    .chartwerk_ui_components___tzZL-K6tZP .input[disabled]::-webkit-input-placeholder, .chartwerk_ui_components___tzZL-K6tZP .textarea[disabled]::-webkit-input-placeholder, .chartwerk_ui_components___tzZL-K6tZP .select select[disabled]::-webkit-input-placeholder,
     fieldset[disabled] .chartwerk_ui_components___tzZL-K6tZP .input::-webkit-input-placeholder,
-    .chartwerk_ui_components___tzZL-K6tZP .textarea[disabled]::-webkit-input-placeholder,
-    fieldset[disabled]
-    .chartwerk_ui_components___tzZL-K6tZP .textarea::-webkit-input-placeholder {
+    fieldset[disabled] .chartwerk_ui_components___tzZL-K6tZP .textarea::-webkit-input-placeholder,
+    fieldset[disabled] .chartwerk_ui_components___tzZL-K6tZP .select select::-webkit-input-placeholder {
       color: rgba(122, 122, 122, 0.3); }
-    .chartwerk_ui_components___tzZL-K6tZP .input[disabled]:-moz-placeholder,
+    .chartwerk_ui_components___tzZL-K6tZP .input[disabled]:-moz-placeholder, .chartwerk_ui_components___tzZL-K6tZP .textarea[disabled]:-moz-placeholder, .chartwerk_ui_components___tzZL-K6tZP .select select[disabled]:-moz-placeholder,
     fieldset[disabled] .chartwerk_ui_components___tzZL-K6tZP .input:-moz-placeholder,
-    .chartwerk_ui_components___tzZL-K6tZP .textarea[disabled]:-moz-placeholder,
-    fieldset[disabled]
-    .chartwerk_ui_components___tzZL-K6tZP .textarea:-moz-placeholder {
+    fieldset[disabled] .chartwerk_ui_components___tzZL-K6tZP .textarea:-moz-placeholder,
+    fieldset[disabled] .chartwerk_ui_components___tzZL-K6tZP .select select:-moz-placeholder {
       color: rgba(122, 122, 122, 0.3); }
-    .chartwerk_ui_components___tzZL-K6tZP .input[disabled]:-ms-input-placeholder,
+    .chartwerk_ui_components___tzZL-K6tZP .input[disabled]:-ms-input-placeholder, .chartwerk_ui_components___tzZL-K6tZP .textarea[disabled]:-ms-input-placeholder, .chartwerk_ui_components___tzZL-K6tZP .select select[disabled]:-ms-input-placeholder,
     fieldset[disabled] .chartwerk_ui_components___tzZL-K6tZP .input:-ms-input-placeholder,
-    .chartwerk_ui_components___tzZL-K6tZP .textarea[disabled]:-ms-input-placeholder,
-    fieldset[disabled]
-    .chartwerk_ui_components___tzZL-K6tZP .textarea:-ms-input-placeholder {
+    fieldset[disabled] .chartwerk_ui_components___tzZL-K6tZP .textarea:-ms-input-placeholder,
+    fieldset[disabled] .chartwerk_ui_components___tzZL-K6tZP .select select:-ms-input-placeholder {
       color: rgba(122, 122, 122, 0.3); }
-  .chartwerk_ui_components___tzZL-K6tZP .input[readonly],
-  .chartwerk_ui_components___tzZL-K6tZP .textarea[readonly] {
+
+.chartwerk_ui_components___tzZL-K6tZP .input, .chartwerk_ui_components___tzZL-K6tZP .textarea {
+  box-shadow: inset 0 1px 2px rgba(51, 51, 51, 0.1);
+  max-width: 100%;
+  width: 100%; }
+  .chartwerk_ui_components___tzZL-K6tZP .input[readonly], .chartwerk_ui_components___tzZL-K6tZP .textarea[readonly] {
     box-shadow: none; }
-  .chartwerk_ui_components___tzZL-K6tZP .input.is-white,
-  .chartwerk_ui_components___tzZL-K6tZP .textarea.is-white {
+  .chartwerk_ui_components___tzZL-K6tZP .is-white.input, .chartwerk_ui_components___tzZL-K6tZP .is-white.textarea {
     border-color: #fff; }
-    .chartwerk_ui_components___tzZL-K6tZP .input.is-white:focus, .chartwerk_ui_components___tzZL-K6tZP .input.is-white.is-focused, .chartwerk_ui_components___tzZL-K6tZP .input.is-white:active, .chartwerk_ui_components___tzZL-K6tZP .input.is-white.is-active,
-    .chartwerk_ui_components___tzZL-K6tZP .textarea.is-white:focus,
-    .chartwerk_ui_components___tzZL-K6tZP .textarea.is-white.is-focused,
-    .chartwerk_ui_components___tzZL-K6tZP .textarea.is-white:active,
-    .chartwerk_ui_components___tzZL-K6tZP .textarea.is-white.is-active {
+    .chartwerk_ui_components___tzZL-K6tZP .is-white.input:focus, .chartwerk_ui_components___tzZL-K6tZP .is-white.textarea:focus, .chartwerk_ui_components___tzZL-K6tZP .is-white.is-focused.input, .chartwerk_ui_components___tzZL-K6tZP .is-white.is-focused.textarea, .chartwerk_ui_components___tzZL-K6tZP .is-white.input:active, .chartwerk_ui_components___tzZL-K6tZP .is-white.textarea:active, .chartwerk_ui_components___tzZL-K6tZP .is-white.is-active.input, .chartwerk_ui_components___tzZL-K6tZP .is-white.is-active.textarea {
       box-shadow: 0 0 0 0.125em rgba(255, 255, 255, 0.25); }
-  .chartwerk_ui_components___tzZL-K6tZP .input.is-black,
-  .chartwerk_ui_components___tzZL-K6tZP .textarea.is-black {
+  .chartwerk_ui_components___tzZL-K6tZP .is-black.input, .chartwerk_ui_components___tzZL-K6tZP .is-black.textarea {
     border-color: #333; }
-    .chartwerk_ui_components___tzZL-K6tZP .input.is-black:focus, .chartwerk_ui_components___tzZL-K6tZP .input.is-black.is-focused, .chartwerk_ui_components___tzZL-K6tZP .input.is-black:active, .chartwerk_ui_components___tzZL-K6tZP .input.is-black.is-active,
-    .chartwerk_ui_components___tzZL-K6tZP .textarea.is-black:focus,
-    .chartwerk_ui_components___tzZL-K6tZP .textarea.is-black.is-focused,
-    .chartwerk_ui_components___tzZL-K6tZP .textarea.is-black:active,
-    .chartwerk_ui_components___tzZL-K6tZP .textarea.is-black.is-active {
+    .chartwerk_ui_components___tzZL-K6tZP .is-black.input:focus, .chartwerk_ui_components___tzZL-K6tZP .is-black.textarea:focus, .chartwerk_ui_components___tzZL-K6tZP .is-black.is-focused.input, .chartwerk_ui_components___tzZL-K6tZP .is-black.is-focused.textarea, .chartwerk_ui_components___tzZL-K6tZP .is-black.input:active, .chartwerk_ui_components___tzZL-K6tZP .is-black.textarea:active, .chartwerk_ui_components___tzZL-K6tZP .is-black.is-active.input, .chartwerk_ui_components___tzZL-K6tZP .is-black.is-active.textarea {
       box-shadow: 0 0 0 0.125em rgba(51, 51, 51, 0.25); }
-  .chartwerk_ui_components___tzZL-K6tZP .input.is-light,
-  .chartwerk_ui_components___tzZL-K6tZP .textarea.is-light {
+  .chartwerk_ui_components___tzZL-K6tZP .is-light.input, .chartwerk_ui_components___tzZL-K6tZP .is-light.textarea {
     border-color: whitesmoke; }
-    .chartwerk_ui_components___tzZL-K6tZP .input.is-light:focus, .chartwerk_ui_components___tzZL-K6tZP .input.is-light.is-focused, .chartwerk_ui_components___tzZL-K6tZP .input.is-light:active, .chartwerk_ui_components___tzZL-K6tZP .input.is-light.is-active,
-    .chartwerk_ui_components___tzZL-K6tZP .textarea.is-light:focus,
-    .chartwerk_ui_components___tzZL-K6tZP .textarea.is-light.is-focused,
-    .chartwerk_ui_components___tzZL-K6tZP .textarea.is-light:active,
-    .chartwerk_ui_components___tzZL-K6tZP .textarea.is-light.is-active {
+    .chartwerk_ui_components___tzZL-K6tZP .is-light.input:focus, .chartwerk_ui_components___tzZL-K6tZP .is-light.textarea:focus, .chartwerk_ui_components___tzZL-K6tZP .is-light.is-focused.input, .chartwerk_ui_components___tzZL-K6tZP .is-light.is-focused.textarea, .chartwerk_ui_components___tzZL-K6tZP .is-light.input:active, .chartwerk_ui_components___tzZL-K6tZP .is-light.textarea:active, .chartwerk_ui_components___tzZL-K6tZP .is-light.is-active.input, .chartwerk_ui_components___tzZL-K6tZP .is-light.is-active.textarea {
       box-shadow: 0 0 0 0.125em rgba(245, 245, 245, 0.25); }
-  .chartwerk_ui_components___tzZL-K6tZP .input.is-dark,
-  .chartwerk_ui_components___tzZL-K6tZP .textarea.is-dark {
+  .chartwerk_ui_components___tzZL-K6tZP .is-dark.input, .chartwerk_ui_components___tzZL-K6tZP .is-dark.textarea {
     border-color: #363636; }
-    .chartwerk_ui_components___tzZL-K6tZP .input.is-dark:focus, .chartwerk_ui_components___tzZL-K6tZP .input.is-dark.is-focused, .chartwerk_ui_components___tzZL-K6tZP .input.is-dark:active, .chartwerk_ui_components___tzZL-K6tZP .input.is-dark.is-active,
-    .chartwerk_ui_components___tzZL-K6tZP .textarea.is-dark:focus,
-    .chartwerk_ui_components___tzZL-K6tZP .textarea.is-dark.is-focused,
-    .chartwerk_ui_components___tzZL-K6tZP .textarea.is-dark:active,
-    .chartwerk_ui_components___tzZL-K6tZP .textarea.is-dark.is-active {
+    .chartwerk_ui_components___tzZL-K6tZP .is-dark.input:focus, .chartwerk_ui_components___tzZL-K6tZP .is-dark.textarea:focus, .chartwerk_ui_components___tzZL-K6tZP .is-dark.is-focused.input, .chartwerk_ui_components___tzZL-K6tZP .is-dark.is-focused.textarea, .chartwerk_ui_components___tzZL-K6tZP .is-dark.input:active, .chartwerk_ui_components___tzZL-K6tZP .is-dark.textarea:active, .chartwerk_ui_components___tzZL-K6tZP .is-dark.is-active.input, .chartwerk_ui_components___tzZL-K6tZP .is-dark.is-active.textarea {
       box-shadow: 0 0 0 0.125em rgba(54, 54, 54, 0.25); }
-  .chartwerk_ui_components___tzZL-K6tZP .input.is-primary,
-  .chartwerk_ui_components___tzZL-K6tZP .textarea.is-primary {
+  .chartwerk_ui_components___tzZL-K6tZP .is-primary.input, .chartwerk_ui_components___tzZL-K6tZP .is-primary.textarea {
     border-color: #00d1b2; }
-    .chartwerk_ui_components___tzZL-K6tZP .input.is-primary:focus, .chartwerk_ui_components___tzZL-K6tZP .input.is-primary.is-focused, .chartwerk_ui_components___tzZL-K6tZP .input.is-primary:active, .chartwerk_ui_components___tzZL-K6tZP .input.is-primary.is-active,
-    .chartwerk_ui_components___tzZL-K6tZP .textarea.is-primary:focus,
-    .chartwerk_ui_components___tzZL-K6tZP .textarea.is-primary.is-focused,
-    .chartwerk_ui_components___tzZL-K6tZP .textarea.is-primary:active,
-    .chartwerk_ui_components___tzZL-K6tZP .textarea.is-primary.is-active {
+    .chartwerk_ui_components___tzZL-K6tZP .is-primary.input:focus, .chartwerk_ui_components___tzZL-K6tZP .is-primary.textarea:focus, .chartwerk_ui_components___tzZL-K6tZP .is-primary.is-focused.input, .chartwerk_ui_components___tzZL-K6tZP .is-primary.is-focused.textarea, .chartwerk_ui_components___tzZL-K6tZP .is-primary.input:active, .chartwerk_ui_components___tzZL-K6tZP .is-primary.textarea:active, .chartwerk_ui_components___tzZL-K6tZP .is-primary.is-active.input, .chartwerk_ui_components___tzZL-K6tZP .is-primary.is-active.textarea {
       box-shadow: 0 0 0 0.125em rgba(0, 209, 178, 0.25); }
-  .chartwerk_ui_components___tzZL-K6tZP .input.is-link,
-  .chartwerk_ui_components___tzZL-K6tZP .textarea.is-link {
+  .chartwerk_ui_components___tzZL-K6tZP .is-link.input, .chartwerk_ui_components___tzZL-K6tZP .is-link.textarea {
     border-color: #1565c0; }
-    .chartwerk_ui_components___tzZL-K6tZP .input.is-link:focus, .chartwerk_ui_components___tzZL-K6tZP .input.is-link.is-focused, .chartwerk_ui_components___tzZL-K6tZP .input.is-link:active, .chartwerk_ui_components___tzZL-K6tZP .input.is-link.is-active,
-    .chartwerk_ui_components___tzZL-K6tZP .textarea.is-link:focus,
-    .chartwerk_ui_components___tzZL-K6tZP .textarea.is-link.is-focused,
-    .chartwerk_ui_components___tzZL-K6tZP .textarea.is-link:active,
-    .chartwerk_ui_components___tzZL-K6tZP .textarea.is-link.is-active {
+    .chartwerk_ui_components___tzZL-K6tZP .is-link.input:focus, .chartwerk_ui_components___tzZL-K6tZP .is-link.textarea:focus, .chartwerk_ui_components___tzZL-K6tZP .is-link.is-focused.input, .chartwerk_ui_components___tzZL-K6tZP .is-link.is-focused.textarea, .chartwerk_ui_components___tzZL-K6tZP .is-link.input:active, .chartwerk_ui_components___tzZL-K6tZP .is-link.textarea:active, .chartwerk_ui_components___tzZL-K6tZP .is-link.is-active.input, .chartwerk_ui_components___tzZL-K6tZP .is-link.is-active.textarea {
       box-shadow: 0 0 0 0.125em rgba(21, 101, 192, 0.25); }
-  .chartwerk_ui_components___tzZL-K6tZP .input.is-info,
-  .chartwerk_ui_components___tzZL-K6tZP .textarea.is-info {
+  .chartwerk_ui_components___tzZL-K6tZP .is-info.input, .chartwerk_ui_components___tzZL-K6tZP .is-info.textarea {
     border-color: #209cee; }
-    .chartwerk_ui_components___tzZL-K6tZP .input.is-info:focus, .chartwerk_ui_components___tzZL-K6tZP .input.is-info.is-focused, .chartwerk_ui_components___tzZL-K6tZP .input.is-info:active, .chartwerk_ui_components___tzZL-K6tZP .input.is-info.is-active,
-    .chartwerk_ui_components___tzZL-K6tZP .textarea.is-info:focus,
-    .chartwerk_ui_components___tzZL-K6tZP .textarea.is-info.is-focused,
-    .chartwerk_ui_components___tzZL-K6tZP .textarea.is-info:active,
-    .chartwerk_ui_components___tzZL-K6tZP .textarea.is-info.is-active {
+    .chartwerk_ui_components___tzZL-K6tZP .is-info.input:focus, .chartwerk_ui_components___tzZL-K6tZP .is-info.textarea:focus, .chartwerk_ui_components___tzZL-K6tZP .is-info.is-focused.input, .chartwerk_ui_components___tzZL-K6tZP .is-info.is-focused.textarea, .chartwerk_ui_components___tzZL-K6tZP .is-info.input:active, .chartwerk_ui_components___tzZL-K6tZP .is-info.textarea:active, .chartwerk_ui_components___tzZL-K6tZP .is-info.is-active.input, .chartwerk_ui_components___tzZL-K6tZP .is-info.is-active.textarea {
       box-shadow: 0 0 0 0.125em rgba(32, 156, 238, 0.25); }
-  .chartwerk_ui_components___tzZL-K6tZP .input.is-success,
-  .chartwerk_ui_components___tzZL-K6tZP .textarea.is-success {
+  .chartwerk_ui_components___tzZL-K6tZP .is-success.input, .chartwerk_ui_components___tzZL-K6tZP .is-success.textarea {
     border-color: #2e7d32; }
-    .chartwerk_ui_components___tzZL-K6tZP .input.is-success:focus, .chartwerk_ui_components___tzZL-K6tZP .input.is-success.is-focused, .chartwerk_ui_components___tzZL-K6tZP .input.is-success:active, .chartwerk_ui_components___tzZL-K6tZP .input.is-success.is-active,
-    .chartwerk_ui_components___tzZL-K6tZP .textarea.is-success:focus,
-    .chartwerk_ui_components___tzZL-K6tZP .textarea.is-success.is-focused,
-    .chartwerk_ui_components___tzZL-K6tZP .textarea.is-success:active,
-    .chartwerk_ui_components___tzZL-K6tZP .textarea.is-success.is-active {
+    .chartwerk_ui_components___tzZL-K6tZP .is-success.input:focus, .chartwerk_ui_components___tzZL-K6tZP .is-success.textarea:focus, .chartwerk_ui_components___tzZL-K6tZP .is-success.is-focused.input, .chartwerk_ui_components___tzZL-K6tZP .is-success.is-focused.textarea, .chartwerk_ui_components___tzZL-K6tZP .is-success.input:active, .chartwerk_ui_components___tzZL-K6tZP .is-success.textarea:active, .chartwerk_ui_components___tzZL-K6tZP .is-success.is-active.input, .chartwerk_ui_components___tzZL-K6tZP .is-success.is-active.textarea {
       box-shadow: 0 0 0 0.125em rgba(46, 125, 50, 0.25); }
-  .chartwerk_ui_components___tzZL-K6tZP .input.is-warning,
-  .chartwerk_ui_components___tzZL-K6tZP .textarea.is-warning {
+  .chartwerk_ui_components___tzZL-K6tZP .is-warning.input, .chartwerk_ui_components___tzZL-K6tZP .is-warning.textarea {
     border-color: #ffdd57; }
-    .chartwerk_ui_components___tzZL-K6tZP .input.is-warning:focus, .chartwerk_ui_components___tzZL-K6tZP .input.is-warning.is-focused, .chartwerk_ui_components___tzZL-K6tZP .input.is-warning:active, .chartwerk_ui_components___tzZL-K6tZP .input.is-warning.is-active,
-    .chartwerk_ui_components___tzZL-K6tZP .textarea.is-warning:focus,
-    .chartwerk_ui_components___tzZL-K6tZP .textarea.is-warning.is-focused,
-    .chartwerk_ui_components___tzZL-K6tZP .textarea.is-warning:active,
-    .chartwerk_ui_components___tzZL-K6tZP .textarea.is-warning.is-active {
+    .chartwerk_ui_components___tzZL-K6tZP .is-warning.input:focus, .chartwerk_ui_components___tzZL-K6tZP .is-warning.textarea:focus, .chartwerk_ui_components___tzZL-K6tZP .is-warning.is-focused.input, .chartwerk_ui_components___tzZL-K6tZP .is-warning.is-focused.textarea, .chartwerk_ui_components___tzZL-K6tZP .is-warning.input:active, .chartwerk_ui_components___tzZL-K6tZP .is-warning.textarea:active, .chartwerk_ui_components___tzZL-K6tZP .is-warning.is-active.input, .chartwerk_ui_components___tzZL-K6tZP .is-warning.is-active.textarea {
       box-shadow: 0 0 0 0.125em rgba(255, 221, 87, 0.25); }
-  .chartwerk_ui_components___tzZL-K6tZP .input.is-danger,
-  .chartwerk_ui_components___tzZL-K6tZP .textarea.is-danger {
+  .chartwerk_ui_components___tzZL-K6tZP .is-danger.input, .chartwerk_ui_components___tzZL-K6tZP .is-danger.textarea {
     border-color: #C91507; }
-    .chartwerk_ui_components___tzZL-K6tZP .input.is-danger:focus, .chartwerk_ui_components___tzZL-K6tZP .input.is-danger.is-focused, .chartwerk_ui_components___tzZL-K6tZP .input.is-danger:active, .chartwerk_ui_components___tzZL-K6tZP .input.is-danger.is-active,
-    .chartwerk_ui_components___tzZL-K6tZP .textarea.is-danger:focus,
-    .chartwerk_ui_components___tzZL-K6tZP .textarea.is-danger.is-focused,
-    .chartwerk_ui_components___tzZL-K6tZP .textarea.is-danger:active,
-    .chartwerk_ui_components___tzZL-K6tZP .textarea.is-danger.is-active {
+    .chartwerk_ui_components___tzZL-K6tZP .is-danger.input:focus, .chartwerk_ui_components___tzZL-K6tZP .is-danger.textarea:focus, .chartwerk_ui_components___tzZL-K6tZP .is-danger.is-focused.input, .chartwerk_ui_components___tzZL-K6tZP .is-danger.is-focused.textarea, .chartwerk_ui_components___tzZL-K6tZP .is-danger.input:active, .chartwerk_ui_components___tzZL-K6tZP .is-danger.textarea:active, .chartwerk_ui_components___tzZL-K6tZP .is-danger.is-active.input, .chartwerk_ui_components___tzZL-K6tZP .is-danger.is-active.textarea {
       box-shadow: 0 0 0 0.125em rgba(201, 21, 7, 0.25); }
-  .chartwerk_ui_components___tzZL-K6tZP .input.is-small,
-  .chartwerk_ui_components___tzZL-K6tZP .textarea.is-small {
+  .chartwerk_ui_components___tzZL-K6tZP .is-small.input, .chartwerk_ui_components___tzZL-K6tZP .is-small.textarea {
     border-radius: 2px;
     font-size: 0.75rem; }
-  .chartwerk_ui_components___tzZL-K6tZP .input.is-medium,
-  .chartwerk_ui_components___tzZL-K6tZP .textarea.is-medium {
+  .chartwerk_ui_components___tzZL-K6tZP .is-medium.input, .chartwerk_ui_components___tzZL-K6tZP .is-medium.textarea {
     font-size: 1.25rem; }
-  .chartwerk_ui_components___tzZL-K6tZP .input.is-large,
-  .chartwerk_ui_components___tzZL-K6tZP .textarea.is-large {
+  .chartwerk_ui_components___tzZL-K6tZP .is-large.input, .chartwerk_ui_components___tzZL-K6tZP .is-large.textarea {
     font-size: 1.5rem; }
-  .chartwerk_ui_components___tzZL-K6tZP .input.is-fullwidth,
-  .chartwerk_ui_components___tzZL-K6tZP .textarea.is-fullwidth {
+  .chartwerk_ui_components___tzZL-K6tZP .is-fullwidth.input, .chartwerk_ui_components___tzZL-K6tZP .is-fullwidth.textarea {
     display: block;
     width: 100%; }
-  .chartwerk_ui_components___tzZL-K6tZP .input.is-inline,
-  .chartwerk_ui_components___tzZL-K6tZP .textarea.is-inline {
+  .chartwerk_ui_components___tzZL-K6tZP .is-inline.input, .chartwerk_ui_components___tzZL-K6tZP .is-inline.textarea {
     display: inline;
     width: auto; }
 
@@ -2453,23 +2306,18 @@
   .chartwerk_ui_components___tzZL-K6tZP .textarea.has-fixed-size {
     resize: none; }
 
-.chartwerk_ui_components___tzZL-K6tZP .checkbox,
-.chartwerk_ui_components___tzZL-K6tZP .radio {
+.chartwerk_ui_components___tzZL-K6tZP .checkbox, .chartwerk_ui_components___tzZL-K6tZP .radio {
   cursor: pointer;
   display: inline-block;
   line-height: 1.25;
   position: relative; }
-  .chartwerk_ui_components___tzZL-K6tZP .checkbox input,
-  .chartwerk_ui_components___tzZL-K6tZP .radio input {
+  .chartwerk_ui_components___tzZL-K6tZP .checkbox input, .chartwerk_ui_components___tzZL-K6tZP .radio input {
     cursor: pointer; }
-  .chartwerk_ui_components___tzZL-K6tZP .checkbox:hover,
-  .chartwerk_ui_components___tzZL-K6tZP .radio:hover {
+  .chartwerk_ui_components___tzZL-K6tZP .checkbox:hover, .chartwerk_ui_components___tzZL-K6tZP .radio:hover {
     color: #363636; }
-  .chartwerk_ui_components___tzZL-K6tZP .checkbox[disabled],
+  .chartwerk_ui_components___tzZL-K6tZP .checkbox[disabled], .chartwerk_ui_components___tzZL-K6tZP .radio[disabled],
   fieldset[disabled] .chartwerk_ui_components___tzZL-K6tZP .checkbox,
-  .chartwerk_ui_components___tzZL-K6tZP .radio[disabled],
-  fieldset[disabled]
-  .chartwerk_ui_components___tzZL-K6tZP .radio {
+  fieldset[disabled] .chartwerk_ui_components___tzZL-K6tZP .radio {
     color: #7a7a7a;
     cursor: not-allowed; }
 
@@ -2491,45 +2339,11 @@
     border-radius: 290486px;
     padding-left: 1em; }
   .chartwerk_ui_components___tzZL-K6tZP .select select {
-    background-color: #fff;
-    border-color: #dbdbdb;
-    color: #363636;
     cursor: pointer;
     display: block;
     font-size: 1em;
     max-width: 100%;
     outline: none; }
-    .chartwerk_ui_components___tzZL-K6tZP .select select::-moz-placeholder {
-      color: rgba(54, 54, 54, 0.3); }
-    .chartwerk_ui_components___tzZL-K6tZP .select select::-webkit-input-placeholder {
-      color: rgba(54, 54, 54, 0.3); }
-    .chartwerk_ui_components___tzZL-K6tZP .select select:-moz-placeholder {
-      color: rgba(54, 54, 54, 0.3); }
-    .chartwerk_ui_components___tzZL-K6tZP .select select:-ms-input-placeholder {
-      color: rgba(54, 54, 54, 0.3); }
-    .chartwerk_ui_components___tzZL-K6tZP .select select:hover, .chartwerk_ui_components___tzZL-K6tZP .select select.is-hovered {
-      border-color: #b5b5b5; }
-    .chartwerk_ui_components___tzZL-K6tZP .select select:focus, .chartwerk_ui_components___tzZL-K6tZP .select select.is-focused, .chartwerk_ui_components___tzZL-K6tZP .select select:active, .chartwerk_ui_components___tzZL-K6tZP .select select.is-active {
-      border-color: #1565c0;
-      box-shadow: 0 0 0 0.125em rgba(21, 101, 192, 0.25); }
-    .chartwerk_ui_components___tzZL-K6tZP .select select[disabled],
-    fieldset[disabled] .chartwerk_ui_components___tzZL-K6tZP .select select {
-      background-color: whitesmoke;
-      border-color: whitesmoke;
-      box-shadow: none;
-      color: #7a7a7a; }
-      .chartwerk_ui_components___tzZL-K6tZP .select select[disabled]::-moz-placeholder,
-      fieldset[disabled] .chartwerk_ui_components___tzZL-K6tZP .select select::-moz-placeholder {
-        color: rgba(122, 122, 122, 0.3); }
-      .chartwerk_ui_components___tzZL-K6tZP .select select[disabled]::-webkit-input-placeholder,
-      fieldset[disabled] .chartwerk_ui_components___tzZL-K6tZP .select select::-webkit-input-placeholder {
-        color: rgba(122, 122, 122, 0.3); }
-      .chartwerk_ui_components___tzZL-K6tZP .select select[disabled]:-moz-placeholder,
-      fieldset[disabled] .chartwerk_ui_components___tzZL-K6tZP .select select:-moz-placeholder {
-        color: rgba(122, 122, 122, 0.3); }
-      .chartwerk_ui_components___tzZL-K6tZP .select select[disabled]:-ms-input-placeholder,
-      fieldset[disabled] .chartwerk_ui_components___tzZL-K6tZP .select select:-ms-input-placeholder {
-        color: rgba(122, 122, 122, 0.3); }
     .chartwerk_ui_components___tzZL-K6tZP .select select::-ms-expand {
       display: none; }
     .chartwerk_ui_components___tzZL-K6tZP .select select[disabled]:hover,
@@ -3023,7 +2837,8 @@
     .chartwerk_ui_components___tzZL-K6tZP .field.has-addons .control .select select:not([disabled]).is-active:hover {
       z-index: 4; }
   .chartwerk_ui_components___tzZL-K6tZP .field.has-addons .control.is-expanded {
-    flex-grow: 1; }
+    flex-grow: 1;
+    flex-shrink: 1; }
   .chartwerk_ui_components___tzZL-K6tZP .field.has-addons.has-addons-centered {
     justify-content: center; }
   .chartwerk_ui_components___tzZL-K6tZP .field.has-addons.has-addons-right {
@@ -3190,12 +3005,12 @@
       opacity: 0.5;
       pointer-events: none; }
 
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600|Inconsolata&display=swap");
 .chartwerk_ui_components___3sSvXmFKQ8 .tags .tag {
   font-family: 'Open Sans', sans-serif; }
 
 .chartwerk_ui_components___3sSvXmFKQ8 .warning .monospace {
-  font-family: monospace; }
+  font-family: 'Inconsolata', monospace; }
 
 .chartwerk_ui_components___3sSvXmFKQ8 {
   margin: 20px 0; }
@@ -3222,14 +3037,6 @@
       font-size: 1rem; }
     .chartwerk_ui_components___3sSvXmFKQ8 .tags.are-large .tag:not(.is-normal):not(.is-medium) {
       font-size: 1.25rem; }
-    .chartwerk_ui_components___3sSvXmFKQ8 .tags.has-addons .tag {
-      margin-right: 0; }
-      .chartwerk_ui_components___3sSvXmFKQ8 .tags.has-addons .tag:not(:first-child) {
-        border-bottom-left-radius: 0;
-        border-top-left-radius: 0; }
-      .chartwerk_ui_components___3sSvXmFKQ8 .tags.has-addons .tag:not(:last-child) {
-        border-bottom-right-radius: 0;
-        border-top-right-radius: 0; }
     .chartwerk_ui_components___3sSvXmFKQ8 .tags.is-centered {
       justify-content: center; }
       .chartwerk_ui_components___3sSvXmFKQ8 .tags.is-centered .tag {
@@ -3399,7 +3206,7 @@
       opacity: 0.5;
       pointer-events: none; }
 
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600|Inconsolata&display=swap");
 .chartwerk_ui_components___yo7UjV4T3z {
   margin-bottom: 25px;
   position: relative; }
@@ -3484,8 +3291,9 @@
         .chartwerk_ui_components___yo7UjV4T3z .table th.is-selected strong {
           color: currentColor; }
     .chartwerk_ui_components___yo7UjV4T3z .table th {
-      color: #363636;
-      text-align: left; }
+      color: #363636; }
+      .chartwerk_ui_components___yo7UjV4T3z .table th:not([align]) {
+        text-align: left; }
     .chartwerk_ui_components___yo7UjV4T3z .table tr.is-selected {
       background-color: #00d1b2;
       color: #fff; }
@@ -3540,7 +3348,7 @@
   .chartwerk_ui_components___yo7UjV4T3z small {
     font-family: 'Open Sans', sans-serif; }
   .chartwerk_ui_components___yo7UjV4T3z table.table.preview td {
-    font-family: monospace; }
+    font-family: 'Inconsolata', monospace; }
   .chartwerk_ui_components___yo7UjV4T3z div.table-footer {
     position: absolute;
     width: calc(100% - 2px);
@@ -3555,7 +3363,6 @@
     display: block;
     border-collapse: collapse;
     margin-bottom: 0px;
-    padding-bottom: 15px;
     border: 1px solid #ccc; }
     .chartwerk_ui_components___yo7UjV4T3z table.table.preview td.date {
       color: #2e7d32; }

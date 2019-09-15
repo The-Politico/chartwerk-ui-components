@@ -18,11 +18,13 @@ class Preview extends React.Component {
           <button
             className='button'
             onClick={() => sendState({ view: EDIT })}
-          >Edit data</button>
+          >Edit data
+          </button>
           <button
             className='button'
             onClick={() => sendState({ view: INPUT })}
-          >New data</button>
+          >New data
+          </button>
         </div>
       </div>
     );

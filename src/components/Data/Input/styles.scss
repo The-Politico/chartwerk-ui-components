@@ -1,14 +1,15 @@
 @import "../../../theme/_colors.scss";
+@import "../../../theme/_fonts.scss";
 .component :global {
   small{
     color: $black;
   }
   textarea{
+    @extend %monospace;
     width: 100%;
     max-width: 100%;
     min-width: 100%;
     min-height: 200px;
-    font-family: monospace;
     outline: none;
     padding: 10px;
     box-sizing: border-box;

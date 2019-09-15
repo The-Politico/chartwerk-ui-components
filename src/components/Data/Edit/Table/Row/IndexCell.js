@@ -6,7 +6,8 @@ const IndexCell = (props) => (
   <div
     style={indexCellWidth}
     className='cell index'
-  >{props.index}</div>
+  >{props.index}
+  </div>
 );
 
 export default IndexCell;

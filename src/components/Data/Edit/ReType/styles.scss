@@ -3,7 +3,7 @@
 
 .component :global {
   @import "~bulma/sass/utilities/_all.sass";
-  @import "~bulma/sass/elements/form.sass";
+  @import "~bulma/sass/form/_all.sass";
 
   @extend %sans;
 

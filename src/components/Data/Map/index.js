@@ -112,7 +112,8 @@ class Map extends React.Component {
           <button
             className='button'
             onClick={() => sendState({ view: EDIT })}
-          >Edit data</button>
+          >Edit data
+          </button>
           <button
             className='button'
             onClick={() => {
@@ -120,7 +121,8 @@ class Map extends React.Component {
               updateContext();
             }}
             disabled={!this.areRequiredMapsSatistified()}
-          >Next</button>
+          >Next
+          </button>
         </div>
       </div>
     );

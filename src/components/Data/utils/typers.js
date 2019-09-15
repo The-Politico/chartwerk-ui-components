@@ -11,7 +11,7 @@ import { parseNumber, parseDate, parseString } from './parsers';
  * like YYYY are parsed as numbers.
  */
 export const autoTypeString = (string) => {
-  let value = parseString(string);
+  const value = parseString(string);
   let number;
   let date;
   if (!value) return null;
@@ -27,14 +27,14 @@ export const autoTypeString = (string) => {
 };
 
 export const autoTyper = (object) => {
-  for (let key in object) {
+  for (const key in object) {
     object[key] = autoTypeString(object[key]);
   }
   return object;
 };
 
 export const stringTyper = (object) => {
-  for (let key in object) {
+  for (const key in object) {
     object[key] = object[key].trim();
   }
   return object;

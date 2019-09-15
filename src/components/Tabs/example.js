@@ -5,19 +5,23 @@ import CodeBlock from 'Common/CodeBlock';
 
 import Tabs from './index';
 
-const One = () => (<h4 key={'1'}>A component</h4>);
+const One = () => (<h4 key='1'>A component</h4>);
 const Two = () => (
-  <h4 key={'2'}>
-    <a href='/' onClick={(e) => {
-      e.preventDefault();
-      window.alert('I has behavior');
-    }}>A second component</a>
+  <h4 key='2'>
+    <a
+      href='/'
+      onClick={(e) => {
+        e.preventDefault();
+        window.alert('I has behavior');
+      }}
+    >A second component
+    </a>
   </h4>
 );
 
 const components = [
-  [<One />],
-  [<One />, <Two />],
+  [<One key='1' />],
+  [<One key='1' />, <Two key='2' />],
 ];
 
 const App = (props) => (

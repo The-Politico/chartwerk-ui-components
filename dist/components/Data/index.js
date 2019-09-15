@@ -72,20 +72,35 @@ function _extends() {
   return _extends.apply(this, arguments);
 }
 
-function _objectSpread(target) {
+function ownKeys(object, enumerableOnly) {
+  var keys = Object.keys(object);
+
+  if (Object.getOwnPropertySymbols) {
+    var symbols = Object.getOwnPropertySymbols(object);
+    if (enumerableOnly) symbols = symbols.filter(function (sym) {
+      return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+    });
+    keys.push.apply(keys, symbols);
+  }
+
+  return keys;
+}
+
+function _objectSpread2(target) {
   for (var i = 1; i < arguments.length; i++) {
     var source = arguments[i] != null ? arguments[i] : {};
-    var ownKeys = Object.keys(source);
 
-    if (typeof Object.getOwnPropertySymbols === 'function') {
-      ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {
-        return Object.getOwnPropertyDescriptor(source, sym).enumerable;
-      }));
+    if (i % 2) {
+      ownKeys(source, true).forEach(function (key) {
+        _defineProperty(target, key, source[key]);
+      });
+    } else if (Object.getOwnPropertyDescriptors) {
+      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+    } else {
+      ownKeys(source).forEach(function (key) {
+        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+      });
     }
-
-    ownKeys.forEach(function (key) {
-      _defineProperty(target, key, source[key]);
-    });
   }
 
   return target;
@@ -545,13 +560,13 @@ var styles$2 = {"component":"chartwerk_ui_components___2X8B4iz3dp"};
 
 var styles$3 = {"component":"chartwerk_ui_components___2tNjOiYN5j"};
 
-var datumWidth = 140;
+var datumWidth = 145;
 var indexWidth = 35;
 var datumCellWidth = {
-  width: '140px'
+  width: "".concat(datumWidth, "px")
 };
 var indexCellWidth = {
-  width: '35px'
+  width: "".concat(indexWidth, "px")
 };
 
 var styles$4 = {"component":"chartwerk_ui_components___2KmMU7PtV6"};
@@ -627,7 +642,7 @@ function (_React$Component) {
         }));
       });
       Header.unshift(React.createElement(EmptyCell, {
-        key: 'empty'
+        key: "empty"
       }));
       var HeaderTypes = orderedColumns.map(function (column, i) {
         return React.createElement(TypeCell, _extends({
@@ -640,7 +655,7 @@ function (_React$Component) {
         }));
       });
       HeaderTypes.unshift(React.createElement(EmptyCell, {
-        key: 'empty'
+        key: "empty"
       }));
       return React.createElement("div", {
         className: classnames('header', styles$4.component)
@@ -782,7 +797,7 @@ function (_React$PureComponent) {
       }), !editing && React.createElement("input", {
         className: type,
         value: this.formatDisplayCell(datum),
-        type: 'text',
+        type: "text",
         readOnly: true
       }));
     }
@@ -909,7 +924,7 @@ function (_React$Component) {
       }), React.createElement(FixedSizeList, {
         itemData: data,
         height: 200,
-        width: indexWidth + datumWidth * Object.keys(columns).length,
+        width: indexWidth + datumWidth * Object.keys(columns).length + 15,
         itemCount: data.length,
         itemSize: 22,
         overscanCount: 10
@@ -1317,7 +1332,7 @@ function (_React$Component) {
         return newData;
       }
 
-      var T = new Transformer(_objectSpread({}, transform));
+      var T = new Transformer(_objectSpread2({}, transform));
       newData.forEach(function (d) {
         d[column].transformed = T.transform(d[column].parsed);
       });
@@ -1336,7 +1351,7 @@ function (_React$Component) {
         return newData;
       }
 
-      var A = new Annotator(_objectSpread({}, annotations));
+      var A = new Annotator(_objectSpread2({}, annotations));
       newData.forEach(function (d) {
         d[column].annotated = A.annotate(d[column].transformed || d[column].parsed);
       });

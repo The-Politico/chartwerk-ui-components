@@ -11,7 +11,7 @@ import Page from 'Common/Page';
 class Docs extends React.Component {
   render() {
     const links = Object.keys(Components).map(site => (
-      <li><a href={`./${site}/`}>{site}</a></li>
+      <li key={site}><a href={`./${site}/`}>{site}</a></li>
     ));
     return (
       <Page link='.'>

@@ -27,7 +27,7 @@ class Headers extends React.Component {
         {...{ transformColumn, setTransformColumn }}
       />
     ));
-    Header.unshift(<EmptyCell key={'empty'} />);
+    Header.unshift(<EmptyCell key='empty' />);
 
     const HeaderTypes = orderedColumns.map((column, i) =>
       <TypeCell
@@ -37,7 +37,7 @@ class Headers extends React.Component {
         {...{ reTypeColumn, setReTypeColumn }}
       />
     );
-    HeaderTypes.unshift(<EmptyCell key={'empty'} />);
+    HeaderTypes.unshift(<EmptyCell key='empty' />);
 
     return (
       <div className={classnames('header', styles.component)}>

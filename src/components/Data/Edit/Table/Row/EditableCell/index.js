@@ -78,21 +78,25 @@ class EditableCell extends React.PureComponent {
         })}
         onClick={(e) => this.setState({ editing: true })}
       >
-        {editing && <input
-          className={classnames('editable', type)}
-          value={value}
-          type={type}
-          onChange={this.onEdit}
-          onKeyPress={this.onKeyPress}
-          onBlur={this.onBlur}
-          autoFocus
-        />}
-        {!editing && <input
-          className={type}
-          value={this.formatDisplayCell(datum)}
-          type={'text'}
-          readOnly
-        />}
+        {editing && (
+          <input
+            className={classnames('editable', type)}
+            value={value}
+            type={type}
+            onChange={this.onEdit}
+            onKeyPress={this.onKeyPress}
+            onBlur={this.onBlur}
+            autoFocus
+          />
+        )}
+        {!editing && (
+          <input
+            className={type}
+            value={this.formatDisplayCell(datum)}
+            type='text'
+            readOnly
+          />
+        )}
       </div>
     );
   }

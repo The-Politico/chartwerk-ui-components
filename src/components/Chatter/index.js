@@ -15,6 +15,7 @@ class Chatter extends React.Component {
     };
     this.debouncedUpdate = debounce(this.debouncedUpdate, props.updateDebounce);
   }
+
   update = (updateObj) => {
     const { chatter } = this.state;
     const updatedChatter = Object.assign({}, chatter, updateObj);

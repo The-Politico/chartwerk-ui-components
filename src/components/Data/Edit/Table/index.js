@@ -41,7 +41,7 @@ class Table extends React.Component {
             <List
               itemData={data}
               height={200}
-              width={indexWidth + (datumWidth * Object.keys(columns).length)}
+              width={indexWidth + (datumWidth * Object.keys(columns).length) + 15}
               itemCount={data.length}
               itemSize={22}
               overscanCount={10}
