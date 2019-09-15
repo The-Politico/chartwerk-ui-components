@@ -13,8 +13,8 @@ import partialRight from 'lodash/partialRight';
 import maxBy from 'lodash/maxBy';
 import head from 'lodash/head';
 import zipWith from 'lodash/zipWith';
-import { FixedSizeList } from 'react-window';
 import { format } from 'd3-format';
+import { FixedSizeList } from 'react-window';
 import keys from 'lodash/keys';
 
 function _classCallCheck(instance, Constructor) {
@@ -560,6 +560,114 @@ var styles$2 = {"component":"chartwerk_ui_components___2X8B4iz3dp"};
 
 var styles$3 = {"component":"chartwerk_ui_components___2tNjOiYN5j"};
 
+var isPositiveNumber = function isPositiveNumber(number) {
+  if (typeof number !== 'number') return false;
+  if (parseFloat(number) < 0) return false;
+  return true;
+};
+var isString = function isString(string) {
+  return typeof string === 'string';
+};
+
+var FIXED = 'fixed point';
+var DIGITS = 'significant digits';
+
+var Annotator =
+/*#__PURE__*/
+function () {
+  function Annotator() {
+    var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+        rounding = _ref.rounding,
+        precision = _ref.precision,
+        prefix = _ref.prefix,
+        suffix = _ref.suffix;
+
+    _classCallCheck(this, Annotator);
+
+    _defineProperty(this, "fixed", FIXED);
+
+    _defineProperty(this, "digits", DIGITS);
+
+    this.rounding = rounding === FIXED ? FIXED : DIGITS;
+    this.precision = isPositiveNumber(precision) ? parseInt(precision) : null;
+    this.prefix = isString(prefix) ? prefix : '';
+    this.suffix = isString(suffix) ? suffix : '';
+  }
+
+  _createClass(Annotator, [{
+    key: "annotate",
+    value: function annotate(d) {
+      try {
+        d = parseFloat(d);
+      } catch (e) {
+        return d;
+      } // Currency prefix is handled as a special case by d3.format
+      // so we get "-$5" not "$-5".
+      // Positive prefix is also handled by d3.format.
+
+
+      var prefix = ['$', '+', '+$'].includes(this.prefix) ? '' : this.prefix;
+      return "".concat(prefix).concat(this.format(d)).concat(this.suffix);
+    }
+  }, {
+    key: "formatString",
+    get: function get() {
+      var precisionFormat = this.rounding === FIXED ? 'f' : 'r';
+      var format = this.precision !== null && this.precision >= 0 ? ",.".concat(this.precision).concat(precisionFormat) : ','; // Add to format string if currency or positive sign is prefix
+
+      var formatPrefix = ['$', '+', '+$'].includes(this.prefix) ? this.prefix : '';
+      return formatPrefix + format;
+    }
+  }, {
+    key: "format",
+    get: function get() {
+      return format(this.formatString);
+    }
+  }]);
+
+  return Annotator;
+}();
+
+var MULTIPLY = 'multiply';
+var DIVIDE = 'divide';
+
+var Transformer =
+/*#__PURE__*/
+function () {
+  function Transformer() {
+    var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+        operation = _ref.operation,
+        multiplier = _ref.multiplier;
+
+    _classCallCheck(this, Transformer);
+
+    _defineProperty(this, "multiply", MULTIPLY);
+
+    _defineProperty(this, "divide", DIVIDE);
+
+    this.operation = operation === MULTIPLY ? MULTIPLY : DIVIDE;
+    this.multiplier = isPositiveNumber(multiplier) ? parseFloat(multiplier) : null;
+  }
+
+  _createClass(Transformer, [{
+    key: "transform",
+    value: function transform(d) {
+      try {
+        d = parseFloat(d);
+      } catch (e) {
+        return d;
+      }
+
+      if (!this.multiplier) return d;
+      if (this.operation === MULTIPLY) d *= this.multiplier;
+      if (this.operation === DIVIDE) d *= 1 / this.multiplier;
+      return d;
+    }
+  }]);
+
+  return Transformer;
+}();
+
 var datumWidth = 145;
 var indexWidth = 35;
 var datumCellWidth = {
@@ -885,8 +993,28 @@ function (_React$Component) {
     _defineProperty(_assertThisInitialized(_this), "updateData", function (type, row, column, value) {
       var _this$props = _this.props,
           data = _this$props.data,
+          columns = _this$props.columns,
           sendState = _this$props.sendState;
-      data[row][column].parsed = parseByType(value, type);
+      var datum = data[row][column]; // Parse value
+
+      var parsedValue = parseByType(value, type);
+      datum.parsed = parsedValue; // Re-run transforms and annotations, if needed
+
+      var _columns$column = columns[column],
+          transform = _columns$column.transform,
+          annotations = _columns$column.annotations;
+      var T, A;
+
+      if (datum.transformed) {
+        T = new Transformer(transform);
+        datum.transformed = T.transform(parsedValue);
+      }
+
+      if (datum.annotated) {
+        A = new Annotator(annotations);
+        datum.annotated = A.annotate(datum.transformed || parsedValue);
+      }
+
       sendState({
         data: data
       });
@@ -944,55 +1072,6 @@ function (_React$Component) {
 var styles$7 = {"component":"chartwerk_ui_components___m7nuPQ3NIt","spinAround":"chartwerk_ui_components___2HG7QYqctC"};
 
 var styles$8 = {"component":"chartwerk_ui_components___2ea2SZEwIv","spinAround":"chartwerk_ui_components___Sn06hWL_Fa"};
-
-var isPositiveNumber = function isPositiveNumber(number) {
-  if (typeof number !== 'number') return false;
-  if (parseFloat(number) < 0) return false;
-  return true;
-};
-var isString = function isString(string) {
-  return typeof string === 'string';
-};
-
-var MULTIPLY = 'multiply';
-var DIVIDE = 'divide';
-
-var Transformer =
-/*#__PURE__*/
-function () {
-  function Transformer() {
-    var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
-        operation = _ref.operation,
-        multiplier = _ref.multiplier;
-
-    _classCallCheck(this, Transformer);
-
-    _defineProperty(this, "multiply", MULTIPLY);
-
-    _defineProperty(this, "divide", DIVIDE);
-
-    this.operation = operation === MULTIPLY ? MULTIPLY : DIVIDE;
-    this.multiplier = isPositiveNumber(multiplier) ? parseFloat(multiplier) : null;
-  }
-
-  _createClass(Transformer, [{
-    key: "transform",
-    value: function transform(d) {
-      try {
-        d = parseFloat(d);
-      } catch (e) {
-        return d;
-      }
-
-      if (!this.multiplier) return d;
-      if (this.operation === MULTIPLY) d *= this.multiplier;
-      if (this.operation === DIVIDE) d *= 1 / this.multiplier;
-      return d;
-    }
-  }]);
-
-  return Transformer;
-}();
 
 var Multiply =
 /*#__PURE__*/
@@ -1055,58 +1134,6 @@ function (_React$Component) {
 
   return Multiply;
 }(React.Component);
-
-var FIXED = 'fixed point';
-var DIGITS = 'significant digits';
-
-var Annotator =
-/*#__PURE__*/
-function () {
-  function Annotator() {
-    var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
-        rounding = _ref.rounding,
-        precision = _ref.precision,
-        prefix = _ref.prefix,
-        suffix = _ref.suffix;
-
-    _classCallCheck(this, Annotator);
-
-    _defineProperty(this, "fixed", FIXED);
-
-    _defineProperty(this, "digits", DIGITS);
-
-    this.rounding = rounding === FIXED ? FIXED : DIGITS;
-    this.precision = isPositiveNumber(precision) ? parseInt(precision) : null;
-    this.prefix = isString(prefix) ? prefix : '';
-    this.suffix = isString(suffix) ? suffix : '';
-  }
-
-  _createClass(Annotator, [{
-    key: "annotate",
-    value: function annotate(d) {
-      try {
-        d = parseFloat(d);
-      } catch (e) {
-        return d;
-      }
-
-      return "".concat(this.prefix).concat(this.format(d)).concat(this.suffix);
-    }
-  }, {
-    key: "formatString",
-    get: function get() {
-      var precisionFormat = this.rounding === FIXED ? 'f' : 'r';
-      return this.precision !== null && this.precision >= 0 ? ",.".concat(this.precision).concat(precisionFormat) : ',';
-    }
-  }, {
-    key: "format",
-    get: function get() {
-      return format(this.formatString);
-    }
-  }]);
-
-  return Annotator;
-}();
 
 var Round =
 /*#__PURE__*/

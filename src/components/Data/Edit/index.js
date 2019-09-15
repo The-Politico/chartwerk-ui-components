@@ -61,11 +61,13 @@ class Edit extends React.Component {
           <button
             className='button'
             onClick={() => sendState({ view: INPUT })}
-          >New data</button>
+          >New data
+          </button>
           <button
             className='button'
             onClick={() => sendState({ view: MAP })}
-          >Next</button>
+          >Next
+          </button>
         </div>
       </div>
     );

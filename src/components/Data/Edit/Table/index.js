@@ -2,6 +2,8 @@ import React from 'react';
 import classnames from 'classnames';
 import styles from './styles.scss';
 import { parseByType } from 'Components/Data/utils/parsers';
+import Annotator from 'Components/Data/utils/number/Annotator';
+import Transformer from 'Components/Data/utils/number/Transformer';
 
 import { datumWidth, indexWidth } from './widths';
 
@@ -12,8 +14,22 @@ import { FixedSizeList as List } from 'react-window';
 
 class Table extends React.Component {
   updateData = (type, row, column, value) => {
-    const { data, sendState } = this.props;
-    data[row][column].parsed = parseByType(value, type);
+    const { data, columns, sendState } = this.props;
+    const datum = data[row][column];
+    // Parse value
+    const parsedValue = parseByType(value, type);
+    datum.parsed = parsedValue;
+    // Re-run transforms and annotations, if needed
+    const { transform, annotations } = columns[column];
+    let T, A;
+    if (datum.transformed) {
+      T = new Transformer(transform);
+      datum.transformed = T.transform(parsedValue);
+    }
+    if (datum.annotated) {
+      A = new Annotator(annotations);
+      datum.annotated = A.annotate(datum.transformed || parsedValue);
+    }
     sendState({ data });
   }
 

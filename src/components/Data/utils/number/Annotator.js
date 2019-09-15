@@ -18,8 +18,11 @@ export default class Annotator {
 
   get formatString() {
     const precisionFormat = this.rounding === FIXED ? 'f' : 'r';
-    return this.precision !== null && this.precision >= 0 ?
+    const format = this.precision !== null && this.precision >= 0 ?
       `,.${this.precision}${precisionFormat}` : ',';
+    // Add to format string if currency or positive sign is prefix
+    const formatPrefix = ['$', '+', '+$'].includes(this.prefix) ? this.prefix : '';
+    return formatPrefix + format;
   }
 
   get format() {
@@ -29,6 +32,11 @@ export default class Annotator {
   annotate(d) {
     try { d = parseFloat(d); } catch (e) { return d; }
 
-    return `${this.prefix}${this.format(d)}${this.suffix}`;
+    // Currency prefix is handled as a special case by d3.format
+    // so we get "-$5" not "$-5".
+    // Positive prefix is also handled by d3.format.
+    const prefix = ['$', '+', '+$'].includes(this.prefix) ? '' : this.prefix;
+
+    return `${prefix}${this.format(d)}${this.suffix}`;
   }
 }
